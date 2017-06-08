@@ -11,4 +11,5 @@
 **/
 
 define("_MB_PRINTLIMINATOR_TXT1" , "Print the page");
-define("_MB_PRINT" , "Print the page");
+define("_MB_PRINTLIMINATOR_PRINT" , "Print the page");
+define("_MB_PRINTLIMINATOR_FILE" , "printliminator.en.php");

@@ -11,4 +11,5 @@
 **/
 
 define("_MB_PRINTLIMINATOR_TXT1" , "Печать страницы");
-define("_MB_PRINT" , "Печать страницы");
+define("_MB_PRINTLIMINATOR_PRINT" , "Печать страницы");
+define("_MB_PRINTLIMINATOR_FILE" , "printliminator.ru.php");
