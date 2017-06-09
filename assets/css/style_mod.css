@@ -5,7 +5,8 @@ padding: 0 15px 0 15px;
 .keyboard-area { 
 margin: 0 -15px 0 -15px; 
 /* extend keyboard background outside of popup - accomidate for different row heights in browsers */ 
-padding: 5px 15px 3px 15px; background: #ccc; 
+padding: 5px 15px 3px 15px; background: #ccc;
+text-align: center; 
 } 
 .head_help {
     text-align: left;
@@ -46,10 +47,18 @@ background-position: -50px -25px;
 
 .key { 
 width: 30%; 
+}
+
+.td_help {
+vertical-align:middle;
+text-align: left;
+margin-top:5px;
 } 
 
-kbd { 
-background: #fff; 
+.kbd_help { 
+background: #fff;
+color:black;
+font-weight: bold; 
 border: #000 1px solid; 
 border-radius: 3px; 
 padding: 1px 3px; 
