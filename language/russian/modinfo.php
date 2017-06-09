@@ -25,5 +25,7 @@ define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Помощь");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP_DESC" , "Помощь в использовании модуля");
 
 // Blocks
-define("_MI_PRINTLIMINATOR_BLOCK_NAME1" , "Printliminator");
-define("_MI_PRINTLIMINATOR_BLOCK_NAME1_DESC" , "Printliminator");
+define("_MI_PRINTLIMINATOR_BLOCK_PRINT" , "Printliminator");
+define("_MI_PRINTLIMINATOR_BLOCK_PRINT_DESC" , "Printliminator");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE" , "QR Code");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC" , "QR Code");

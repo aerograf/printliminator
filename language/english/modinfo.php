@@ -27,3 +27,5 @@ define("_MI_PRINTLIMINATOR_MANAGER_HELP_DESC" , "Help pour module usage");
 // Blocks
 define("_MI_PRINTLIMINATOR_BLOCK_NAME1" , "Printliminator");
 define("_MI_PRINTLIMINATOR_BLOCK_NAME1_DESC" , "Printliminator");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE" , "QR Code");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC" , "QR Code");

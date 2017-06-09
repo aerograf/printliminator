@@ -10,8 +10,9 @@
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
 
-define("_MB_PRINTLIMINATOR_TXT1" , "Print the page");
+define("_MB_PRINTLIMINATOR_QRCODE" , "QR Code");
 define("_MB_PRINTLIMINATOR_PRINT" , "Print the page");
+define("_MB_PRINTLIMINATOR_HELP_QR" , "Code");
 //help
 define("_MB_PRINTLIMINATOR_HELP" , "Options");
 define("_MB_PRINTLIMINATOR_CLICK_1" , "Just click stuff on page to remove.");

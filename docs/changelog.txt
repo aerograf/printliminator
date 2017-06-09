@@ -1,4 +1,5 @@
 - The Printliminator for XOOPS
--- Added help popup
+-- Add help popup
+-- Add QR Code
 - The Printliminator for XOOPS
 -- Ver. 0.1 Beta 1

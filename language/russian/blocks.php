@@ -10,8 +10,9 @@
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
 
-define("_MB_PRINTLIMINATOR_TXT1" , "Печать страницы");
+define("_MB_PRINTLIMINATOR_QRCODE" , "QR Code");
 define("_MB_PRINTLIMINATOR_PRINT" , "Печать страницы");
+define("_MB_PRINTLIMINATOR_HELP_QR" , "Код");
 //help
 define("_MB_PRINTLIMINATOR_HELP" , "Опции");
 define("_MB_PRINTLIMINATOR_CLICK_1" , "Нажмите на выделенную область, чтобы удалить.");

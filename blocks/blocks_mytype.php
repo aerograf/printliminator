@@ -19,6 +19,6 @@ if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/
 function b_printliminator_myfunction_show($options)
 {
     $block = array();
-    $block["text"] = _MB_PRINTLIMINATOR_TXT1;
+    $block["text"] = _MB_PRINTLIMINATOR_PRINT;
     return $block;
 }

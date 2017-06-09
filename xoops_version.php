@@ -52,7 +52,8 @@ $modversion = array(
     'system_menu'         =>  1,
     'hasAdmin'            =>  1,
     'adminindex'          =>  'admin/index.php',
-    'adminmenu'           =>  'admin/menu.php'
+    'adminmenu'           =>  'admin/menu.php',
+    'use_smarty'          =>  1
 );
 
 // Templates
@@ -70,8 +71,18 @@ $modversion['templates'] = array(
 //Blocks
 $modversion['blocks'][] = array(
           'file'          =>  'blocks_mytype.php',
-          'name'          =>  _MI_PRINTLIMINATOR_BLOCK_NAME1,
-          'description'   =>  _MI_PRINTLIMINATOR_BLOCK_NAME1_DESC,
+          'name'          =>  _MI_PRINTLIMINATOR_BLOCK_PRINT,
+          'description'   =>  _MI_PRINTLIMINATOR_BLOCK_PRINT_DESC,
           'show_func'     =>  'b_' . $moduleDirName . '_myfunction_show',
           'template'      =>  $moduleDirName . '_block.tpl'
 );
+$modversion['blocks'][] = array(
+          'file'          =>  'blocks_qrcode.php',
+          'name'          =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE,
+          'description'   =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC,
+          'show_func'     =>  'b_' . $moduleDirName . '_myfunction_qrcode',
+          'template'      =>  $moduleDirName . '_qrcode.tpl'
+);
+
+// Notification
+$modversion['hasNotification'] = 0;
