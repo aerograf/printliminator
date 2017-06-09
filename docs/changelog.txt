@@ -1,2 +1,4 @@
 - The Printliminator for XOOPS
+-- Added help popup
+- The Printliminator for XOOPS
 -- Ver. 0.1 Beta 1

@@ -16,6 +16,8 @@
  * @author 	kris <http://www.xoofoo.org>
  * @version	$Id: functions.php 418 2010-10-11 18:22:33Z kris_fr $
 **/
+use Xmf\Request;
+use Xmf\Module\Helper;
+if( ! defined( 'XOOPS_ROOT_PATH' ) )  die("XOOPS_ROOT_PATH not defined!");
 
 
-?>
