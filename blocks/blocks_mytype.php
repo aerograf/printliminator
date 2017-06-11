@@ -20,8 +20,9 @@ if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/
      include_once XOOPS_ROOT_PATH.'/language/english/blocks.php';
 }
 
-function b_printliminator_myfunction_show($options)
+function b_printliminator_print_show($options)
 {
+    $title = _MB_PRINTLIMINATOR_PRINT;
     $block = array();
     $block["text"] = _MB_PRINTLIMINATOR_PRINT;
     return $block;

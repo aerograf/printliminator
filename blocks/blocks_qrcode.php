@@ -19,8 +19,9 @@ if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/
      include_once XOOPS_ROOT_PATH.'/language/english/blocks.php';
 }
 
-function b_printliminator_myfunction_qrcode($options)
+function b_printliminator_qrcode_show($options)
 {
+    $title = _MB_PRINTLIMINATOR_QRCODE;
     $block = array();
     $block["text"] = _MB_PRINTLIMINATOR_QRCODE;
     return $block;

@@ -73,14 +73,14 @@ $modversion['blocks'][] = array(
           'file'          =>  'blocks_mytype.php',
           'name'          =>  _MI_PRINTLIMINATOR_BLOCK_PRINT,
           'description'   =>  _MI_PRINTLIMINATOR_BLOCK_PRINT_DESC,
-          'show_func'     =>  'b_' . $moduleDirName . '_myfunction_show',
+          'show_func'     =>  'b_' . $moduleDirName . '_print_show',
           'template'      =>  $moduleDirName . '_block.tpl'
 );
 $modversion['blocks'][] = array(
           'file'          =>  'blocks_qrcode.php',
           'name'          =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE,
           'description'   =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC,
-          'show_func'     =>  'b_' . $moduleDirName . '_myfunction_qrcode',
+          'show_func'     =>  'b_' . $moduleDirName . '_qrcode_show',
           'template'      =>  $moduleDirName . '_qrcode.tpl'
 );
 
