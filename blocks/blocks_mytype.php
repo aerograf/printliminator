@@ -10,10 +10,6 @@
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
 
-$xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_block.css' );
-$xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_mod.css' );
-$xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_help.css' );
-
 if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php')) {
      include_once XOOPS_ROOT_PATH.'/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php';
 } else {
@@ -21,7 +17,11 @@ if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/
 }
 
 function b_printliminator_print_show($options)
-{
+{   
+    global $xoTheme;
+    $xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_block.css' );
+    $xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_mod.css' );
+    $xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_help.css' );
     $title = _MB_PRINTLIMINATOR_PRINT;
     $block = array();
     $block["text"] = _MB_PRINTLIMINATOR_PRINT;

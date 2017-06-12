@@ -9,9 +9,6 @@
  * @author 	aerograf <https://www.shmel.org>
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
-$xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_block.css' );
-$xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_mod.css' );
-$xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_help.css' );
 
 if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php')) {
      include_once XOOPS_ROOT_PATH.'/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php';
@@ -21,8 +18,15 @@ if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/
 
 function b_printliminator_qrcode_show($options)
 {
+    $myts =& MyTextSanitizer::getInstance();
+    global $xoTheme;
+    $xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_block.css' );
+    $xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_mod.css' );
+    $xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_help.css' );
     $title = _MB_PRINTLIMINATOR_QRCODE;
     $block = array();
     $block["text"] = _MB_PRINTLIMINATOR_QRCODE;
+    $block["qrcode_size"] = 2;
     return $block;
 }
+
