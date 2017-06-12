@@ -26,7 +26,8 @@ function b_printliminator_qrcode_show($options)
     $title = _MB_PRINTLIMINATOR_QRCODE;
     $block = array();
     $block["text"] = _MB_PRINTLIMINATOR_QRCODE;
-    $block["qrcode_size"] = 2;
+    $block["qrcode_size"] = 2;  // 1-4
+    $block["qrcode_error"] = M; //Error correct level You can set 'L','M','Q' or 'H'. 
     return $block;
 }
 

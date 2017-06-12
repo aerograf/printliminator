@@ -68,7 +68,7 @@ $modversion['templates'] = array(
     ),
 );
 
-//Blocks
+//Blocks    
 $modversion['blocks'][] = array(
           'file'          =>  'blocks_mytype.php',
           'name'          =>  _MI_PRINTLIMINATOR_BLOCK_PRINT,
@@ -81,8 +81,8 @@ $modversion['blocks'][] = array(
           'name'          =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE,
           'description'   =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC,
           'show_func'     =>  'b_' . $moduleDirName . '_qrcode_show',
-          'template'      =>  $moduleDirName . '_qrcode.tpl'
+          'template'      =>  $moduleDirName . '_qrcode.tpl',
 );
 
-// Notification
+// Notification   
 $modversion['hasNotification'] = 0;
