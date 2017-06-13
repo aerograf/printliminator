@@ -13,11 +13,19 @@
 define("_MB_PRINTLIMINATOR_QRCODE" , "QR Code");
 define("_MB_PRINTLIMINATOR_PRINT" , "Print the page");
 define("_MB_PRINTLIMINATOR_HELP_QR" , "Code");
-//help
 define("_MB_PRINTLIMINATOR_HELP" , "Options");
+//
+define("_MB_PRINTLIMINATOR_CLOSE" , "CLOSE");
+define("_MB_PRINTLIMINATOR_DRAG" , "DRAG");
 define("_MB_PRINTLIMINATOR_CLICK_1" , "Just click stuff on page to remove.");
 define("_MB_PRINTLIMINATOR_CLICK_2" , "Alt-click to remove opposite.");
+define("_MB_PRINTLIMINATOR_SUPERPOWERS" , "Other Useful Superpowers");
+define("_MB_PRINTLIMINATOR_UNDO_LAST" , "Undo<br>Last");
+define("_MB_PRINTLIMINATOR_PRINT_STYLE" , "Add Print<br>Styles");
+define("_MB_PRINTLIMINATOR_REMOVE" , "Remove<br>Graphics");
+define("_MB_PRINTLIMINATOR_SEND_TO" , "Send to<br>print");
 define("_MB_PRINTLIMINATOR_VIEW_KEY" , "View Keyboard Commands");
+define("_MB_PRINTLIMINATOR_HIDE_KEY" , "Hide Keyboard Commands");
 define("_MB_PRINTLIMINATOR_KEY" , "Key");
 define("_MB_PRINTLIMINATOR_KEY_DESC" , "Description");
 define("_MB_PRINTLIMINATOR_PAGEUP" , "Find wrapper of highlighted box");

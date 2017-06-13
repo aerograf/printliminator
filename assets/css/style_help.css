@@ -6,13 +6,12 @@
     cursor: 	pointer;
 }
 .tooltip_help {
-    display: block;
+    display: none;
     z-index: 1;
     position: absolute;
     background: #ededed;
     color: #555;
-    right:10%;
-    top:50%;
+    right:50%;
     font-size: 12px;
     padding: 2px;
     line-height: 18px;
@@ -27,9 +26,10 @@
 
     .widget_help:hover .tooltip_help {
         margin-top: 0;
-        right:10%;
-        top:50%;
-        opacity: 1;
+        display: inline-block;
+        z-index: 1000;
+        right:50%;
+        opacity: 1;                       
         visibility: visible;
         -webkit-transition-delay: 0s;
         -moz-transition-delay: 0s;
