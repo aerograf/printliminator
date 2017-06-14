@@ -24,7 +24,7 @@ function b_printliminator_print_show($options)
     $xoTheme->addStylesheet( XOOPS_URL . '/modules/printliminator/assets/css/style_help.css' );
     $title = _MB_PRINTLIMINATOR_PRINT;
     $block = array();
-    $block["text"] = _MB_PRINTLIMINATOR_PRINT;
+    $block["text"] = $title;
     // Lang code form start
     $block["print_close"] = _MB_PRINTLIMINATOR_CLOSE;
     $block["print_drag"] = _MB_PRINTLIMINATOR_DRAG;
@@ -51,5 +51,23 @@ function b_printliminator_print_show($options)
     $block["print_alt"] = _MB_PRINTLIMINATOR_ALT;
     $block["print_shift"] = _MB_PRINTLIMINATOR_SHIFT;
     // end
+    // Help window
+    if ($options[0] == 0) {
+        $block['layout'] = 1;
+    } else {
+        $block['layout'] = 0;
+    }
+    // end
     return $block;
 }
+
+function b_printliminator_print_edit($options)
+{  
+    $form = _MB_PRINTLIMINATOR_HELP_POPUP . '&nbsp;&nbsp;';
+    $form .= "<input type='radio' name='options[0]' value='1'" . (($options[0] == 1) ? ' checked' : '') . ' />' . _YES . '&nbsp;';
+    $form .= "<input type='radio' name='options[0]' value='0'" . (($options[0] == 0) ? ' checked' : '') . ' />' . _NO . '<br>';
+    return $form;
+}
+/*
+print_close='<{$block.print_close}>';print_drag='<{$block.print_drag}>';print_click_1='<{$block.print_click_1}>';print_click_2='<{$block.print_click_2}>';print_superpowers='<{$block.print_superpowers}>';print_undo_last='<{$block.print_undo_last}>';print_print_style='<{$block.print_print_style}>';print_remove='<{$block.print_remove}>';print_send_to='<{$block.print_send_to}>';print_view_key='<{$block.print_view_key}>';print_key='<{$block.print_key}>';print_key_desc='<{$block.print_key_desc}>';print_pageup='<{$block.print_pageup}>';print_pagedown='<{$block.print_pagedown}>';print_right='<{$block.print_right}>';print_left='<{$block.print_left}>';print_enter='<{$block.print_enter}>';print_backspace='<{$block.print_backspace}>';print_numpad_plus='<{$block.print_numpad_plus}>';print_numpad_minus='<{$block.print_numpad_minus}>';print_reset_font='<{$block.print_reset_font}>';print_alt='<{$block.print_alt}>';print_shift='<{$block.print_shift}>';
+*/

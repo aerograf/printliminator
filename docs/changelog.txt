@@ -1,3 +1,4 @@
+- Added setting of blocks
 - The Printliminator for XOOPS
 -- Add help popup
 -- Add QR Code

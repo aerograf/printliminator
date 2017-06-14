@@ -14,6 +14,11 @@ define("_MB_PRINTLIMINATOR_QRCODE" , "QR Code");
 define("_MB_PRINTLIMINATOR_PRINT" , "Печать страницы");
 define("_MB_PRINTLIMINATOR_HELP_QR" , "Код");
 define("_MB_PRINTLIMINATOR_HELP" , "Опции");
+define("_MB_PRINTLIMINATOR_HELP_POPUP" , "Показать окно помощи");
+define("_MB_PRINTLIMINATOR_SIZE_QR" , "Размер");
+define("_MB_PRINTLIMINATOR_SIZE_DESC_QR" , "Размер изображения зависит от этой настройки. Вы можете установить 1-4.");
+define("_MB_PRINTLIMINATOR_ERROR_QR" , "Уровень ошибки");
+define("_MB_PRINTLIMINATOR_ERROR_DESC_QR" , "Вы можете установить 'L','<b>M</b>','Q' и 'H'.");
 //
 define("_MB_PRINTLIMINATOR_CLOSE" , "Закрыть");
 define("_MB_PRINTLIMINATOR_DRAG" , "Переместить");

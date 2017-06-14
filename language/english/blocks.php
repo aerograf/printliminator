@@ -14,6 +14,11 @@ define("_MB_PRINTLIMINATOR_QRCODE" , "QR Code");
 define("_MB_PRINTLIMINATOR_PRINT" , "Print the page");
 define("_MB_PRINTLIMINATOR_HELP_QR" , "Code");
 define("_MB_PRINTLIMINATOR_HELP" , "Options");
+define("_MB_PRINTLIMINATOR_HELP_POPUP" , "Show help window");
+define("_MB_PRINTLIMINATOR_SIZE_QR" , "Size");
+define("_MB_PRINTLIMINATOR_SIZE_DESC_QR" , "Image size depends on this parameter. You can set the 1-4.");
+define("_MB_PRINTLIMINATOR_ERROR_QR" , "Error correct level");
+define("_MB_PRINTLIMINATOR_ERROR_DESC_QR" , "You can set 'L','<b>M</b>','Q' or 'H'.");
 //
 define("_MB_PRINTLIMINATOR_CLOSE" , "CLOSE");
 define("_MB_PRINTLIMINATOR_DRAG" , "DRAG");

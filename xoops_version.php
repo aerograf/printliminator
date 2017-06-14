@@ -35,9 +35,9 @@ $modversion = array(
     'modicons16'          =>  'assets/images/icons/16',
     'modicons32'          =>  'assets/images/icons/32',
     // About
-    'module_release'      =>  '07/06/2017',
+    'module_release'      =>  '14/06/2017',
     'release_date'        =>  '2017/06/07',
-    'module_status'       =>  'Beta 1',
+    'module_status'       =>  'Beta 2',
     'module_website_url'  =>  'https://www.shmel.org',
     'module_website_name' =>  'SHMEL.ORG',
     'module_website_url'  =>  'https://github.com/aerograf/printliminator',
@@ -74,6 +74,8 @@ $modversion['blocks'][] = array(
           'name'          =>  _MI_PRINTLIMINATOR_BLOCK_PRINT,
           'description'   =>  _MI_PRINTLIMINATOR_BLOCK_PRINT_DESC,
           'show_func'     =>  'b_' . $moduleDirName . '_print_show',
+          'edit_func'     =>  'b_' . $moduleDirName . '_print_edit',
+          'options'       =>  '',
           'template'      =>  $moduleDirName . '_block.tpl'
 );
 $modversion['blocks'][] = array(
@@ -81,7 +83,9 @@ $modversion['blocks'][] = array(
           'name'          =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE,
           'description'   =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC,
           'show_func'     =>  'b_' . $moduleDirName . '_qrcode_show',
-          'template'      =>  $moduleDirName . '_qrcode.tpl',
+          'edit_func'     =>  'b_' . $moduleDirName . '_qrcode_edit',
+          'options'       =>  '2',
+          'template'      =>  $moduleDirName . '_qrcode.tpl'
 );
 
 // Notification   
