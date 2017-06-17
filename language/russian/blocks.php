@@ -11,6 +11,11 @@
 **/
 
 define("_MB_PRINTLIMINATOR_QRCODE" , "QR Code");
+define("_MB_PRINTLIMINATOR_QRCODE_DIV" , "QR Code DIV");
+define("_MB_PRINTLIMINATOR_DIV_LEFT_QR" , "Расположение относительно левого края");
+define("_MB_PRINTLIMINATOR_DIV_LEFT_DESC_QR" , "Вносить расстояние можно как в px так и в %. <b>Обязательно указывать px или %</b>");
+define("_MB_PRINTLIMINATOR_DIV_TOP_QR" , "Расположение относительно верхнего края");
+define("_MB_PRINTLIMINATOR_DIV_TOP_DESC_QR" , "Вносить расстояние можно как в px так и в %. <b>Обязательно указывать px или %</b>");
 define("_MB_PRINTLIMINATOR_PRINT" , "Печать страницы");
 define("_MB_PRINTLIMINATOR_HELP_QR" , "Код");
 define("_MB_PRINTLIMINATOR_HELP" , "Опции");

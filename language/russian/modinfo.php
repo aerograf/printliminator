@@ -23,9 +23,12 @@ define("_MI_PRINTLIMINATOR_MANAGER_ABOUT" , "About");
 define("_MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC" , "Об этом модуле");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Помощь");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP_DESC" , "Помощь в использовании модуля");
+define("_MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC" , "QR Code DIV");
 
 // Blocks
 define("_MI_PRINTLIMINATOR_BLOCK_PRINT" , "Printliminator");
 define("_MI_PRINTLIMINATOR_BLOCK_PRINT_DESC" , "Printliminator");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC" , "QR Code");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DIV" , "QR Code DIV");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC_DIV" , "Блок 'QR Code' с возможностью свободного размещения");

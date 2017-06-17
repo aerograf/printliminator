@@ -11,6 +11,11 @@
 **/
 
 define("_MB_PRINTLIMINATOR_QRCODE" , "QR Code");
+define("_MB_PRINTLIMINATOR_QRCODE_DIV" , "QR Code DIV");
+define("_MB_PRINTLIMINATOR_DIV_LEFT_QR" , "Location relative to the left edge");
+define("_MB_PRINTLIMINATOR_DIV_LEFT_DESC_QR" , "You can enter the distance both in px and in %. <b>Be sure to specify px or %</b>");
+define("_MB_PRINTLIMINATOR_DIV_TOP_QR" , "Location relative to the top edge");
+define("_MB_PRINTLIMINATOR_DIV_TOP_DESC_QR" , "You can enter the distance both in px and in %. <b>Be sure to specify px or %</b>");
 define("_MB_PRINTLIMINATOR_PRINT" , "Print the page");
 define("_MB_PRINTLIMINATOR_HELP_QR" , "Code");
 define("_MB_PRINTLIMINATOR_HELP" , "Options");

@@ -35,3 +35,5 @@ define("_AM_PRINTLIMINATOR_HELP7" , "
 	<li><a class='tooltip' rel='external' href='http://docs.jquery.com/Main_Page' title='jQuery Documentation'>jQuery</a></li>
 </ul>
 ");
+define("_AM_PRINTLIMINATOR_HELP8" , 'Для размещения QR кода в шаблоне необходимо скопировать код <{includeq file="db:printliminator_qrcode_div_in.tpl"}> и вставить его в необходимое место в шаблоне. Размер картинки QR кода можно в шаблоне /modules/printliminator/templates/printliminator_qrcode_div_in.tpl изменить параметр s=2 в диапазоне от 1 до 4.<br /><hr /><br />');
+define("_AM_PRINTLIMINATOR_HELP9" , "<h3>Дополнительно</h3>"); 

@@ -35,3 +35,5 @@ define("_AM_PRINTLIMINATOR_HELP7" , "
 	<li><a class='tooltip' rel='external' href='http://docs.jquery.com/Main_Page' title='jQuery Documentation'>jQuery</a></li>
 </ul>
 ");
+define("_AM_PRINTLIMINATOR_HELP8" , 'To place the QR code in the template, you must copy the code <{includeq file = "db: printliminator_qrcode_div_in.tpl"}> and paste it into the required place in the template. The size of the QR code image can be changed in the template /modules/printliminator/templates/printliminator_qrcode_div_in.tpl by changing the parameter s=2 in the range from 1 to 4.<br /><hr /><br />');
+define("_AM_PRINTLIMINATOR_HELP9" , "<h3>Additionally</h3>");

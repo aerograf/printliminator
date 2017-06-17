@@ -10,10 +10,10 @@
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
 
-if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php')) {
-     include_once XOOPS_ROOT_PATH.'/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php';
+if (isset($GLOBALS['xoopsConfig']['language']) && file_exists(XOOPS_ROOT_PATH.'/modules/printliminator/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php')) {
+     include_once XOOPS_ROOT_PATH.'/modules/printliminator/language/'.$GLOBALS['xoopsConfig']['language'].'/blocks.php';
 } else {
-     include_once XOOPS_ROOT_PATH.'/language/english/blocks.php';
+     include_once XOOPS_ROOT_PATH.'/modules/printliminator/language/english/blocks.php';
 }
 
 function b_printliminator_print_show($options)
@@ -63,9 +63,9 @@ function b_printliminator_print_show($options)
 
 function b_printliminator_print_edit($options)
 {  
-    $form = _MB_PRINTLIMINATOR_HELP_POPUP . '&nbsp;&nbsp;';
-    $form .= "<input type='radio' name='options[0]' value='1'" . (($options[0] == 1) ? ' checked' : '') . ' />' . _YES . '&nbsp;';
-    $form .= "<input type='radio' name='options[0]' value='0'" . (($options[0] == 0) ? ' checked' : '') . ' />' . _NO . '<br>';
+    $form = "<hr /><br /><div style='float:left;width:20%;'>" . _MB_PRINTLIMINATOR_HELP_POPUP . ":</div><div style='float:left;width:80%;'>";
+    $form .= "<input type='radio' name='options[0]' value='1'" . (($options[0] == 1) ? ' checked' : '') . ' />' . _YES . '&nbsp;&nbsp;';
+    $form .= "<input type='radio' name='options[0]' value='0'" . (($options[0] == 0) ? ' checked' : '') . ' />' . _NO . '</div><br /><br /><hr /><br />';
     return $form;
 }
 /*

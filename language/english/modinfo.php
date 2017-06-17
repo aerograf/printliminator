@@ -23,9 +23,12 @@ define("_MI_PRINTLIMINATOR_MANAGER_ABOUT" , "About");
 define("_MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC" , "About this module");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Help");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP_DESC" , "Help pour module usage");
+define("_MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC" , "QR Code DIV");
 
 // Blocks
 define("_MI_PRINTLIMINATOR_BLOCK_NAME1" , "Printliminator");
 define("_MI_PRINTLIMINATOR_BLOCK_NAME1_DESC" , "Printliminator");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC" , "QR Code");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DIV" , "QR Code DIV");
+define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC_DIV" , "The 'QR Code' block with the possibility of free placement");
