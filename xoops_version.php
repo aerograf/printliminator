@@ -17,7 +17,7 @@ $xoops_url     = parse_url(XOOPS_URL);
 
 $modversion = array(
     'name' 	              =>  _MI_PRINTLIMINATOR_NAME,
-    'version'        	    =>  0.1,
+    'version'        	    =>  0.2,
     'description'         =>  _MI_PRINTLIMINATOR_DESC,
     'author'              =>  'aerograf',
     'credits'             =>  'Xoops Community',
@@ -36,8 +36,8 @@ $modversion = array(
     'modicons32'          =>  'assets/images/icons/32',
     // About
     'module_release'      =>  '07/06/2017',
-    'release_date'        =>  '2017/06/17',
-    'module_status'       =>  'Beta 3',
+    'release_date'        =>  '2017/06/18',
+    'module_status'       =>  'Beta 1',
     'module_website_url'  =>  'https://www.shmel.org',
     'module_website_name' =>  'SHMEL.ORG',
     'module_website_url'  =>  'https://github.com/aerograf/printliminator',
@@ -65,6 +65,10 @@ $modversion['templates'] = array(
     array(
           'file'          =>  'admin/' . $moduleDirName . '_admin_help.tpl',
           'description'   =>  _MI_PRINTLIMINATOR_MANAGER_HELP_DESC
+    ),
+    array(
+          'file'          =>  'admin/' . $moduleDirName . '_admin_help_fm.tpl',
+          'description'   =>  _MI_PRINTLIMINATOR_FILE_MANAGER_DESC
     ),
     array(
           'file'          =>  $moduleDirName . '_qrcode_div_in.tpl',
@@ -100,6 +104,18 @@ $modversion['blocks'][] = array(
           'options'       =>  '1||0%|0px',
           'template'      =>  $moduleDirName . '_qrcode_div.tpl'
 );
+
+// Preferences
+$i = 1;
+include_once XOOPS_ROOT_PATH . "/class/xoopslists.php";
+$modversion["config"][$i]["name"]           = "editor";
+$modversion["config"][$i]["title"]          = "_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR";
+$modversion["config"][$i]["description"]    = "_MI_PRINTLIMINATOR_FILE_MANAGER_FORM_EDITORDSC";
+$modversion["config"][$i]["formtype"]       = "select";
+$modversion["config"][$i]["valuetype"]      = "text";
+$modversion["config"][$i]["default"]        = "textarea";
+$modversion["config"][$i]["options"]        = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . "/class/xoopseditor");
+$modversion["config"][$i]["category"]       = "global";
 
 // Notification   
 $modversion['hasNotification'] = 0;

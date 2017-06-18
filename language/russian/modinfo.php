@@ -32,3 +32,11 @@ define("_MI_PRINTLIMINATOR_BLOCK_QRCODE" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DIV" , "QR Code DIV");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC_DIV" , "Блок 'QR Code' с возможностью свободного размещения");
+
+//FileManager
+define("_MI_PRINTLIMINATOR_FILE_MANAGER" , "FileManager");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC" , "FileManager for Xoops");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_HELP" , "FileManager Помощь");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC_HELP" , "Помощь по FileManager for Xoops");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR","FileManafer<hr />Редактор кода");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_FORM_EDITORDSC","Выберите редактор");

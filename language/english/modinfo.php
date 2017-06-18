@@ -32,3 +32,11 @@ define("_MI_PRINTLIMINATOR_BLOCK_QRCODE" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DIV" , "QR Code DIV");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC_DIV" , "The 'QR Code' block with the possibility of free placement");
+
+//FileManager
+define("_MI_PRINTLIMINATOR_FILE_MANAGER" , "Filemanager");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC" , "FileManager for Xoops");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_HELP" , "Filemanager Help");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC_HELP" , "Help to FileManager for Xoops");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR","FileManafer<hr />Code Editor");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_FORM_EDITORDSC","Choose the editor for code areas");

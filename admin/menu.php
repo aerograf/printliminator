@@ -34,6 +34,12 @@ $adminmenu = array(
           'icon'    =>    'assets/images/icons/index.png'
           ),
     array(
+          'title'   =>    _MI_PRINTLIMINATOR_FILE_MANAGER,
+          'link'    =>    'admin/filemanager.php',
+          'desc'    =>    _MI_PRINTLIMINATOR_FILE_MANAGER_DESC,
+          'icon'    =>    'assets/images/icons/example.png'
+          ),
+    array(
           'title'   =>    _MI_PRINTLIMINATOR_MANAGER_ABOUT,
           'link'    =>    'admin/about.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC,
@@ -44,5 +50,11 @@ $adminmenu = array(
           'link'    =>    'admin/help.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_HELP_DESC,
           'icon'    =>    'assets/images/icons/help.png'
+          ),
+    array(
+          'title'   =>    _MI_PRINTLIMINATOR_FILE_MANAGER_HELP,
+          'link'    =>    'admin/help_fm.php',
+          'desc'    =>    _MI_PRINTLIMINATOR_FILE_MANAGER_DESC_HELP,
+          'icon'    =>    'assets/images/admin/actions/help.png'
           )
 );
