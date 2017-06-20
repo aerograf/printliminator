@@ -77,6 +77,10 @@ $modversion['templates'] = array(
     array(
           'file'          =>  $moduleDirName . '_qrcode_div_in.tpl',
           'description'   =>  _MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC
+    ),
+    array(
+          'file'          =>  $moduleDirName . '_share42_div_in.tpl',
+          'description'   =>  _MI_PRINTLIMINATOR_SHARE42_DIV_DESC
     ),    
 );
 

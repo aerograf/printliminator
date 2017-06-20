@@ -29,6 +29,7 @@ define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Help");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP_DESC" , "Help pour module usage");
 define("_MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC" , "Share this page");
 //define("_MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC" , "QR Code DIV");
+define("_MI_PRINTLIMINATOR_SHARE42_DIV_DESC" , "Share this page DIV");
 
 // Blocks
 define("_MI_PRINTLIMINATOR_BLOCK_NAME1" , "Printliminator");

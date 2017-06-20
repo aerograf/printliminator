@@ -35,7 +35,7 @@ define("_AM_PRINTLIMINATOR_HELP7" , "
 	<li><a class='tooltip' rel='external' href='http://docs.jquery.com/Main_Page' title='jQuery Documentation'>jQuery</a></li>
 </ul>
 ");
-define("_AM_PRINTLIMINATOR_HELP8" , 'Для размещения QR кода в шаблоне необходимо скопировать код <{includeq file="db:printliminator_qrcode_div_in.tpl"}> и вставить его в необходимое место в шаблоне. Размер картинки QR кода можно в шаблоне /modules/printliminator/templates/printliminator_qrcode_div_in.tpl изменить параметр s=2 в диапазоне от 1 до 4.<br /><br /><hr /><br />');
+define("_AM_PRINTLIMINATOR_HELP8" , '<h2>OR Code</h2>Для размещения QR кода в шаблоне необходимо скопировать код <{includeq file="db:printliminator_qrcode_div_in.tpl"}> и вставить его в необходимое место в шаблоне. Размер картинки QR кода можно в шаблоне /modules/printliminator/templates/printliminator_qrcode_div_in.tpl изменить параметр s=2 в диапазоне от 1 до 4.');
 define("_AM_PRINTLIMINATOR_HELP9" , "<h3>Дополнительно</h3>");
 define("_AM_PRINTLIMINATOR_HELP10" , "<h3><br /><hr /><br />Использованы скрипты:</h3>");
 define("_AM_PRINTLIMINATOR_HELP11" , "
@@ -44,9 +44,10 @@ define("_AM_PRINTLIMINATOR_HELP11" , "
 <li><a target='_blank' href='http://www.swetake.com/'>QR Code</a></li>
 <li><a target='_blank' href='http://luciorota.altervista.org/xoops/'>File Manager</a></li>
 <li><a target='_blank' href='http://www.culex.dk/'>IndexScan</a></li>
+<li><a target='_blank' href='http://share42.com/'>Share42</a></li>
 </ul>
 ");
- 
+define("_AM_PRINTLIMINATOR_HELP12" , '<h2>Поделиться страницей</h2>Для размещения иконок "Поделиться" в плавающем блоке необходимо разместить в шаблоне темы <{includeq file="db:printliminator_share42_div_in.tpl"}>. Размещение иконок можно установить в шаблоне /modules/printliminator/templates/printliminator_share42_div_in.tpl изменяя параметры data-top1="150" data-top2="20" data-margin="0".<br /><b>Обратите внимание!</b> Для работы необходимо отключить блок в администрировании блоков (если включен).'); 
 
 //FileManager
 define("_AM_PRINTLIMINATOR_HELP_FM_1" , "Помощь по FileManager");

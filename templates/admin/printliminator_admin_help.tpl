@@ -21,6 +21,9 @@
 	<div class="width45 floatright pad5">
   <{$smarty.const._AM_PRINTLIMINATOR_HELP9}>
   <{$smarty.const._AM_PRINTLIMINATOR_HELP8}>
+<br /><br />
+  <{$smarty.const._AM_PRINTLIMINATOR_HELP12}>
+<br /><br /><hr /><br />
 	<{$smarty.const._AM_PRINTLIMINATOR_HELP4}>
 	<{$smarty.const._AM_PRINTLIMINATOR_HELP5}>
 	<{$smarty.const._AM_PRINTLIMINATOR_HELP6}>
