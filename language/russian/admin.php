@@ -13,8 +13,8 @@
 define("_AM_PRINTLIMINATOR_MANAGER_INDEX",                  "Главная");
 define("_AM_PRINTLIMINATOR_MANAGER_ABOUT",                  "About");
 define("_AM_PRINTLIMINATOR_MANAGER_ABOUT1",                  "Разработка");
-define("_AM_PRINTLIMINATOR_MANAGER_HELP",                  "Printliminator & QRCode Помощь");
-define("_AM_PRINTLIMINATOR_MANAGER_EXAMPLE",                 "Пример");
+define("_AM_PRINTLIMINATOR_MANAGER_HELP",                  "Помощь");
+define("_AM_PRINTLIMINATOR_MANAGER_EXAMPLE",                 "Printliminator & QRCode Пример");
 define("_AM_PRINTLIMINATOR_MANAGER_PREFERENCES",            "Настройки");
 define("_AM_PRINTLIMINATOR_MANAGER_UPDATE",                 "Обновить");
 
