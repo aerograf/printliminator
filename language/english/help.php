@@ -10,7 +10,7 @@
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
 
-define("_AM_PRINTLIMINATOR_HELP1" , "");
+define("_AM_PRINTLIMINATOR_HELP1" , "-- The Printliminator -- & -- QR Code -- & -- File Manager -- & -- Index Scan --");
 define("_AM_PRINTLIMINATOR_HELP2" , "<a target='_blank' href='https://css-tricks.github.io/The-Printliminator/'><img src='../assets/images/web-store-tile.png'></a>");
 define("_AM_PRINTLIMINATOR_HELP3" , "<img src='../assets/images/screenshot.png'>");
 define("_AM_PRINTLIMINATOR_HELP4" , "<h4>Others documentations</h4>");

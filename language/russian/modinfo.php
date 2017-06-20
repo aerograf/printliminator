@@ -25,7 +25,7 @@ define("_MI_PRINTLIMINATOR_MANAGER_INDEX" , "Главная");
 define("_MI_PRINTLIMINATOR_MANAGER_INDEX_DESC" , "Модуль главной страницы");
 define("_MI_PRINTLIMINATOR_MANAGER_ABOUT" , "About");
 define("_MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC" , "Об этом модуле");
-define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Printliminator & QRCode Помощь");
+define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Помощь");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP_DESC" , "Помощь в использовании модуля");
 define("_MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC" , "QR Code DIV");
 

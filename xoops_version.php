@@ -66,14 +66,14 @@ $modversion['templates'] = array(
           'file'          =>  'admin/' . $moduleDirName . '_admin_help.tpl',
           'description'   =>  _MI_PRINTLIMINATOR_MANAGER_HELP_DESC
     ),
-    array(
+/*    array(
           'file'          =>  'admin/' . $moduleDirName . '_admin_help_fm.tpl',
           'description'   =>  _MI_PRINTLIMINATOR_FILE_MANAGER_DESC
     ),
     array(
           'file'          =>  'admin/' . $moduleDirName . '_admin_help_is.tpl',
           'description'   =>  _MI_PRINTLIMINATOR_INDEXSCAN_DESC
-    ),    
+    ), */   
     array(
           'file'          =>  $moduleDirName . '_qrcode_div_in.tpl',
           'description'   =>  _MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC

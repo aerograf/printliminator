@@ -25,7 +25,7 @@ define("_MI_PRINTLIMINATOR_MANAGER_INDEX" , "Index");
 define("_MI_PRINTLIMINATOR_MANAGER_INDEX_DESC" , "Module Administration index page");
 define("_MI_PRINTLIMINATOR_MANAGER_ABOUT" , "About");
 define("_MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC" , "About this module");
-define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Printliminator & QRCode Help");
+define("_MI_PRINTLIMINATOR_MANAGER_HELP" , "Help");
 define("_MI_PRINTLIMINATOR_MANAGER_HELP_DESC" , "Help pour module usage");
 define("_MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC" , "QR Code DIV");
 

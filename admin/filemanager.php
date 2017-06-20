@@ -867,7 +867,7 @@ function tool_bar($go_back = FALSE) {
     echo "</b></td>";
     echo "<td align='right'>\n";
     echo "<a href='javascript:location.reload()' title='" . _FM_AM_REFRESHPAGE . "'><img src='images/actions/refresh.png' alt='" . _FM_AM_REFRESHPAGE . "' style='border:none;'></a>&nbsp;&nbsp;\n";
-    echo "<a href='help_fm.php' title='" . _FM_AM_HELP . "'><img src='images/actions/help.png' alt='" . _FM_AM_HELP . "' style='border:none;'></a>&nbsp;&nbsp;\n";
+    echo "<a href='help.php' title='" . _FM_AM_HELP . "'><img src='images/actions/help.png' alt='" . _FM_AM_HELP . "' style='border:none;'></a>&nbsp;&nbsp;\n";
     if (($xoopsUser) && ($xoopsUser->isAdmin()))
         echo ""; 
     echo "</td></tr></table>\n";

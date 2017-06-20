@@ -62,7 +62,7 @@ $adminmenu = array(
           'link'    =>    'admin/help.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_HELP_DESC,
           'icon'    =>    'assets/images/icons/help.png'
-          ),
+          )/*,
     array(
           'title'   =>    _MI_PRINTLIMINATOR_FILE_MANAGER_HELP,
           'link'    =>    'admin/help_fm.php',
@@ -74,5 +74,5 @@ $adminmenu = array(
           'link'    =>    'admin/help_is.php',
           'desc'    =>    _MI_PRINTLIMINATOR_INDEXSCAN_DESC_HELP,
           'icon'    =>    'assets/images/admin/help_1.png'
-          )
+          )*/
 );
