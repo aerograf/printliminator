@@ -112,6 +112,14 @@ $modversion['blocks'][] = array(
 // Preferences
 // FileManager
 $i = 1;
+$modversion['config'][$i]['name'] = 'logfile';
+$modversion['config'][$i]['title'] = '_MI_PRINTLIMINATOR_CAT1';
+$modversion['config'][$i]['description'] = '_MI_PRINTLIMINATOR_FILE_MANAGER_DESC';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'odd';
+
+$i++;
 include_once XOOPS_ROOT_PATH . "/class/xoopslists.php";
 $modversion["config"][$i]["name"]           = "editor";
 $modversion["config"][$i]["title"]          = "_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR";
@@ -123,6 +131,14 @@ $modversion["config"][$i]["options"]        = XoopsLists::getDirListAsArray(XOOP
 $modversion["config"][$i]["category"]       = "global";
 // end FileManager
 // IndexScan
+$i++;
+$modversion['config'][$i]['name'] = 'logfile';
+$modversion['config'][$i]['title'] = '_MI_PRINTLIMINATOR_CAT2';
+$modversion['config'][$i]['description'] = '_MI_PRINTLIMINATOR_INDEXSCAN_DESC';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'odd';
+
 $i++;
 $modversion['config'][$i]['name']      			= 'indexscan_frombackup';
 $modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_FROMBACKUP';

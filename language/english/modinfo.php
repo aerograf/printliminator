@@ -10,6 +10,10 @@
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
 
+// Categories
+define('_MI_PRINTLIMINATOR_CAT1','<font color="#0040FF" size="6"><b>--- FileManager ---</b></font> ');
+define('_MI_PRINTLIMINATOR_CAT2','<font color="#0040FF" size="6"><b>--- IndexScan ---</b></font> ');
+
 // The name of this module
 define("_MI_PRINTLIMINATOR_NAME" , "Printliminator");
 
@@ -38,7 +42,7 @@ define("_MI_PRINTLIMINATOR_FILE_MANAGER" , "Filemanager");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC" , "FileManager for Xoops");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_HELP" , "Filemanager Help");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC_HELP" , "Help to FileManager for Xoops");
-define("_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR","FileManafer<br /><hr /><br />Code Editor");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR","Code Editor");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_FORM_EDITORDSC","Choose the editor for code areas");
 
 // IndexScan
@@ -64,5 +68,5 @@ define("_MI_INDEXSCAN_ROOTORSUB","Root or sub folder installation");
 define("_MI_INDEXSCAN_ROOTORSUB_DESC","Write here from where you want to start scanning<br/>'../../../' if your web is like 'www.myspace.com/mainfile,php'<br/>'../../../../' if it is like www.websted.dk/htdocs/mainfile.com");
 define("_MI_INDEXSCAN_ILLEGALFILETYPES","Skip file types.");
 define("_MI_INDEXSCAN_ILLEGALFILETYPES_DESC","Add files you wish to skip while 'checking files'.<br/>These files will be considered 'safe'<br/>if they also are listed in the file 'admin/filecheck.txt'.");
-define("_MI_INDEXSCAN_FROMBACKUP","IndexScan<br /><hr /><br />Create file zip");
+define("_MI_INDEXSCAN_FROMBACKUP","Create file zip");
 define("_MI_INDEXSCAN_FROMBACKUP_DESC","Creates a zip archieve with same folder structure from the folder you ftp to folder2backup.<br/>The zip contains nothing but the folders and,<br/>index.html files where missing from<br/>your uploaded folder.<br/><br/>The folder name is the name of the folder in your folder2backup folder, for instance 'testing'.<br/>You can delete 'testing' this folder is only for example.");

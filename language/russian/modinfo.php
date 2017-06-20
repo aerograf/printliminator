@@ -10,7 +10,11 @@
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
 
-// The name of this module
+// Categories
+define('_MI_PRINTLIMINATOR_CAT1','<font color="#0040FF" size="6"><b>--- FileManager ---</b></font> ');
+define('_MI_PRINTLIMINATOR_CAT2','<font color="#0040FF" size="6"><b>--- IndexScan ---</b></font> ');
+
+// The name of this module 
 define("_MI_PRINTLIMINATOR_NAME" , "Printliminator");
 
 // A brief description of this module
@@ -38,7 +42,7 @@ define("_MI_PRINTLIMINATOR_FILE_MANAGER" , "FileManager");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC" , "FileManager for Xoops");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_HELP" , "FileManager Помощь");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC_HELP" , "Помощь по FileManager for Xoops");
-define("_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR","FileManafer<br /><hr /><br />Редактор кода");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR","Редактор кода");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_FORM_EDITORDSC","Выберите редактор");
 
 // IndexScan
@@ -64,5 +68,5 @@ define("_MI_INDEXSCAN_ROOTORSUB","Установка корневой или п�
 define("_MI_INDEXSCAN_ROOTORSUB_DESC","Напишите здесь, откуда вы хотите начать сканирование<br/>'../../../' Если у Вас - 'www.myspace.com/mainfile,php'<br/>'../../../../' Если у Вас -  www.websted.dk/htdocs/mainfile.com");
 define("_MI_INDEXSCAN_ILLEGALFILETYPES","Пропустить типы файлов.");
 define("_MI_INDEXSCAN_ILLEGALFILETYPES_DESC","Добавьте файлы, которые вы хотите пропустить во время проверки файлов.<br/>Эти файлы будут считаться «безопасными»,<br/>если они также указаны в файле 'admin/filecheck.txt'.");
-define("_MI_INDEXSCAN_FROMBACKUP","IndexScan<br /><hr /><br />Создание файла zip");
+define("_MI_INDEXSCAN_FROMBACKUP","Создание файла zip");
 define("_MI_INDEXSCAN_FROMBACKUP_DESC","Создает zip-архив с той же структурой папок, в folder2backup.<br/>Архив содержит только папки и<br/>index.html файлы, отсутствующие в<br/>Вашей загруженной папке.<br/><br/>Имя папки - это имя папки в папке folder2backup, например 'testing'.<br/>Вы можете удалить 'testing'.");
