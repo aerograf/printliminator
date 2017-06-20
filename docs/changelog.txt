@@ -1,3 +1,4 @@
+- Add Index Scan
 - Add File Manager
 - [RU] Для размещения QR кода в шаблоне необходимо скопировать код <{includeq file="db:printliminator_qrcode_div_in.tpl"}> и вставить его в необходимое место в шаблоне. Размер картинки QR кода можно в шаблоне  /modules/printliminator/templates/printliminator_qrcode_div_in.tpl изменить параметр s=2 в диапазоне от 1 до 4.
 - [EN] To place the QR code in the template, you must copy the code <{includeq file = "db: printliminator_qrcode_div_in.tpl"}> and paste it into the required place in the template. The size of the QR code image can be changed in the template /modules/printliminator/templates/printliminator_qrcode_div_in.tpl by changing the parameter s=2 in the range from 1 to 4.

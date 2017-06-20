@@ -19,6 +19,8 @@
 	<{$smarty.const._AM_PRINTLIMINATOR_HELP5}>
 	<{$smarty.const._AM_PRINTLIMINATOR_HELP6}>
 	<{$smarty.const._AM_PRINTLIMINATOR_HELP7}>
+  <{$smarty.const._AM_PRINTLIMINATOR_HELP10}>
+  <{$smarty.const._AM_PRINTLIMINATOR_HELP11}>
 	</div>
 </div>
 <div class="clear"></div>

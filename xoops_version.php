@@ -17,7 +17,7 @@ $xoops_url     = parse_url(XOOPS_URL);
 
 $modversion = array(
     'name' 	              =>  _MI_PRINTLIMINATOR_NAME,
-    'version'        	    =>  0.2,
+    'version'        	    =>  1.01,
     'description'         =>  _MI_PRINTLIMINATOR_DESC,
     'author'              =>  'aerograf',
     'credits'             =>  'Xoops Community',
@@ -36,8 +36,8 @@ $modversion = array(
     'modicons32'          =>  'assets/images/icons/32',
     // About
     'module_release'      =>  '07/06/2017',
-    'release_date'        =>  '2017/06/18',
-    'module_status'       =>  'Beta 1',
+    'release_date'        =>  '2017/06/19',
+    'module_status'       =>  'Release',
     'module_website_url'  =>  'https://www.shmel.org',
     'module_website_name' =>  'SHMEL.ORG',
     'module_website_url'  =>  'https://github.com/aerograf/printliminator',
@@ -71,6 +71,10 @@ $modversion['templates'] = array(
           'description'   =>  _MI_PRINTLIMINATOR_FILE_MANAGER_DESC
     ),
     array(
+          'file'          =>  'admin/' . $moduleDirName . '_admin_help_is.tpl',
+          'description'   =>  _MI_PRINTLIMINATOR_INDEXSCAN_DESC
+    ),    
+    array(
           'file'          =>  $moduleDirName . '_qrcode_div_in.tpl',
           'description'   =>  _MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC
     ),    
@@ -92,7 +96,7 @@ $modversion['blocks'][] = array(
           'description'   =>  _MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC,
           'show_func'     =>  'b_' . $moduleDirName . '_qrcode_show',
           'edit_func'     =>  'b_' . $moduleDirName . '_qrcode_edit',
-          'options'       =>  '2',
+          'options'       =>  '2',                                                   
           'template'      =>  $moduleDirName . '_qrcode.tpl'
 );
 $modversion['blocks'][] = array(
@@ -106,6 +110,7 @@ $modversion['blocks'][] = array(
 );
 
 // Preferences
+// FileManager
 $i = 1;
 include_once XOOPS_ROOT_PATH . "/class/xoopslists.php";
 $modversion["config"][$i]["name"]           = "editor";
@@ -116,6 +121,63 @@ $modversion["config"][$i]["valuetype"]      = "text";
 $modversion["config"][$i]["default"]        = "textarea";
 $modversion["config"][$i]["options"]        = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . "/class/xoopseditor");
 $modversion["config"][$i]["category"]       = "global";
+// end FileManager
+// IndexScan
+$i++;
+$modversion['config'][$i]['name']      			= 'indexscan_frombackup';
+$modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_FROMBACKUP';
+$modversion['config'][$i]['description'] 	  = '_MI_INDEXSCAN_FROMBACKUP_DESC';
+$modversion['config'][$i]['formtype'] 		  = 'textbox';
+$modversion['config'][$i]['valuetype'] 	    = 'text';
+$modversion['config'][$i]['default'] 		    = 'testing';
 
-// Notification   
+$i++;
+$modversion['config'][$i]['name'] 			    = 'indexscan_rootorsub';
+$modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_ROOTORSUB';
+$modversion['config'][$i]['description'] 	  = '_MI_INDEXSCAN_ROOTORSUB_DESC';
+$modversion['config'][$i]['formtype'] 		  = 'textbox';
+$modversion['config'][$i]['valuetype'] 	    = 'text';
+$modversion['config'][$i]['default'] 		    = '../../../';
+	
+$i++;
+$modversion['config'][$i]['name'] 			    = 'indexscan_illegalfiles';
+$modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_ILLEGALFILETYPES';
+$modversion['config'][$i]['description'] 	  = '_MI_INDEXSCAN_ILLEGALFILETYPES_DESC';
+$modversion['config'][$i]['formtype'] 		  = 'textarea';
+$modversion['config'][$i]['valuetype'] 	    = 'text';
+$modversion['config'][$i]['default'] 		    = 'php|html|htm|jpg|png|gif|js|ico|txt|css|htaccess|eot|sql|swf|tpl|ttf';	
+
+$i++;
+$modversion['config'][$i]['name'] 			    = 'exep_01';
+$modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_EXEP1';
+$modversion['config'][$i]['description'] 	  = '_MI_INDEXSCAN_EXEP1_DESC';
+$modversion['config'][$i]['formtype'] 		  = 'textbox';
+$modversion['config'][$i]['valuetype'] 	    = 'text';
+$modversion['config'][$i]['default'] 		    = '';
+
+$i++;
+$modversion['config'][$i]['name'] 			    = 'exep_02';
+$modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_EXEP2';
+$modversion['config'][$i]['description'] 	  = '_MI_INDEXSCAN_EXEP2_DESC';
+$modversion['config'][$i]['formtype'] 		  = 'textbox';
+$modversion['config'][$i]['valuetype'] 	    = 'text';
+$modversion['config'][$i]['default'] 		    = '';
+
+$i++;
+$modversion['config'][$i]['name'] 			    = 'exep_03';
+$modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_EXEP3';
+$modversion['config'][$i]['description'] 	  = '_MI_INDEXSCAN_EXEP3_DESC';
+$modversion['config'][$i]['formtype'] 		  = 'textbox';
+$modversion['config'][$i]['valuetype'] 	    = 'text';
+$modversion['config'][$i]['default'] 		    = '';
+
+$i++;
+$modversion['config'][$i]['name'] 			    = 'exep_04';
+$modversion['config'][$i]['title'] 		      = '_MI_INDEXSCAN_EXEP4';
+$modversion['config'][$i]['description'] 	  = '_MI_INDEXSCAN_EXEP4_DESC';
+$modversion['config'][$i]['formtype'] 		  = 'textbox';
+$modversion['config'][$i]['valuetype'] 	    = 'text';
+$modversion['config'][$i]['default'] 		    = '';
+// end IndexScan  
+// Notification
 $modversion['hasNotification'] = 0;

@@ -12,11 +12,9 @@
 use Xmf\Request;
 use Xmf\Module\Helper;
 include( "header_fm.php" );
-
 $current_file = basename(__FILE__);        
 
 switch ($op) {
-
     case 'download' :
         $FileName = basename($file);
         $size = filesize(XOOPS_ROOT_PATH . DS . $file);
@@ -40,9 +38,11 @@ switch ($op) {
             $edited_code = str_replace("&lt;", "<", $edited_code);
             file_put_contents($filename, $edited_code);
         }
-        xoops_cp_header();        
+        xoops_cp_header();
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-
+        echo "<br /><hr /><br />\n";
         echo "<div>\n";
         echo "<p><img src='images/actions/edit.png'> " . _FM_AM_FILENAME . " : ";
         echo "<b>" . $fic . "</b></p>\n";
@@ -92,17 +92,18 @@ switch ($op) {
         echo "<a href='" . $current_file . "?id=" . $id . "&rep=" . $rep . "&order_by=" . $order_by . "&sens=" . $sens . "'>";
         echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' border='0'>";
         echo "</a>\n";
-        echo "</form>\n";
-
+        echo "</form><br /><hr /><br />\n";
+        include_once __DIR__ . '/footer.php';
         xoops_cp_footer();
         break;
 
 
     case "copy" :
         xoops_cp_header();
-
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-
+        echo "<br /><hr /><br />\n";
         echo "<div>\n";
         echo "<p><img src='images/actions/copy.png'> " . _FM_AM_SELECTED_FILE . " : ";
         echo "<b>$fic</b></p>\n";
@@ -156,10 +157,8 @@ switch ($op) {
         echo "<a href='" . $current_file . "?id=" . $id . "&rep=" . $rep . "&order_by=" . $order_by . "&sens=" . $sens . "'>";
         echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' style='border: none;'>";
         echo "</a>\n";
-        echo "</form>\n";
-
-
-
+        echo "</form><br /><hr /><br />\n";
+        include_once __DIR__ . '/footer.php';
         xoops_cp_footer();
         break;
 
@@ -230,9 +229,10 @@ switch ($op) {
 
     case "move" :
         xoops_cp_header();
-
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-
+        echo "<br /><hr /><br />\n";
         echo "<div>\n";
         echo "<p><img src='images/actions/move.png'> " . _FM_AM_SELECTED_FILE . " : ";
         echo "<b>$fic</b></p>\n";
@@ -285,8 +285,8 @@ switch ($op) {
         echo "<a href='" . $current_file . "?id=" . $id . "&rep=" . $rep . "&order_by=" . $order_by . "&sens=" . $sens . "'>";
         echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' style='border: none;'>";
         echo "</a>\n";
-        echo "</form>\n";
-
+        echo "</form><br /><hr /><br />\n";
+        include_once __DIR__ . '/footer.php';
         xoops_cp_footer();
         break;
 
@@ -316,9 +316,10 @@ switch ($op) {
 
     case "delete" :
         xoops_cp_header();
-
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-
+        echo "<br /><hr /><br />\n";
         echo "<div>\n";
         if(is_dir(XOOPS_ROOT_PATH . DS . $fic))
             {$mime = _FM_AM_DIRECTORY;}
@@ -329,7 +330,8 @@ switch ($op) {
         echo "<a href=\"$current_file?op=delete_ok&rep=$rep&fic=$fic&id=$id&order_by=$order_by&sens=$sens\">"._FM_AM_YES."</a>&nbsp;&nbsp;&nbsp;\n";
         echo "<a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\">"._FM_AM_NO."</a>\n";
         echo "<br />";
-        echo "</div>\n";
+        echo "</div><br /><hr /><br />\n";
+        include_once __DIR__ . '/footer.php';        
         xoops_cp_footer();
         break;
 
@@ -363,10 +365,11 @@ switch ($op) {
 
     case "rename" :
         xoops_cp_header();
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));
         $nom_fic = basename($fic);
-
         tool_bar(FALSE);
-
+        echo "<br /><hr /><br />\n";
         echo "<div>\n";
         echo "<form op='" . $current_file . "' method='post'>\n";
         echo "<input type='hidden' name='op' value='move_ok'>\n";
@@ -386,7 +389,8 @@ switch ($op) {
         echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' style='border: none;'>";
         echo "</a>\n";
         echo "</form>\n";
-        echo "</div>\n";
+        echo "</div><br /><hr /><br />\n";
+        include_once __DIR__ . '/footer.php';
         xoops_cp_footer();
         break;
 
@@ -550,7 +554,8 @@ switch ($op) {
 
     default :
         xoops_cp_header();
-
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));
         if(preg_match("/\.\./i",$rep)) {$rep="";}
         // init
         if( $rep == "" )
