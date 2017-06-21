@@ -6,6 +6,7 @@
     <div id="Printliminator_Action">
     </div>
 </div>
+<!-- Printliminator & QR Code -->
 <div id="Printliminator_Title" class="bold shadowlight alignmiddle">
     <div id="Printliminator_Help">
         <{$smarty.const._AM_PRINTLIMINATOR_MANAGER_HELP}>
@@ -33,6 +34,7 @@
 	</div>
 </div>
 <br /><br /><hr /><br />
+<!-- File Manager -->
 <div id="Printliminator_Title" class="bold shadowlight alignmiddle">
     <div id="Printliminator_Help">
         <{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_1}>
@@ -49,6 +51,7 @@
 <div style="float:left; width:15%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_6}></div>
 <div style="float:left; width:85%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_7}></div> 
 <br /><br /><hr /><br />
+<!-- Index Scan -->
 <div id="Printliminator_Title" class="bold shadowlight alignmiddle">
     <div id="Printliminator_Help">
         <{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_1}>
@@ -63,6 +66,18 @@
 <div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_4}></div>
 <br /><br /><hr /><br />
 <div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_5}></div> 
-<!--<div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_6}></div>
-<div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_7}></div>--> 
+<br /><br /><hr /><br />
+<!-- Share42 -->
+<div id="Printliminator_Title" class="bold shadowlight alignmiddle">
+    <div id="Printliminator_Help">
+        <{$smarty.const._AM_PRINTLIMINATOR_HELP_SHARE42_1}>
+    </div>
+    <div id="Printliminator_Action">
+    </div>
+</div>
+<div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_SHARE42_2}></div>
+<div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_SHARE42_3}></div>
+<div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_SHARE42_4}></div>
+<div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_SHARE42_5}></div> 
+<div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_SHARE42_6}></div>
 <br /><br /><hr /><br />
