@@ -8,7 +8,7 @@
 [![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/lexikon.svg?style=flat)](https://github.com/XoopsModules25x/lexikon/tags/)
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/lexikon.svg?style=flat)](https://github.com/XoopsModules25x/lexikon/releases/)
 
-Printliminator module for [XOOPS CMS](http://xoops.org) is a module to allows the user to select the printable area. Block with QRCode (Site - Block name - URL of the page).
+Printliminator module for [XOOPS CMS](http://xoops.org) is a module to allows the user to select the printable area. The module has collected some scripts, modules, etc. Which were combined into one module, for ease of use.
 
 Please visit us on http://xoops.org
 
