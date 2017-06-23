@@ -31,6 +31,15 @@ define("_AM_PRINTLIMINATOR_ABOUT_MODULE_INFO",              "Module Infos");
 define("_AM_PRINTLIMINATOR_ABOUT_AUTHOR_INFO",              "Author Infos");
 define("_AM_PRINTLIMINATOR_ABOUT_LASTUPDATE",        "Last update");
 
+//Admin module menu
+define("_AM_PRINTLIMINATOR_MODULES_DATA",        "Status of module components");
+define("_AM_PRINTLIMINATOR_QRCODE_DATA_ON",        "The 'QR Code' block is ready. To configure and activate, go to the settings of the blocks. More information on setting up in the help section.");
+define("_AM_PRINTLIMINATOR_QRCODE_DATA_OFF",        "The 'QR Code' block is not ready. To enable the block, you must uncompress the contents of docs/data.rar in the include folder. It should turn out to include/data. Follow the instructions.");
+define("_AM_PRINTLIMINATOR_BLOCK_DATA_ON",        "The 'The Printliminator' block is ready.");
+define("_AM_PRINTLIMINATOR_BLOCK_DATA_OFF",        "The 'The Printliminator' block is not ready. Check the file /assets/js/printliminator.min.js. If not, download the module archive again.");
+define("_AM_PRINTLIMINATOR_SHARE42_DATA_ON",        "The 'Share42' blocks are ready.");
+define("_AM_PRINTLIMINATOR_SHARE42_DATA_OFF",        "'Share42' blocks are not ready. Check the file /assets/js/share42d.js and share42s.js. If not, download the module archive again.");
+
 // FileManager
 define("_FM_AM_LASTVERSION","Last version");
 define("_FM_AM_FILENAME","Filename");
