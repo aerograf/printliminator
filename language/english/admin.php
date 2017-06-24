@@ -33,12 +33,15 @@ define("_AM_PRINTLIMINATOR_ABOUT_LASTUPDATE",        "Last update");
 
 //Admin module menu
 define("_AM_PRINTLIMINATOR_MODULES_DATA",        "Status of module components");
-define("_AM_PRINTLIMINATOR_QRCODE_DATA_ON",        "The 'QR Code' block is ready. To configure and activate, go to the settings of the blocks. More information on setting up in the help section.");
-define("_AM_PRINTLIMINATOR_QRCODE_DATA_OFF",        "The 'QR Code' block is not ready. To enable the block, you must uncompress the contents of docs/data.rar in the include folder. It should turn out to include/data. Follow the instructions.");
+define("_AM_PRINTLIMINATOR_MODULES_DATA_DESC",        "After performing any action, you must refresh the page.");
+define("_AM_PRINTLIMINATOR_QRCODE_DATA_ON",        "The 'QR Code' block is ready. To configure and activate, go to the settings of the blocks. More information on setting up in the help section. <a href='../include/dell_data.php'>Uninstall.</a>");
+define("_AM_PRINTLIMINATOR_QRCODE_DATA_OFF",        "The 'QR Code' block is not ready. <a href='../include/extract_archive.php'>Install.</a>");
 define("_AM_PRINTLIMINATOR_BLOCK_DATA_ON",        "The 'The Printliminator' block is ready.");
 define("_AM_PRINTLIMINATOR_BLOCK_DATA_OFF",        "The 'The Printliminator' block is not ready. Check the file /assets/js/printliminator.min.js. If not, download the module archive again.");
 define("_AM_PRINTLIMINATOR_SHARE42_DATA_ON",        "The 'Share42' blocks are ready.");
 define("_AM_PRINTLIMINATOR_SHARE42_DATA_OFF",        "'Share42' blocks are not ready. Check the file /assets/js/share42d.js and share42s.js. If not, download the module archive again.");
+define("_AM_PRINTLIMINATOR_STARTUP_DATA_ON",        "The 'Startup' module is enabled. Go to the tab and configure the module according to the instructions.");
+define("_AM_PRINTLIMINATOR_STARTUP_DATA_OFF",        "The 'Startup' module is not enabled. To enable, go to the module tab.");
 
 // FileManager
 define("_FM_AM_LASTVERSION","Last version");
@@ -167,3 +170,22 @@ define("_AM_INDEXSCAN_CLEANUPDONE","Cleaning up...Done!");
 define("_AM_INDEXSCAN_FILESARECOPIED"," Files were copied to backup folder");
 define("_AM_INDEXSCAN_FILESDELETED"," Files were deleted from backup folder again");
 define("_AM_INDEXSCAN_FILESCREATED"," Index.html files were created in backupfolder");
+
+//Startup
+define("_AM_STARTUP_ENABLE_ON","Enable");
+define("_AM_STARTUP_ENABLE_OFF","Disable");
+define("_AM_STARTUP_ENABLE","Please refresh the page.");
+define('_AM_STARTUP_DELETE', 'Uninstall');
+define('_AM_STARTUP_ADD', 'Add');
+define('_AM_STARTUP_FORM_DESCRIPTION_1', 'After installing, enabling the module, you must set the "Printliminator" module in the XOOPS settings as the default start page module.<br />Then you need to go to the module settings/installation and hide the module in the menu.');
+define('_AM_STARTUP_FORM_DESCRIPTION_2', 'Here you can define the startup module for each group, set the order to determine which module has priority if the user is in more than one group.');
+define('_AM_STARTUP_FORM_GROUP_SELECT', 'Select a group or several groups');
+define('_AM_STARTUP_FORM_MODULE_SELECT', 'Select a startup module for group');
+define('_AM_STARTUP_FORM_GROUP_NAME', 'Group name');
+define('_AM_STARTUP_FORM_MODULE_NAME', 'Module name');
+define('_AM_STARTUP_FORM_ORDER', 'Set the priority for groups');
+define('_AM_STARTUP_FORM_ACTION', 'Action');
+define('_AM_STARTUP_ORDER_UPDATE', 'Update priority');
+define('_AM_STARTUP_SUCCESS_SAVE', 'Operation saved');
+define('_AM_STARTUP_ERROR_FAILURE_SAVE', 'Error while saving. Operation canceled.');
+define('_AM_STARTUP_ERROR_FAILURE_DELETE', 'Error while deleting. Operation canceled.');

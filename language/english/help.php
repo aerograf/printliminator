@@ -45,6 +45,7 @@ define("_AM_PRINTLIMINATOR_HELP11" , "
 <li><a target='_blank' href='http://luciorota.altervista.org/xoops/'>File Manager</a></li>
 <li><a target='_blank' href='http://www.culex.dk/'>IndexScan</a></li>
 <li><a target='_blank' href='http://share42.com/'>Share42</a></li>
+<li><a target='_blank' href='http://xoops.org/modules/repository/singlefile.php?cid=101&lid=1906'>TS-My Startup Page</a></li>
 </ul>
 ");
 define("_AM_PRINTLIMINATOR_HELP12" , '<h2>Share this page</h2>To place the "Share this page" icons in the floating block, you must place the themes in the template <{includeq file="db:printliminator_share42_div_in.tpl"}>. Placement of icons can be set in the template /modules/printliminator/templates/printliminator_share42_div_in.tpl changing the parameters data-top1="150" data-top2="20" data-margin="0".<br /><b>Note!</b> For operation, it is necessary to disable the unit in block administration (if enabled).'); 

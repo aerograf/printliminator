@@ -45,6 +45,7 @@ define("_AM_PRINTLIMINATOR_HELP11" , "
 <li><a target='_blank' href='http://luciorota.altervista.org/xoops/'>File Manager</a></li>
 <li><a target='_blank' href='http://www.culex.dk/'>IndexScan</a></li>
 <li><a target='_blank' href='http://share42.com/'>Share42</a></li>
+<li><a target='_blank' href='http://xoops.org/modules/repository/singlefile.php?cid=101&lid=1906'>TS-My Startup Page</a></li>
 </ul>
 ");
 define("_AM_PRINTLIMINATOR_HELP12" , '<h2>Поделиться страницей</h2>Для размещения иконок "Поделиться" в плавающем блоке необходимо разместить в шаблоне темы <{includeq file="db:printliminator_share42_div_in.tpl"}>. Размещение иконок можно установить в шаблоне /modules/printliminator/templates/printliminator_share42_div_in.tpl изменяя параметры data-top1="150" data-top2="20" data-margin="0".<br /><b>Обратите внимание!</b> Для работы необходимо отключить блок в администрировании блоков (если включен).'); 

@@ -17,7 +17,7 @@ $xoops_url     = parse_url(XOOPS_URL);
 
 $modversion = array(
     'name' 	              =>  _MI_PRINTLIMINATOR_NAME,
-    'version'        	    =>  1.01,
+    'version'        	    =>  1.11,
     'description'         =>  _MI_PRINTLIMINATOR_DESC,
     'author'              =>  'aerograf',
     'credits'             =>  'Xoops Community',
@@ -36,7 +36,7 @@ $modversion = array(
     'modicons32'          =>  'assets/images/icons/32',
     // About
     'module_release'      =>  '07/06/2017',
-    'release_date'        =>  '2017/06/19',
+    'release_date'        =>  '2017/06/24',
     'module_status'       =>  'Release',
     'module_website_url'  =>  'https://www.shmel.org',
     'module_website_name' =>  'SHMEL.ORG',
@@ -48,12 +48,21 @@ $modversion = array(
     'onUpdate'            =>  'include/update.php',
     'min_php'             =>  '5.5',
     'min_xoops'           =>  '2.5.8',
+    'min_db'              =>  array('mysql' => '5.5'),
+    // Файл базы данных
+    'sqlfile'             =>  array('mysql' => 'sql/mysql.sql'),
+    // Таблицы
+    'tables'              =>  array(
+            'printliminator_startup_page'
+        ),        
     // Admin Menu
     'system_menu'         =>  1,
     'hasAdmin'            =>  1,
     'adminindex'          =>  'admin/index.php',
     'adminmenu'           =>  'admin/menu.php',
-    'use_smarty'          =>  1
+    'use_smarty'          =>  1,
+    'hasMain'             =>  1,
+    'hasProfile'          =>  0
 );
 
 // Templates
@@ -192,4 +201,4 @@ $modversion['config'][$i]['valuetype'] 	    = 'text';
 $modversion['config'][$i]['default'] 		    = '';
 // end IndexScan  
 // Notification
-$modversion['hasNotification'] = 0;
+//$modversion['hasNotification'] = 0;

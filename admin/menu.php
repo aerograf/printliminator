@@ -44,7 +44,13 @@ $adminmenu = array(
           'link'    =>    'admin/indexscan.php',
           'desc'    =>    '',
           'icon'    =>    'assets/images/icons/administration.png'
-          ),          
+          ),
+    array(
+          'title'   =>    _MI_PRINTLIMINATOR_STARTUP_MANAGER,
+          'link'    =>    'admin/startup.php',
+          'desc'    =>    '',
+          'icon'    =>    'assets/images/icons/startup.png'
+          ),                    
     array(
           'title'   =>    _MI_PRINTLIMINATOR_MANAGER_ABOUT,
           'link'    =>    'admin/about.php',

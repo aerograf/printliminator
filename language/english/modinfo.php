@@ -73,3 +73,7 @@ define("_MI_INDEXSCAN_ILLEGALFILETYPES","Skip file types.");
 define("_MI_INDEXSCAN_ILLEGALFILETYPES_DESC","Add files you wish to skip while 'checking files'.<br/>These files will be considered 'safe'<br/>if they also are listed in the file 'admin/filecheck.txt'.");
 define("_MI_INDEXSCAN_FROMBACKUP","Create file zip");
 define("_MI_INDEXSCAN_FROMBACKUP_DESC","Creates a zip archieve with same folder structure from the folder you ftp to folder2backup.<br/>The zip contains nothing but the folders and,<br/>index.html files where missing from<br/>your uploaded folder.<br/><br/>The folder name is the name of the folder in your folder2backup folder, for instance 'testing'.<br/>You can delete 'testing' this folder is only for example.");
+
+//Startup
+define("_MI_PRINTLIMINATOR_STARTUP_MANAGER","Startup");
+define('_MI_STARTUP_CAT_STARTUP_NAME', '<h3>Set the start page</h3>');
