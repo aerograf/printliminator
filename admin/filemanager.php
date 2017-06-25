@@ -644,10 +644,10 @@ switch ($op) {
                     $display_FM_AM_COPY = FALSE;
                     }
                 else {
-                    $link = "$current_file?id=$id&order_by=$order_by&sens=$sens&op=edit&rep=";  
+                    $link = "";  
                     if ( $rep != "" ) {$link .= $rep . DS;}
                     $link .= $file;
-                    $link = 'javascript:popup("' . $file . '")';
+                    $link = 'javascript:popup("' . $link . '")';
                     $display_FM_AM_COPY = TRUE;
                     }
                 echo "<tr>\n";
