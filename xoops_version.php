@@ -17,7 +17,7 @@ $xoops_url     = parse_url(XOOPS_URL);
 
 $modversion = array(
     'name' 	              =>  _MI_PRINTLIMINATOR_NAME,
-    'version'        	    =>  1.11,
+    'version'        	    =>  1.21,
     'description'         =>  _MI_PRINTLIMINATOR_DESC,
     'author'              =>  'aerograf',
     'credits'             =>  'Xoops Community',
@@ -36,8 +36,8 @@ $modversion = array(
     'modicons32'          =>  'assets/images/icons/32',
     // About
     'module_release'      =>  '07/06/2017',
-    'release_date'        =>  '2017/06/24',
-    'module_status'       =>  'Release',
+    'release_date'        =>  '2017/06/26',
+    'module_status'       =>  'Betta1',
     'module_website_url'  =>  'https://www.shmel.org',
     'module_website_name' =>  'SHMEL.ORG',
     'module_website_url'  =>  'https://github.com/aerograf/printliminator',
@@ -200,5 +200,26 @@ $modversion['config'][$i]['formtype'] 		  = 'textbox';
 $modversion['config'][$i]['valuetype'] 	    = 'text';
 $modversion['config'][$i]['default'] 		    = '';
 // end IndexScan  
+// XoopsInfo
+$i++;
+$modversion['config'][$i]['name'] = 'logfile';
+$modversion['config'][$i]['title'] = '_MI_PRINTLIMINATOR_CAT3';
+$modversion['config'][$i]['description'] = '_MI_XOOPSINFO_MAIN';
+$modversion['config'][$i]['formtype'] = 'line_break';
+$modversion['config'][$i]['valuetype'] = 'textbox';
+$modversion['config'][$i]['default'] = 'odd';
+
+$i++;
+$modversion['config'][$i]['name'] = 'xi_check_table';
+$modversion['config'][$i]['title'] = '_MI_XI_CHECK_TABLE';
+$modversion['config'][$i]['description'] = '_MI_XI_CHECK_TABLE_DSC';
+$modversion['config'][$i]['formtype'] = 'textarea';
+$modversion['config'][$i]['valuetype'] = 'text';
+$modversion['config'][$i]['default'] = 'session|online|priv_msgs|protector_access|protector_log';
+
+//end XoopsInfo
 // Notification
-//$modversion['hasNotification'] = 0;
+$modversion['hasNotification'] = 0;
+
+if( ! empty( $_POST['fct'] ) && ! empty( $_POST['op'] ) && $_POST['fct'] == 'modulesadmin' && $_POST['op'] == 'update_ok' && $_POST['dirname'] == $modversion['dirname'] ) {
+}

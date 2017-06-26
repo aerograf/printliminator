@@ -77,3 +77,14 @@ define("_MI_INDEXSCAN_FROMBACKUP_DESC","Creates a zip archieve with same folder 
 //Startup
 define("_MI_PRINTLIMINATOR_STARTUP_MANAGER","Startup");
 define('_MI_STARTUP_CAT_STARTUP_NAME', '<h3>Set the start page</h3>');
+
+//XoopsInfo
+define("_MI_XOOPSINFO_MAIN","XoopsInfo");
+define("_MI_XI_CHECK_TABLE","Tables to be controlled");
+define("_MI_XI_CHECK_TABLE_DSC","Separate the tables name by <font color='#CC0000'><b>|</b></font>");
+define("_MI_XI_REFERER", "Referers authorized for <font color='#CC0000'>xoopsinfo.php</font>");
+define("_MI_XI_REFERER_DSC", "separated by <font color='#CC0000'><b>|</b></font>");
+define("_MI_XOOPSINFO_SERVER_MAIN","Server");
+define("_MI_XOOPSINFO_MYSQL_MAIN","MySQL");
+define("_MI_XOOPSINFO_MODULES_MAIN","Modules");
+define("_MI_XOOPSINFO_EDITORS_MAIN","Editors");

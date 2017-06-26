@@ -40,6 +40,12 @@ $adminmenu = array(
           'icon'    =>    'assets/images/icons/fm_fm.png'
           ),
     array(
+          'title'   =>    _MI_XOOPSINFO_MAIN,
+          'link'    =>    'admin/xoopsinfo.php',
+          'desc'    =>    '',
+          'icon'    =>    'assets/images/icons/xoopsinfo_m.png'
+          ),
+    array(
           'title'   =>    _MI_INDEXSCAN_MAIN,
           'link'    =>    'admin/indexscan.php',
           'desc'    =>    '',

@@ -13,6 +13,7 @@
 // Categories
 define('_MI_PRINTLIMINATOR_CAT1','<font color="#0040FF" size="6"><b>--- FileManager ---</b></font> ');
 define('_MI_PRINTLIMINATOR_CAT2','<font color="#0040FF" size="6"><b>--- IndexScan ---</b></font> ');
+define('_MI_PRINTLIMINATOR_CAT3','<font color="#0040FF" size="6"><b>--- Xoops Info ---</b></font> ');
 
 // The name of this module 
 define("_MI_PRINTLIMINATOR_NAME" , "Printliminator");
@@ -77,3 +78,14 @@ define("_MI_INDEXSCAN_FROMBACKUP_DESC","Создает zip-архив с той 
 //Startup
 define("_MI_PRINTLIMINATOR_STARTUP_MANAGER","Startup");
 define('_MI_STARTUP_CAT_STARTUP_NAME', '<h3>Установка стартовой страницы</h3>');
+
+//XoopsInfo
+define("_MI_XOOPSINFO_MAIN","XoopsInfo");
+define("_MI_XI_CHECK_TABLE","Таблицы, подлежащие контролю");
+define("_MI_XI_CHECK_TABLE_DSC","Разделите имена таблиц <font color='#CC0000'><b>|</b></font>");
+define("_MI_XI_REFERER", "Референции, уполномоченные на <font color='#CC0000'>xoopsinfo.php</font>");
+define("_MI_XI_REFERER_DSC", "Разделите имена <font color='#CC0000'><b>|</b></font>");
+define("_MI_XOOPSINFO_SERVER_MAIN","Сервер");
+define("_MI_XOOPSINFO_MYSQL_MAIN","MySQL");
+define("_MI_XOOPSINFO_MODULES_MAIN","Модули");
+define("_MI_XOOPSINFO_EDITORS_MAIN","Редакторы");

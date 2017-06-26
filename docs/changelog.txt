@@ -1,4 +1,5 @@
-- Add Startu module
+- Add Xoops Info Module
+- Add Startup module
 - Add Index Scan
 - Add File Manager
 - [RU] Для размещения QR кода в шаблоне необходимо скопировать код <{includeq file="db:printliminator_qrcode_div_in.tpl"}> и вставить его в необходимое место в шаблоне. Размер картинки QR кода можно в шаблоне  /modules/printliminator/templates/printliminator_qrcode_div_in.tpl изменить параметр s=2 в диапазоне от 1 до 4.

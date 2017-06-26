@@ -37,4 +37,3 @@ $xoTheme->addStylesheet( XOOPS_URL . "/modules/" . $xoopsModule->getVar("dirname
 //$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
 //$xoTheme->addScript("browse.php?modules/" . $xoopsModule->getVar("dirname") . "/assets/js/admin.js");
 
-?>
