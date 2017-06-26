@@ -42,6 +42,14 @@ define("_AM_PRINTLIMINATOR_SHARE42_DATA_ON",        "Блоки 'Share42' гот
 define("_AM_PRINTLIMINATOR_SHARE42_DATA_OFF",        "Блоки 'Share42' не готовы. Проверьте файл /assets/js/share42d.js и share42s.js. Если его нет, скачайте архив модуля заново.");
 define("_AM_PRINTLIMINATOR_STARTUP_DATA_ON",        "Модуль 'Startup' включен. Перейдите на вкладку и настройте модуль согласно инструкциям.");
 define("_AM_PRINTLIMINATOR_STARTUP_DATA_OFF",        "Модуль 'Startup' не включен. Для включения перейдите на вкладку модуля.");
+define("_AM_PRINTLIMINATOR_CACHE_1",        "Очистка кеша");
+define("_AM_PRINTLIMINATOR_CACHE_2",        "Опции");
+define("_AM_PRINTLIMINATOR_CACHE_3",        "Очистить кеш Xoops");
+define("_AM_PRINTLIMINATOR_CACHE_4",        "Очистить кеш Smarty");
+define("_AM_PRINTLIMINATOR_CACHE_5",        "Очистить компилятор Smarty");
+define("_AM_PRINTLIMINATOR_CACHE_6",        "Очищается выбранный кеш");
+define("_AM_PRINTLIMINATOR_CACHE_7",        "Выбранный кеш очищен");
+
 // FileManager
 define("_FM_AM_LASTVERSION","Последняя версия");
 define("_FM_AM_FILENAME","Имя файла");

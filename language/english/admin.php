@@ -42,6 +42,13 @@ define("_AM_PRINTLIMINATOR_SHARE42_DATA_ON",        "The 'Share42' blocks are re
 define("_AM_PRINTLIMINATOR_SHARE42_DATA_OFF",        "'Share42' blocks are not ready. Check the file /assets/js/share42d.js and share42s.js. If not, download the module archive again.");
 define("_AM_PRINTLIMINATOR_STARTUP_DATA_ON",        "The 'Startup' module is enabled. Go to the tab and configure the module according to the instructions.");
 define("_AM_PRINTLIMINATOR_STARTUP_DATA_OFF",        "The 'Startup' module is not enabled. To enable, go to the module tab.");
+define("_AM_PRINTLIMINATOR_CACHE_1",        "Clearing the cache");
+define("_AM_PRINTLIMINATOR_CACHE_2",        "Options");
+define("_AM_PRINTLIMINATOR_CACHE_3",        "Clear Xoops cache");
+define("_AM_PRINTLIMINATOR_CACHE_4",        "Clear Smarty cache");
+define("_AM_PRINTLIMINATOR_CACHE_5",        "Clear the Smarty compiler");
+define("_AM_PRINTLIMINATOR_CACHE_6",        "Clears the selected cache");
+define("_AM_PRINTLIMINATOR_CACHE_7",        "Selected cache cleared");
 
 // FileManager
 define("_FM_AM_LASTVERSION","Last version");
