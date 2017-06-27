@@ -13,7 +13,7 @@
 */
 
 $editor['name']= 'HtmlArea Editor';
-$editor['class']= '/class/htmlarea/formhtmlarea.php';
+$editor['class']= '/class/xoopseditor/htmlarea/formhtmlarea.php';
 $editor['dirname']  = '';
 $editor['project']  = '';
 ?>

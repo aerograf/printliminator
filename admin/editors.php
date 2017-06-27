@@ -57,16 +57,6 @@ if ( file_exists( XOOPS_ROOT_PATH . '/modules/system/language/' . $xoopsConfig['
 
 $myts = MyTextSanitizer::getInstance();
 
-if (defined("_PHPSYSINFO") && defined("_PHPSECINFO")){
-//	adminmenu(6);
-} elseif ( (defined("_PHPSYSINFO") && !defined("_PHPSECINFO")) || (!defined("_PHPSYSINFO") && defined("_PHPSECINFO")) ){
-//	adminmenu(5);
-} elseif (!defined("_PHPSYSINFO") && !defined("_PHPSECINFO")){
-//	adminmenu(4);
-}
-
-//echo ('<h3>'._MI_XI_ADMENU4.'</h3>');
-
 $path = XOOPSINFO_PATH . 'plugins/editors/' ;
 $d = dir( $path );
 while (false !== ($entry = $d->read())) {

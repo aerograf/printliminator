@@ -56,15 +56,6 @@ if ( file_exists( XOOPS_ROOT_PATH . '/modules/system/language/' . $xoopsConfig['
 
 $myts = MyTextSanitizer::getInstance();
 
-if (defined("_PHPSYSINFO") && defined("_PHPSECINFO")){
-	//adminmenu(5);
-} elseif ( (defined("_PHPSYSINFO") && !defined("_PHPSECINFO")) || (!defined("_PHPSYSINFO") && defined("_PHPSECINFO")) ){
-	//adminmenu(4);
-} elseif (!defined("_PHPSYSINFO") && !defined("_PHPSECINFO")){
-	//adminmenu(3);
-}
-
-
 $module_handler = xoops_gethandler('module');
 $installed_mods = $module_handler->getObjects();
 

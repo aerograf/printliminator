@@ -13,7 +13,7 @@
 */
 
 $editor['name']= 'FCK Editor';
-$editor['class']= '/class/fckeditor/formfckeditor.php';
+$editor['class']= '/class/xoopseditor/fckeditor/formfckeditor.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/showfiles.php?group_id=1155';
 ?>
