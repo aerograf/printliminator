@@ -18,7 +18,7 @@ if (!defined('XOOPS_ROOT_PATH')) { die('XOOPS root path not defined'); }
 function Template_GetModulesList() {
 	global $mid, $theme, $status;
 
-	$module_handler = xoops_gethandler('module');
+	$module_handler = xoops_getHandler('module');
 	$criteria = new CriteriaCompo(new Criteria('hasmain', 1));
 	$criteria->add(new Criteria('isactive', 1));
 	$criteria->add(new Criteria('mid', 1), 'OR');
@@ -37,7 +37,7 @@ function Template_GetModulesList() {
 }
 
 function XoopsInfo_getModuleInfo( $dirname= 'xoopsinfo') {
-	$hModule = xoops_gethandler('module');
+	$hModule = xoops_getHandler('module');
 	$Module = $hModule->getByDirname( $dirname );
 	return $Module;
 }

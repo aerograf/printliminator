@@ -46,8 +46,8 @@ $modversion = array(
     'onInstall'           =>  'include/install.php',
     'onUninstall'         =>  'include/uninstall.php',
     'onUpdate'            =>  'include/update.php',
-    'min_php'             =>  '5.5',
-    'min_xoops'           =>  '2.5.8',
+    'min_php'             =>  '5.6',
+    'min_xoops'           =>  '2.5.8+',
     'min_db'              =>  array('mysql' => '5.5'),
     // Файл базы данных
     'sqlfile'             =>  array('mysql' => 'sql/mysql.sql'),

@@ -872,5 +872,3 @@ function tool_bar($go_back = FALSE) {
         echo ""; 
     echo "</td></tr></table>\n";
     }
-
-

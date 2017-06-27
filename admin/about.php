@@ -14,7 +14,7 @@ include_once __DIR__ . '/header.php';
 
 $adminObject  = \Xmf\Module\Admin::getInstance();
 
-$module_info =& $module_handler->get( $xoopsModule->getVar("mid") );
+$module_info = $module_handler->get( $xoopsModule->getVar("mid") );
 \Xmf\Module\Admin::setPaypal('aerograf@shmel.org');
 $adminObject->displayAbout(false);
 

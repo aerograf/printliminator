@@ -29,16 +29,16 @@
 include_once "../../mainfile.php";
 
 // Handler
-$myhandler = xoops_getmodulehandler('printliminator');
-$module_handler = xoops_gethandler('module');
-$gperm_handler = xoops_gethandler('groupperm');
+$myhandler = xoops_getModuleHandler('printliminator');
+$module_handler = xoops_getHandler('module');
+$gperm_handler = xoops_getHandler('groupperm');
 
 	// Init
 	$page_url = '';
 	
 	if (is_object($xoopsUser)) {
 		// Get all the groups for this user
-		$member_handler = xoops_gethandler('member');
+		$member_handler = xoops_getHandler('member');
 		$grpList = $member_handler->getGroupsByUser($xoopsUser->uid());
 		foreach ($grpList as $grp) {
 			$criteria = new CriteriaCompo();

@@ -1,12 +1,16 @@
 <?php
 include '../../../include/cp_header.php';
+
 if (!defined('XOOPS_ROOT_PATH')) { die('XOOPS root path not defined'); }
+
 define('XOOPSINFO_URL',XOOPS_URL . '/modules/printliminator/');
 define('XOOPSINFO_URL_IMAGE',XOOPS_URL . '/modules/printliminator/assets/images/icons');
 define('XOOPSINFO_ADMIN_URL',XOOPS_URL . '/modules/printliminator/admin/xoopsinfo.php');
 define('XOOPSINFO_PATH',XOOPS_ROOT_PATH . '/modules/printliminator/');
+
 include_once __DIR__ . '/header.php';
 include_once '../include/admmenuinfo.php';
+
 $adminObject  = \Xmf\Module\Admin::getInstance();
 $adminObject->displayNavigation(basename(__FILE__));
 

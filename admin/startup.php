@@ -197,4 +197,3 @@ echo '	</tbody>
 </table><hr />';
 include_once __DIR__ . '/footer.php';	
 xoops_cp_footer();
-?>
