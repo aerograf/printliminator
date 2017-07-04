@@ -13,6 +13,7 @@
 // Categories
 define('_MI_PRINTLIMINATOR_CAT1','<font color="#0040FF" size="6"><b>--- FileManager ---</b></font> ');
 define('_MI_PRINTLIMINATOR_CAT2','<font color="#0040FF" size="6"><b>--- IndexScan ---</b></font> ');
+define('_MI_PRINTLIMINATOR_CAT3','<font color="#0040FF" size="6"><b>--- Xoops Info ---</b></font> ');
 
 // The name of this module
 define("_MI_PRINTLIMINATOR_NAME" , "Printliminator");
@@ -32,8 +33,8 @@ define("_MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC" , "Share this page");
 define("_MI_PRINTLIMINATOR_SHARE42_DIV_DESC" , "Share this page DIV");
 
 // Blocks
-define("_MI_PRINTLIMINATOR_BLOCK_NAME1" , "Printliminator");
-define("_MI_PRINTLIMINATOR_BLOCK_NAME1_DESC" , "Printliminator");
+define("_MI_PRINTLIMINATOR_BLOCK_PRINT" , "Printliminator");
+define("_MI_PRINTLIMINATOR_BLOCK_PRINT_DESC" , "Printliminator");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC" , "QR Code");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DIV" , "Share this page");
@@ -41,7 +42,7 @@ define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DIV" , "Share this page");
 define("_MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC_DIV" , "The 'QR Code' block with the possibility of free placement");
 
 //FileManager
-define("_MI_PRINTLIMINATOR_FILE_MANAGER" , "Filemanager");
+define("_MI_PRINTLIMINATOR_FILE_MANAGER" , "FileManager");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC" , "FileManager for Xoops");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_HELP" , "Filemanager Help");
 define("_MI_PRINTLIMINATOR_FILE_MANAGER_DESC_HELP" , "Help to FileManager for Xoops");
