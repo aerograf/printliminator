@@ -1,0 +1,45 @@
+.widget_help {
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    cursor: 	pointer;
+}
+.tooltip_help {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    background: #ededed;
+    color: #555;
+    right:50%;
+    font-size: 12px;
+    padding: 2px;
+    line-height: 18px;
+    margin-top: 20px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.3s, margin-top 0.3s, visibility 0s linear 0.3s;
+    -moz-transition: opacity 0.3s, margin-top 0.3s, visibility 0s linear 0.3s;
+    -o-transition: opacity 0.3s, margin-top 0.3s, visibility 0s linear 0.3s;
+    transition: opacity 0.3s, margin-top 0.3s, visibility 0s linear 0.3s;
+}
+
+    .widget_help:hover .tooltip_help {
+        margin-top: 0;
+        display: inline-block;
+        z-index: 1000;
+        right:50%;
+        opacity: 1;                       
+        visibility: visible;
+        -webkit-transition-delay: 0s;
+        -moz-transition-delay: 0s;
+        -o-transition-delay: 0s;
+        transition-delay: 0s;
+    }
+
+    .widget_fixed_help .tooltip_help {
+        pointer-events: none;
+    }
+    .widget_fixed_help:hover .tooltip_help {
+        pointer-events: auto;
+    }

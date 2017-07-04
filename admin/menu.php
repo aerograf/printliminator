@@ -18,11 +18,10 @@ if (false !== ($moduleHelper = Xmf\Module\Helper::getHelper($moduleDirName))) {
 } else {
     $moduleHelper = Xmf\Module\Helper::getHelper('system');
 }
-$adminObject = \Xmf\Module\Admin::getInstance();
 
+$adminObject = \Xmf\Module\Admin::getInstance();
 $pathIcon32    = \Xmf\Module\Admin::menuIconPath('');
 $pathModIcon32 = $moduleHelper->getModule()->getInfo('modicons32');
-
 $moduleHelper->loadLanguage('modinfo');
 $moduleHelper->loadLanguage('admin');
 
@@ -33,6 +32,30 @@ $adminmenu = array(
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_INDEX_DESC,
           'icon'    =>    'assets/images/icons/index.png'
           ),
+    array(
+          'title'   =>    _MI_PRINTLIMINATOR_FILE_MANAGER,
+          'link'    =>    'admin/filemanager.php',
+          'desc'    =>    _MI_PRINTLIMINATOR_FILE_MANAGER_DESC,
+          'icon'    =>    'assets/images/icons/fm_fm.png'
+          ),
+    array(
+          'title'   =>    _MI_XOOPSINFO_MAIN,
+          'link'    =>    'admin/xoopsinfo.php',
+          'desc'    =>    '',
+          'icon'    =>    'assets/images/icons/xoopsinfo_m.png'
+          ),
+    array(
+          'title'   =>    _MI_INDEXSCAN_MAIN,
+          'link'    =>    'admin/indexscan.php',
+          'desc'    =>    '',
+          'icon'    =>    'assets/images/icons/administration.png'
+          ),
+    array(
+          'title'   =>    _MI_PRINTLIMINATOR_STARTUP_MANAGER,
+          'link'    =>    'admin/startup.php',
+          'desc'    =>    '',
+          'icon'    =>    'assets/images/icons/startup.png'
+          ),                    
     array(
           'title'   =>    _MI_PRINTLIMINATOR_MANAGER_ABOUT,
           'link'    =>    'admin/about.php',

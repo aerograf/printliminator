@@ -1,83 +1,17 @@
-*, *:before, *:after { 
-box-sizing: inherit; 
+.footer_print { 
+padding: 0 15px 0 15px; 
 } 
-html { 
-box-sizing: border-box; 
-height: 100%; 
-} 
-html, body { 
-background: #eee; 
-min-height: 220px; 
-font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif; 
-font-size: 14px; 
-margin: 0; 
-padding: 0; 
-cursor: default; 
-overflow: hidden; 
--webkit-user-select: none; 
--moz-user-select: none; 
--ms-user-select: none; user-select: none; 
-} 
-.top { 
-background: #fff; 
-padding: 15px; 
-} 
-.top h3 { 
-color: #ccc; 
-margin: 0; 
-} 
-.top h3 span { 
-color: red; 
-} 
-.header, li { 
-background: #111; 
-color: #fff; 
-font-size: 11px; 
-} 
-.header, .header > div { 
-height: 21px; font-size: 11px; 
-} 
-.header > div, li { 
-display: inline-block; 
-} 
-.right { 
-float: right; 
-margin-right: 6px; 
-} 
-.footer { 
-padding: 15px 15px 0 15px; 
-} 
-.footer ul { 
-margin: 0 0 15px 0; 
-padding: 0; 
-list-style-type: none; 
-} 
+ 
 .keyboard-area { 
 margin: 0 -15px 0 -15px; 
 /* extend keyboard background outside of popup - accomidate for different row heights in browsers */ 
-padding: 15px 15px 50px 15px; background: #ccc; 
+padding: 5px 15px 3px 15px; background: #ccc;
+text-align: center; 
 } 
-.toggle { 
-font-size: 12px; 
-margin: 0 0 15px 0; 
-cursor: pointer; 
-} 
-.pl_logo { 
-width: 225px; 
-height: 15px; 
-margin: 0 0 5px 0; 
-} 
-h1, h3 { 
-margin: 0 0 10px; 
-font-weight: normal; 
-text-transform: uppercase; 
-} 
-h3 { 
-font-size: 10px; 
-font-weight: bold; 
-} 
-.close, ._printliminator_drag_icon { 
-text-transform: uppercase; 
+.head_help {
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
 }
 .icon { 
 display: inline-block; 
@@ -110,55 +44,22 @@ width: 35px;
 .left_click { 
 background-position: -50px -25px; 
 } 
-li.busy .icon { 
-background-position: -50px 0; 
--webkit-animation: spin 1.5s linear infinite; 
--moz-animation: spin 1.5s linear infinite; 
-animation: spin 1.5s linear infinite; 
-} 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } } 
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } } 
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } } 
-li { 
-padding: 4px 14px 4px 4px; 
-line-height: 12px; 
-font-size: 10px; 
-text-transform: uppercase; 
-text-align: left; 
-white-space: nowrap; 
-margin: 2px; 
-cursor: pointer; 
-display: inline-block; 
-} 
-li:hover { 
-background-color: #333; 
-} 
-li span { 
-float: left; 
-margin: 0 10px 0 0; 
-text-align: left; 
-} 
+
 .key { 
 width: 30%; 
+}
+
+.td_help {
+vertical-align:middle;
+text-align: left;
+margin-top:5px;
 } 
-table { 
-margin: 0 4px; 
-border-spacing: 0; 
-} 
-th { 
-text-align: left; 
-padding: 0; 
-} 
-kbd { 
-background: #fff; 
+
+.kbd_help { 
+background: #fff;
+color:black;
+font-weight: bold; 
 border: #000 1px solid; 
 border-radius: 3px; 
 padding: 1px 3px; 
-} 
-td { 
-border-top: 1px solid #aaa; 
-font-size: 12px; 
-padding: 5px; 
-/* make Firefox match Webkit */ 
-line-height: 18px; 
 } 

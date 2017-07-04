@@ -11,6 +11,15 @@
 **/
 
 include_once __DIR__ . '/header.php';
+//System info
+define(_HELP_XOOPS_1,XOOPS_URL);
+define(_HELP_XOOPS_2,XOOPS_VERSION);
+define(_HELP_XOOPS_3,$xoopsConfig['theme_set']);
+define(_HELP_XOOPS_4,$xoopsConfig['template_set']);
+define(_HELP_XOOPS_5,PHP_VERSION);
+define(_HELP_XOOPS_6,mysqli_get_server_info($xoopsDB->conn));
+define(_HELP_XOOPS_7,PHP_SAPI);
+define(_HELP_XOOPS_8,$_SERVER['HTTP_USER_AGENT']);
 
 xoops_loadLanguage("help", $xoopsModule->getVar("dirname", "e"));
 

@@ -27,14 +27,10 @@ if ( $xoopsUser ) {
 require_once XOOPS_ROOT_PATH . "/class/template.php";
 
 if (!isset($xoopsTpl)) {$xoopsTpl = new XoopsTpl();}
-//$xoopsTpl->xoops_setCaching(0);
+
 $xoopsTpl->caching=0;
 
 xoops_cp_header();
 
-// Define Stylesheet and JScript
-$xoTheme->addStylesheet( XOOPS_URL . "/modules/" . $xoopsModule->getVar("dirname") . "/assets/css/admin.css" );
-//$xoTheme->addScript("browse.php?Frameworks/jquery/jquery.js");
-//$xoTheme->addScript("browse.php?modules/" . $xoopsModule->getVar("dirname") . "/assets/js/admin.js");
 
-?>
+$xoTheme->addStylesheet( XOOPS_URL . "/modules/" . $xoopsModule->getVar("dirname") . "/assets/css/admin.css" );
