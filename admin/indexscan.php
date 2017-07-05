@@ -60,13 +60,12 @@ use Xmf\Module\Helper;
 	function indexScan_Choice() {
 	global $xoopsModule,$count,$verifyMessage;
 	echo '<table class="outer bold shadowlight alignmiddle" width="100%"><tr>';
-	echo "<td class='even'><center><a onclick='ShowHide();' href='indexscan.php?op=ScanNow'><h2>"._AM_INDEXSCAN_NOW."</h2></a></center></td>";
-	echo "<td class='even'><center><a onclick='ShowHide2();' href='indexscan.php?op=CreateNow'><h2>"._AM_INDEXSCAN_CREATE."</h2></a></center></td>";
-	echo "<td class='even'><center><a onclick='ShowHide3();' href='indexscan.php?op=injectionScan'><h2>"._AM_INDEXSCAN_INJECTIONSCAN."</h2></a></center></td>";
-	echo "<td class='even'><center><a onclick='ShowHide4();' href='indexscan.php?op=checkillegalfiles'><h2>"._AM_INDEXSCAN_CHECKILLEGALFILES."</h2></a></center></td>";
-	echo "<td class='even'><center><a onclick='ShowHide5();' href='indexscan.php?op=createzip'><h2>"._AM_INDEXSCAN_CREATEZIP."</h2></a></center></td>";
-	echo "<td class='even'><center><a href='../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod="
-		.$xoopsModule ->getVar('mid')."'><h2>"._AM_INDEXSCAN_CONFIG."</h2></a></center></td>";
+	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=ScanNow\"' type='button' value='" . _AM_INDEXSCAN_NOW . "'></center></td>";
+	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=CreateNow\"' type='button' value='" . _AM_INDEXSCAN_CREATE . "'></center></td>";
+	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=injectionScan\"' type='button' value='" . _AM_INDEXSCAN_INJECTIONSCAN . "'></center></td>";
+	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=checkillegalfiles\"' type='button' value='" . _AM_INDEXSCAN_CHECKILLEGALFILES . "'></center></td>";
+	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=createzip\"' type='button' value='" . _AM_INDEXSCAN_CREATEZIP . "'></center></td>";
+//	echo "<td class='even'><center><input onclick='return location.href = \"../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod='" . $xoopsModule ->getVar('mid') . "'\" type='button' value='" . _AM_INDEXSCAN_CONFIG . "'></center></td>";
 	echo '</tr></table>';
 	if ($verifyMessage !=''){
 	echo '<div align="center" id="indexscan_verifyMsg"><br>'.$verifyMessage.'</div>';

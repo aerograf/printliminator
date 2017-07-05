@@ -32,5 +32,4 @@ $xoopsTpl->caching=0;
 
 xoops_cp_header();
 
-
 $xoTheme->addStylesheet( XOOPS_URL . "/modules/" . $xoopsModule->getVar("dirname") . "/assets/css/admin.css" );
