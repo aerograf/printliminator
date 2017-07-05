@@ -61,11 +61,11 @@ $adminmenu = array(
           'link'    =>    'admin/about.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC,
           'icon'    =>    'assets/images/icons/about.png'
-          ),
+          )/*,
     array(
           'title'   =>    _MI_PRINTLIMINATOR_MANAGER_HELP,
           'link'    =>    'admin/help.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_HELP_DESC,
           'icon'    =>    'assets/images/icons/help.png'
-          )
+          )*/
 );

@@ -19,7 +19,7 @@ $xoops_url     = parse_url(XOOPS_URL);
 
 $modversion = array(
     'name'                => _MI_PRINTLIMINATOR_NAME,
-    'version'             => 1.21,
+    'version'             => 1.22,
     'description'         => _MI_PRINTLIMINATOR_DESC,
     'author'              => 'aerograf',
     'credits'             => 'Xoops Community',
@@ -36,28 +36,28 @@ $modversion = array(
     'sysicons32'          => 'Frameworks/moduleclasses/icons/32',
     'modicons16'          => 'assets/images/icons/16',
     'modicons32'          => 'assets/images/icons/32',
-    // About
+// ------------------- About ------------------- //
     'module_release'      => '07/06/2017',
-    'release_date'        => '2017/06/26',
-    'module_status'       => 'Betta1',
+    'release_date'        => '2017/07/05',
+    'module_status'       => 'Beta1',
     'module_website_url'  => 'https://www.shmel.org',
     'module_website_name' => 'SHMEL.ORG',
     'module_website_url'  => 'https://github.com/aerograf/printliminator',
     'module_website_name' => 'GitHub',
-    // Scripts to run upon install, uninstall or update
+// ------------------- Scripts to run upon install, uninstall or update ------------------- //
     'onInstall'           => 'include/install.php',
     'onUninstall'         => 'include/uninstall.php',
     'onUpdate'            => 'include/update.php',
     'min_php'             => '5.6',
     'min_xoops'           => '2.5.8+',
     'min_db'              => array('mysql' => '5.5'),
-    // Файл базы данных
+// ------------------- Файл базы данных ------------------- //
     'sqlfile'             => array('mysql' => 'sql/mysql.sql'),
-    // Таблицы
+// ------------------- Таблицы ------------------- //
     'tables'              => array(
         'printliminator_startup_page'
     ),
-    // Admin Menu
+// ------------------- Admin Menu ------------------- //
     'system_menu'         => 1,
     'hasAdmin'            => 1,
     'adminindex'          => 'admin/index.php',
@@ -81,7 +81,18 @@ $modversion['helpsection'] = array(
     ['name' => _MI_PRINTLIMINATOR_SUPPORT, 'link' => 'page=support'],
 );
 
-// Templates
+// ------------------- System info ------------------- //
+    global $xoopsDB;
+    define('_HELP_XOOPS_1',XOOPS_URL);
+    define('_HELP_XOOPS_2',XOOPS_VERSION);
+    define('_HELP_XOOPS_3',$xoopsConfig['theme_set']);
+    define('_HELP_XOOPS_4',$xoopsConfig['template_set']);
+    define('_HELP_XOOPS_5',PHP_VERSION);
+    define('_HELP_XOOPS_6',mysqli_get_server_info($xoopsDB->conn));
+    define('_HELP_XOOPS_7',PHP_SAPI);
+    define('_HELP_XOOPS_8',$_SERVER['HTTP_USER_AGENT']);
+
+// ------------------- Templates ------------------- //
 $modversion['templates'] = array(
     array(
         'file'        => 'admin/' . $moduleDirName . '_admin_about.tpl',
@@ -101,7 +112,7 @@ $modversion['templates'] = array(
     ),
 );
 
-//Blocks    
+// ------------------- Blocks ------------------- //    
 $modversion['blocks'][] = array(
     'file'        => 'blocks_mytype.php',
     'name'        => _MI_PRINTLIMINATOR_BLOCK_PRINT,
@@ -130,8 +141,8 @@ $modversion['blocks'][] = array(
     'template'    => $moduleDirName . '_qrcode_div.tpl'
 );
 
-// Preferences
-// FileManager
+// ------------------- Preferences ------------------- //
+// ------------------- FileManager ------------------- //
 $i                                       = 1;
 $modversion['config'][$i]['name']        = 'logfile';
 $modversion['config'][$i]['title']       = '_MI_PRINTLIMINATOR_CAT1';
@@ -150,8 +161,8 @@ $modversion["config"][$i]["valuetype"]   = "text";
 $modversion["config"][$i]["default"]     = "textarea";
 $modversion["config"][$i]["options"]     = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . "/class/xoopseditor");
 $modversion["config"][$i]["category"]    = "global";
-// end FileManager
-// IndexScan
+// ------------------- end FileManager ------------------- //
+// ------------------- IndexScan ------------------- //
 $i++;
 $modversion['config'][$i]['name']        = 'logfile';
 $modversion['config'][$i]['title']       = '_MI_PRINTLIMINATOR_CAT2';
@@ -215,8 +226,8 @@ $modversion['config'][$i]['description'] = '_MI_INDEXSCAN_EXEP4_DESC';
 $modversion['config'][$i]['formtype']    = 'textbox';
 $modversion['config'][$i]['valuetype']   = 'text';
 $modversion['config'][$i]['default']     = '';
-// end IndexScan  
-// XoopsInfo
+// ------------------- end IndexScan ------------------- //  
+// ------------------- XoopsInfo ------------------- //
 $i++;
 $modversion['config'][$i]['name']        = 'logfile';
 $modversion['config'][$i]['title']       = '_MI_PRINTLIMINATOR_CAT3';
@@ -233,8 +244,8 @@ $modversion['config'][$i]['formtype']    = 'textarea';
 $modversion['config'][$i]['valuetype']   = 'text';
 $modversion['config'][$i]['default']     = 'session|online|priv_msgs|protector_access|protector_log';
 
-//end XoopsInfo
-// Notification
+// ------------------- end XoopsInfo ------------------- //
+// ------------------- Notification ------------------- //
 $modversion['hasNotification'] = 0;
 
 if (!empty($_POST['fct']) && !empty($_POST['op']) && $_POST['fct'] == 'modulesadmin' && $_POST['op'] == 'update_ok' && $_POST['dirname'] == $modversion['dirname']) {

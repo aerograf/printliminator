@@ -1,3 +1,4 @@
+- Edit help file
 - Add Xoops Info Module
 - Add Startup module
 - Add Index Scan
