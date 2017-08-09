@@ -92,7 +92,7 @@ define("_MI_XOOPSINFO_EDITORS_MAIN","Редакторы");
 
 //Help
 define('_MI_PRINTLIMINATOR_DIRNAME', basename(dirname(dirname(__DIR__))));
-define('_MI_PRINTLIMINATOR_HELP_HEADER', __DIR__.'/help/helpheader.html');
+define('_MI_PRINTLIMINATOR_HELP_HEADER', __DIR__.'/help/helpheader.tpl');
 define('_MI_PRINTLIMINATOR_BACK_2_ADMIN', 'Back to Administration of ');
 define('_MI_PRINTLIMINATOR_OVERVIEW', 'Overview');
 
