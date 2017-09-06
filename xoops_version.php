@@ -248,5 +248,5 @@ $modversion['config'][$i]['default']     = 'session|online|priv_msgs|protector_a
 // ------------------- Notification ------------------- //
 $modversion['hasNotification'] = 0;
 
-if (!empty($_POST['fct']) && !empty($_POST['op']) && $_POST['fct'] == 'modulesadmin' && $_POST['op'] == 'update_ok' && $_POST['dirname'] == $modversion['dirname']) {
+if (!empty($_POST['fct']) && !empty($_POST['op']) && $_POST['fct'] == 'modulesadmin' && $_POST['op'] == 'update_ok' && $_POST[$moduleDirName] == $modversion[$moduleDirName]) {
 }
