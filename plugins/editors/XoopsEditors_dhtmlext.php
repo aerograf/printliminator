@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'XoopsEditors Framework - dhtmlext';
-$editor['class']= '/class/xoopseditor/dhtmlext/dhtmlext.php';
+$editor['name']     = 'XoopsEditors Framework - dhtmlext';
+$editor['class']    = '/class/xoopseditor/dhtmlext/dhtmlext.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/?htmlarea';
-?>

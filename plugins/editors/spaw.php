@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'Spaw';
-$editor['class']= '/class/xoopseditor/spaw/formspaw.php';
+$editor['name']     = 'Spaw';
+$editor['class']    = '/class/xoopseditor/spaw/formspaw.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://xoops.org.cn/modules/wfdownloads/visit.php?lid=201';
-?>

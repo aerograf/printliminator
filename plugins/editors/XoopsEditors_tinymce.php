@@ -12,8 +12,8 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'XoopsEditors Framework - tinymce';
-$editor['class']= '/class/xoopseditor/tinymce/formtinymce.php';
+$editor['name']     = 'XoopsEditors Framework - tinymce';
+$editor['class']    = '/class/xoopseditor/tinymce/formtinymce.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/?htmlarea';
 ?>

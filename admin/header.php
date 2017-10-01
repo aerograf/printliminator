@@ -23,13 +23,10 @@ if ( $xoopsUser ) {
     redirect_header(XOOPS_URL."/",3,_NOPERM);
     exit();
 }
-
 require_once XOOPS_ROOT_PATH . "/class/template.php";
 
 if (!isset($xoopsTpl)) {$xoopsTpl = new XoopsTpl();}
 
 $xoopsTpl->caching=0;
-
 xoops_cp_header();
-
 $xoTheme->addStylesheet( XOOPS_URL . "/modules/" . $xoopsModule->getVar("dirname") . "/assets/css/admin.css" );

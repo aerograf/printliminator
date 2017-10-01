@@ -35,22 +35,32 @@ include_once(XOOPS_ROOT_PATH."/header.php");
 
 // Handlers 
 $startup_handler = xoops_getModuleHandler('printliminator');
-$group_handler = xoops_getHandler('group');
-$module_handler = xoops_getHandler('module');
+$group_handler   = xoops_getHandler('group');
+$module_handler  = xoops_getHandler('module');
 
 xoops_cp_header();
 $adminObject  = \Xmf\Module\Admin::getInstance();
 $adminObject->displayNavigation(basename(__FILE__));
-	  echo "<div class='bold shadowlight alignmiddle' style='clear:both;width:100%;vertical-align:middle;text-align:center;'><h3>" . _AM_STARTUP_FORM_DESCRIPTION_2 . "</h3></div><hr style='border: dotted 1px;' />";
+	  echo "<div class='bold shadowlight alignmiddle' style='clear:both;width:100%;vertical-align:middle;text-align:center;'><h3>"
+          . _AM_STARTUP_FORM_DESCRIPTION_2
+          . "</h3></div><hr style='border: dotted 1px;' />";
     //Enable module
     if (strpos(file_get_contents("../../../include/checklogin.php"), '$url = XOOPS_URL."/index.php"'))
     echo "<div style='float:left;width:25px;vertical-align:middle;text-align:center;'><img style='height:14px;'' src='../assets/images/admin/on.gif'></div>";  
     else echo "<div style='float:left;width:25px;vertical-align:middle;text-align:center;'><img style='height:14px;'' src='../assets/images/admin/off.gif'></div>";
     
     if (strpos(file_get_contents("../../../include/checklogin.php"), '$url = XOOPS_URL."/index.php"; // Printliminator STARTUP HACK')){
-        echo '<div style="float:left;width:10%;"><form action="" method="POST"><input type="submit" name="submit_del" value="' . _AM_STARTUP_ENABLE_OFF . '"></form>' . _AM_STARTUP_ENABLE . '</div>';
+        echo '<div style="float:left;width:10%;"><form action="" method="POST"><input type="submit" name="submit_del" value="'
+              . _AM_STARTUP_ENABLE_OFF
+              . '"></form>'
+              . _AM_STARTUP_ENABLE
+              . '</div>';
     }else{
-        echo '<div style="float:left;width:10%;"><form action="" method="POST"><input type="submit" name="submit_save" value="' . _AM_STARTUP_ENABLE_ON . '"></form>' . _AM_STARTUP_ENABLE . '</div>';
+        echo '<div style="float:left;width:10%;"><form action="" method="POST"><input type="submit" name="submit_save" value="'
+              . _AM_STARTUP_ENABLE_ON
+              . '"></form>'
+              . _AM_STARTUP_ENABLE
+              . '</div>';
      }
      if (isset($_POST['submit_save'])){
         copy ("../docs/checklogin.php", "../../../include/checklogin.php") or die ("Error copy");
@@ -67,7 +77,7 @@ $adminObject->displayNavigation(basename(__FILE__));
 		// Adding a new startup page for a group
 		$module_id = intval($_POST['module_selected']);
 		$group_sel = $_POST['group_selected'];
-		$order = intval($_POST['order']);
+		$order     = intval($_POST['order']);
 		if (!is_numeric($order) || $order < 0) $order = 0;
 		$msg = _AM_STARTUP_SUCCESS_SAVE;
 		
@@ -105,12 +115,19 @@ $adminObject->displayNavigation(basename(__FILE__));
 	if (isset($_POST['btnUpdate'])) {
 		$count=1;
 		while($count<1000){
-			$gidname="gid".$count;
-			$midname="mid".$count;
-			$ordername="order".$count;
+			$gidname   = "gid" . $count;
+			$midname   = "mid" . $count;
+			$ordername = "order" . $count;
 			if (isset($_POST[$gidname])){
 				$db=Database::getInstance();
-				$sql="UPDATE ".$db->prefix("printliminator_startup_page")." SET start_order='".intval($_REQUEST[$ordername])."' WHERE group_id=".intval($_POST[$gidname])." AND module_id=".intval($_POST[$midname]);
+				$sql="UPDATE "
+              . $db->prefix("printliminator_startup_page")
+              . " SET start_order='"
+              . intval($_REQUEST[$ordername])
+              . "' WHERE group_id="
+              . intval($_POST[$gidname])
+              . " AND module_id="
+              . intval($_POST[$midname]);
 				$db->query($sql);
 				$msg = _AM_STARTUP_SUCCESS_SAVE;
 			} else {
@@ -118,33 +135,32 @@ $adminObject->displayNavigation(basename(__FILE__));
 			}
 			$count++;
 		}
-		redirect_header("startup.php",1,$msg);
+		redirect_header("startup.php", 1, $msg);
 	} 
 	// Show the add form
-	echo "<div style='float:left;width:70%;vertical-align:middle;text-align:center;'>" . _AM_STARTUP_FORM_DESCRIPTION_1 . "</div><br />";
+	echo "<div style='float:left;width:70%;vertical-align:middle;text-align:center;'>"
+        . _AM_STARTUP_FORM_DESCRIPTION_1
+        . "</div><br>";
 	$myForm = new XoopsThemeForm(_MI_STARTUP_CAT_STARTUP_NAME, 'frmStartupPage', '');
 	$myForm->addElement(new XoopsFormSelectGroup(_AM_STARTUP_FORM_GROUP_SELECT, 'group_selected', true, null, 5,true));
 	
 	$moduleSelect = new XoopsFormSelect(_AM_STARTUP_FORM_MODULE_SELECT, 'module_selected', false);
-	$moduleList = $module_handler->getList(new Criteria('hasmain', 1));
+	$moduleList   = $module_handler->getList(new Criteria('hasmain', 1));
 	$moduleSelect->addOptionArray($moduleList);
 	$myForm->addElement($moduleSelect);
 	$myForm->addElement(new XoopsFormText(_AM_STARTUP_FORM_ORDER, 'order', 4, 4, '0'));
 	$myForm->addElement(new XoopsFormButton('', 'btnAdd', _AM_STARTUP_ADD, 'submit'));
 	
 	$myForm->display();
-
-
-echo '<table cellspacing="0" width="100%">
-	<thead>
-		<tr>
-			<th>'._AM_STARTUP_FORM_GROUP_NAME.'</th>
-			<th>'._AM_STARTUP_FORM_MODULE_NAME.'</th>
-			<th>'._AM_STARTUP_FORM_ORDER.'</th>
-			<th>'._AM_STARTUP_FORM_ACTION.'</th>
-		</tr>
-	</thead>
-	<tbody>';
+echo '<table cellspacing="0" style="width:100%;"><thead><tr><th>'
+      . _AM_STARTUP_FORM_GROUP_NAME
+      . '</th><th>'
+      . _AM_STARTUP_FORM_MODULE_NAME
+      . '</th><th>'
+      . _AM_STARTUP_FORM_ORDER
+      . '</th><th>'
+      . _AM_STARTUP_FORM_ACTION
+      . '</th></tr></thead><tbody>';
 
 	$criteria = new CriteriaCompo();
 	$criteria->setSort('group_id, start_order, module_id');
@@ -161,20 +177,36 @@ echo "<form action='startup.php' method='post' name='startorder' id='startorder'
 		$grp = $group_handler->get($grouppage->getVar('group_id'));
 		$mod = $module_handler->get($grouppage->getVar('module_id'));
 		if ($mod && $grp) {
-			$action = '<input type="button" name="btnDelete" value="'._AM_STARTUP_DELETE.'" onclick="location=\'?op=delete&gid='.intval($grouppage->getVar('group_id')).'&mid='.intval($grouppage->getVar('module_id')).'\'" />';
-			echo "<input type=hidden name=gid".$rowcount." value=".intval($grouppage->getVar('group_id')).">";
-			echo "<input type=hidden name=mid".$rowcount." value=".intval($grouppage->getVar('module_id')).">";
-
-
-	echo 	'<tr align="center" class="'.$class.'">
-			<td>'.$grp->getVar("name").'</td>
-			<td>'.$mod->getVar("name").'</td>
-			<td><input name="order'.$rowcount.'" type="text" value="'.$grouppage->getVar("start_order").'" maxlength="3" size="2"</td>
-			<td>'.$action.'</td>
-		</tr>';
-
-		}
-		else {
+			$action = '<input type="button" name="btnDelete" value="'
+                . _AM_STARTUP_DELETE
+                . '" onclick="location=\'?op=delete&gid='
+                . intval($grouppage->getVar('group_id'))
+                . '&mid='
+                . intval($grouppage->getVar('module_id'))
+                . '\'" />';
+    			echo "<input type=hidden name=gid"
+                . $rowcount
+                . " value=".intval($grouppage->getVar('group_id'))
+                . "><input type=hidden name=mid"
+                . $rowcount
+                . " value="
+                . intval($grouppage->getVar('module_id'))
+                .">";
+    
+        	echo 	'<tr align="center" class="'
+                . $class
+                . '"><td>'
+                . $grp->getVar("name")
+                . '</td><td>'
+                . $mod->getVar("name")
+                . '</td><td><input name="order'
+                . $rowcount
+                . '" type="text" value="'
+                . $grouppage->getVar("start_order")
+                . '" maxlength="3" size="2"</td><td>'
+                . $action
+                . '</td></tr>';
+		} else {
 			// Module or group has been deleted... get rid of this mapping
 			$criteria = new CriteriaCompo();
 			$criteria->add( new Criteria('group_id', $grp));
@@ -186,14 +218,9 @@ echo "<form action='startup.php' method='post' name='startorder' id='startorder'
 		$rowcount++;
 	}
 
-echo '	</tbody>
-		<tr>
-		<td colspan=4>&nbsp;</td>
-		</tr>
-			<tr>
-			<td colspan=4 align="center"><input type="submit" name="btnUpdate" value="'._AM_STARTUP_ORDER_UPDATE.'"></td>
-		</tr>
-			</form>
-</table><hr />';
+echo '</tbody><tr><td colspan=4>&nbsp;</td></tr><tr>
+			<td colspan=4 align="center"><input type="submit" name="btnUpdate" value="'
+      . _AM_STARTUP_ORDER_UPDATE
+      . '"></td></tr></form></table><br><hr><br>';
+      
 include_once __DIR__ . '/footer.php';	
-xoops_cp_footer();

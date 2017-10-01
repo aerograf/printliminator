@@ -30,7 +30,6 @@ use Xmf\Module\Helper;
 		echo '<link type="text/css" rel="stylesheet" href="../assets/css/style_is.css">';
 
     $op = '';
-
 		if (isset($_GET['op']) && $_GET['op'] == 'ScanNow') {
        $op = 'ScanNow';
         }
@@ -65,16 +64,15 @@ use Xmf\Module\Helper;
 	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=injectionScan\"' type='button' value='" . _AM_INDEXSCAN_INJECTIONSCAN . "'></center></td>";
 	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=checkillegalfiles\"' type='button' value='" . _AM_INDEXSCAN_CHECKILLEGALFILES . "'></center></td>";
 	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=createzip\"' type='button' value='" . _AM_INDEXSCAN_CREATEZIP . "'></center></td>";
-//	echo "<td class='even'><center><input onclick='return location.href = \"../../system/admin.php?fct=preferences&amp;op=showmod&amp;mod='" . $xoopsModule ->getVar('mid') . "'\" type='button' value='" . _AM_INDEXSCAN_CONFIG . "'></center></td>";
 	echo '</tr></table>';
 	if ($verifyMessage !=''){
 	echo '<div align="center" id="indexscan_verifyMsg"><br>'.$verifyMessage.'</div>';
 	} else {};
-	echo '<div align="center" id="slidingDiv"><img src="images/spinner.gif" align="center"><br>'._AM_INDEXSCAN_SCANNING4MISS.'</div>';
-	echo '<div align="center" id="slidingDiv2"><img src="images/spinner.gif" align="center"><br>'._AM_INDEXSCAN_CREATINGMISS.'</div>';
-	echo '<div align="center" id="slidingDiv3"><img src="images/spinner.gif" align="center"><br>'._AM_INDEXSCAN_SCANNING4IFRAME.'</div>';
-	echo '<div align="center" id="slidingDiv4"><img src="images/spinner.gif" align="center"><br>'._AM_INDEXSCAN_SCANNING4ILLEGALFILES.'</div>';
-	echo '<div align="center" id="slidingDiv5"><img src="images/spinner.gif" align="center"><br>'._AM_INDEXSCAN_CREATINGZIP.'</div>';
+	echo '<div style="text-align:center;" id="slidingDiv"><img src="images/spinner.gif" style="text-align:center;"><br>' . _AM_INDEXSCAN_SCANNING4MISS . '</div>';
+	echo '<div style="text-align:center;" id="slidingDiv2"><img src="images/spinner.gif" style="text-align:center;"><br>' . _AM_INDEXSCAN_CREATINGMISS . '</div>';
+	echo '<div style="text-align:center;" id="slidingDiv3"><img src="images/spinner.gif" style="text-align:center;"><br>' . _AM_INDEXSCAN_SCANNING4IFRAME . '</div>';
+	echo '<div style="text-align:center;" id="slidingDiv4"><img src="images/spinner.gif" style="text-align:center;"><br>' . _AM_INDEXSCAN_SCANNING4ILLEGALFILES . '</div>';
+	echo '<div style="text-align:center;" id="slidingDiv5"><img src="images/spinner.gif" style="text-align:center;"><br>' . _AM_INDEXSCAN_CREATINGZIP . '</div>';
 	}
 		
 // Switch for choises
@@ -86,8 +84,10 @@ switch($op) {
     $adminObject  = \Xmf\Module\Admin::getInstance();
     $adminObject->displayNavigation(basename(__FILE__));
 		indexScan_Choice();
-		print "<div align = 'center' id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
-		print "<tr class='header'><center><th colspan=2><h2>"._AM_INDEXSCAN_HEADER."</h2></center></th></tr>";
+		print "<div style='text-align:center; width:100%;' id ='indexscan_result'><table class='outer' style='width:100%;'>";
+		print "<tr class='header'><center><th colspan=2><h2>"
+          . _AM_INDEXSCAN_HEADER
+          . "</h2></center></th></tr>";
 		print "<tr><center><td></center></td></tr>";
 
 /* 
@@ -95,8 +95,9 @@ Print the dir found via xoops_look4Files and show where the index.html is not fo
 */
 function xoops_PrintPaths ( $xoopsFilePath,$File2Look4,$count ) {
 	$xoopsFilePath = substr($xoopsFilePath,7);
-	print "<tr><td><span class='indexscan_path'>$xoopsFilePath</span></td><td><span class='indexscan_index_notfound'>".
-	_AM_INDEXSCAN_NOTFOUND."</span></td></tr>";
+	print "<tr><td><span class='indexscan_path'>$xoopsFilePath</span></td><td><span class='indexscan_index_notfound'>"
+        .	_AM_INDEXSCAN_NOTFOUND
+        . "</span></td></tr>";
 }
 
 // Setting up the search //		
@@ -110,10 +111,10 @@ function xoops_PrintPaths ( $xoopsFilePath,$File2Look4,$count ) {
 This function will look through all folder on server starting from $RootDir. And will call back all missing
 dirs not having index.html
 */
-function xoops_Look4Files ( $RootDir, $File2Look4, $ReturnFindings = NULL, $Dirs2Exclude = array() ) {
+function xoops_Look4Files ( $RootDir, $File2Look4, $ReturnFindings = NULL, $Dirs2Exclude = [] ) {
 		global $count;
 		$count = 0;
-		$Queue2Array = array( rtrim( $RootDir, '/' ).'/' ); // normalize all paths
+		$Queue2Array = [ rtrim( $RootDir, '/' ).'/' ]; // normalize all paths
   foreach ( $Dirs2Exclude as $path ) { // &$path Req. PHP ver 5.x and later
 		$path = $RootDir.trim( $path, '/' ).'/';
   }
@@ -146,12 +147,15 @@ function xoops_Look4Files ( $RootDir, $File2Look4, $ReturnFindings = NULL, $Dirs
 			}
 // $Dirs2Exclude = array( 'modules', './', 'themes' );
 	print xoops_Look4Files ( $RootDir, $File2Look4, $ReturnFindings, $Dirs2Exclude );
-	print "<tr><td colspan=2></td></tr><tr><td colspan=2><center></center></td></tr><tr><td colspan=2></td></tr>";
-	print "<tr><td colspan=2></td></tr><tr><th colspan=2><center>$count "._AM_INDEXSCAN_FOUNDMISSING."</center></th></tr><tr><td colspan=2></td></tr>";
-	print "</table></div>";
+	print "<tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr>";
+	print "<tr><td colspan=2>&nbsp;</td></tr><tr><th colspan=2><center><h2>"
+        . $count
+        . " "
+        . _AM_INDEXSCAN_FOUNDMISSING
+        . "</h2></center></th></tr><tr><td colspan=2>&nbsp;</td></tr></table></div>";
   include_once __DIR__ . '/footer.php';
-	xoops_cp_footer();
-                break;
+  break;
+
 case "CreateNow":
 		global $count,$myts;
  		xoops_cp_header();
@@ -159,13 +163,18 @@ case "CreateNow":
     $adminObject->displayNavigation(basename(__FILE__));    
 		indexScan_Choice();
 			print "<div align = 'center' id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
-			print "<tr class='header'><center><th colspan=2><h2>"._AM_INDEXSCAN_MAKINGHEADER."</h2></center></th></tr>";
-			print "<tr class='header'><center><td colspan=2></center></td></tr>";
+			print "<tr class='header'><th colspan=2><center><h2>"
+            . _AM_INDEXSCAN_MAKINGHEADER
+            . "</h2></center></th></tr>";
+			print "<tr class='header'><td colspan=2>&nbsp;</td></tr>";
 	function xoops_PrintPathsCR ( $xoopsFilePathCR,$File2Look4CR,$countCR ) {
 	$xoopsFilePathCRSHORT = substr($xoopsFilePathCR,7);
 	xoops_CreateMissingIndexFiles ($xoopsFilePathCR);
-	print "<tr><td><span class='indexscan_path'>$xoopsFilePathCRSHORT</span></td><td><span class='indexscan_created_ok'>".
-	_AM_INDEXSCAN_CREATED."</span><br><td></tr>";
+	print "<tr><td><span class='indexscan_path'>"
+        . $xoopsFilePathCRSHORT
+        . "</span></td><td><span class='indexscan_created_ok'>"
+        .	_AM_INDEXSCAN_CREATED
+        . "</span><br><td></tr>";
 }
 
 // Setting up the search //		
@@ -175,13 +184,18 @@ case "CreateNow":
 	$RootDirCR = indexscan_GetModuleOption('indexscan_rootorsub');
 	
 // Define wich folders not to scan	
-	$Dirs2ExcludeCR = array( $xoopsModuleConfig['exep_01'], $xoopsModuleConfig['exep_02'], $xoopsModuleConfig['exep_03'], $xoopsModuleConfig['exep_04'] );
+	$Dirs2ExcludeCR = [
+                    $xoopsModuleConfig['exep_01'],
+                    $xoopsModuleConfig['exep_02'],
+                    $xoopsModuleConfig['exep_03'],
+                    $xoopsModuleConfig['exep_04']
+                    ];
 
 /*
 This function opens a file called index.html, write content, and saves where not found
 */
 function xoops_CreateMissingIndexFiles ($folderUrl) {
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 file_put_contents($folderUrl.'index.html', "<script>history.go(-1);</script>");
 }
 
@@ -189,10 +203,10 @@ file_put_contents($folderUrl.'index.html', "<script>history.go(-1);</script>");
 This function will look through all folder on server starting from $RootDir. And will call back all missing
 dirs not having index.html
 */
-function xoops_Look4FilesCR ( $RootDirCR, $File2Look4CR, $ReturnFindingsCR = NULL, $Dirs2ExcludeCR = array() ) {
+function xoops_Look4FilesCR ( $RootDirCR, $File2Look4CR, $ReturnFindingsCR = NULL, $Dirs2ExcludeCR = [] ) {
 	global $countCR;
 		$countCR = 0;
-		$Queue2ArrayCR = array( rtrim( $RootDirCR, '/' ).'/' ); // normalize all paths
+		$Queue2ArrayCR = [ rtrim( $RootDirCR, '/' ).'/' ]; // normalize all paths
   foreach ( $Dirs2ExcludeCR as &$pathCR ) { // &$path Req. PHP ver 5.x and later
 		$pathCR = $RootDirCR.trim( $pathCR, '/' ).'/';
   }
@@ -224,21 +238,23 @@ function xoops_Look4FilesCR ( $RootDirCR, $File2Look4CR, $ReturnFindingsCR = NUL
 		return FALSE; // end of tree.
 			}
        
-	print xoops_Look4FilesCR ( $RootDirCR, $File2Look4CR, $ReturnFindingsCR, $Dirs2ExcludeCR );
-	print "<tr><td colspan=2></td></tr><tr><td colspan=2><center></center></td></tr><tr><td colspan=2></td></tr>";
-	print "<tr><td colspan=2></td></tr><tr><th colspan=2><center>$countCR "._AM_INDEXSCAN_CREATEDINDEXFILES."</center></th></tr><tr><td colspan=2></td></tr>";
-	print "</table></div>";
+  	print xoops_Look4FilesCR ( $RootDirCR, $File2Look4CR, $ReturnFindingsCR, $Dirs2ExcludeCR );
+  	print "<tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr>";
+  	print "<tr><td colspan=2>&nbsp;</td></tr><tr><th colspan=2><center><h2>"
+          . $countCR
+          . " "
+          . _AM_INDEXSCAN_CREATEDINDEXFILES
+          . "</h2></center></th></tr><tr><td colspan=2>&nbsp;</td></tr>";
+  	print "</table></div>";
 	  include_once __DIR__ . '/footer.php';       
-		xoops_cp_footer();		
-                break;
+    break;
 		default:
 				xoops_cp_header();
             $adminObject  = \Xmf\Module\Admin::getInstance();
             $adminObject->displayNavigation(basename(__FILE__));        
             indexScan_Choice();
             include_once __DIR__ . '/footer.php';
-				xoops_cp_footer();
-                break;	
+            break;	
 		
 case "injectionScan":	
 
@@ -262,25 +278,30 @@ case "injectionScan":
 			
 				$baseDir = basename(dirname($_SERVER['PHP_SELF']));
 				$WebPth = 'http://'.$_SERVER['HTTP_HOST'].'/';
-				$content_pattern = array("iframe","fromCharCode","%69%66%72%61%6D%65","document.write(unescape(");
-					$tmp = pathinfo( XOOPS_ROOT_PATH."/mainfile.php");
-					$tmp1 = dirname(dirname( XOOPS_ROOT_PATH."/mainfile.php"));
+				$content_pattern = ["iframe","fromCharCode","%69%66%72%61%6D%65","document.write(unescape("];
+					$tmp = pathinfo( XOOPS_ROOT_PATH . "/mainfile.php");
+					$tmp1 = dirname(dirname( XOOPS_ROOT_PATH . "/mainfile.php"));
 					$tmp2 = str_replace($tmp1,'',$tmp);
-					$file = $tmp2['dirname']."/modules/printliminator/admin/indexscan.php";
+					$file = $tmp2['dirname'] . "/modules/printliminator/admin/indexscan.php";
 					$fileSub = str_replace("\\","/",$file);
 					$fileSubs = "../../../..".$fileSub;
-				$content_pattern_exclude = array("../../../modules/printliminator/admin/indexsacn.php",$fileSubs);
+				$content_pattern_exclude = ["../../../modules/printliminator/admin/indexsacn.php",$fileSubs];
 				$count_files = 0;
 				$count_injections = 0;
 					echo _AM_INDEXSCAN_CHECKFORFILES;
 				$dir_handle = @opendir($path) or die("Unable to open $path");
 					indexScan_Scan4ifrm($dir_handle, $path, '');
-		print "<tr><td colspan=2></td></tr><tr><td colspan=2><center></center></td></tr><tr><td colspan=2></td></tr>";
-		print "<tr><td colspan=2></td></tr><tr><th colspan=2><span style='position:relative;text-align:left;font-size:14px;font-weight:bold;'>$count_injections</span><span style = 'position:relative;text-align:left;font-size:10px;'>"._AM_INDEXSCAN_FINISDINJECTIONS."</span><span style='font-size:14px;font-weight:bold;'> $count_files</span></th></tr><tr><td colspan=2></td></tr>";
+		print "<tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr>";
+		print "<tr><td colspan=2>&nbsp;</td></tr><tr><th colspan=2><span style='position:relative;text-align:left;font-size:14px;font-weight:bold;'>"
+          . $count_injections
+          . "</span><span style = 'position:relative;text-align:left;font-size:10px;'> "
+          . _AM_INDEXSCAN_FINISDINJECTIONS
+          . "</span><span style='font-size:14px;font-weight:bold;'> "
+          . $count_files
+          . "</span></th></tr><tr><td colspan=2>&nbsp;</td></tr>";
 		echo "</table></div>";
     include_once __DIR__ . '/footer.php'; 
-		xoops_cp_footer();
-break;
+    break;
 	
 case "CheckIllegalFiles":
 	global $ignores;
@@ -293,7 +314,7 @@ case "CheckIllegalFiles":
 	$ci = 0;
   
 	echo "<div id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
-	$ignores = array();
+	$ignores = [];
 	  $tmps = file('filecheck.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 	  foreach ($tmps as $lines) {
 	  list($line, $sum) = explode(':',$lines);
@@ -323,10 +344,17 @@ case "CheckIllegalFiles":
 	indexscan_get_files($ff,$extension);
 	} else continue;
 			}	
-	echo "<center><span style='position:relative;text-align:left;font-size:14px;font-weight:bold;'>".$count_illegalfiles."</span><span style = 'position:relative;text-align:left;font-size:10px;'>"._AM_INDEXSCAN_FINISDILLEGAL."</span><span style='font-size:14px;font-weight:bold;'>".$count_xoopsfiles."</span><br/><br/><span style = 'position:relative;text-align:left;font-size:10px;'>"._AM_INDEXSCAN_ILLEGAL_DESC."</span></center></table></div>";
+	echo "<center><span style='position:relative;text-align:left;font-size:14px;font-weight:bold;'>"
+        . $count_illegalfiles
+        . "</span><span style = 'position:relative;text-align:left;font-size:10px;'> "
+        . _AM_INDEXSCAN_FINISDILLEGAL
+        . "</span><span style='font-size:14px;font-weight:bold;'> "
+        . $count_xoopsfiles
+        . "</span><br><br><span style = 'position:relative;text-align:left;font-size:10px;'> "
+        . _AM_INDEXSCAN_ILLEGAL_DESC
+        . "</span></center></table></div>";
   include_once __DIR__ . '/footer.php';
-	xoops_cp_footer();
-break;
+  break;
 
 case "createzip":	
 	xoops_cp_header();
@@ -338,15 +366,31 @@ case "createzip":
 	$filecreated=0;
 			echo "<div id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
 	$module = indexscan_GetModuleOption('indexscan_frombackup');
-	$src = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1).'/modules/printliminator/admin/folder2backup/'.$module;
-	$dst = 'backup/'.$module;
-		indexscan_CreateBackup($src, $dst);
-	echo "<tr><td colspan=2></td></tr><tr class='header'><td colspan=2><br/><br/><center><a href='indexscan.php?op=downloadzip'>"._AM_INDEXSCAN_DOWNLOADZIP."</a></center></td></tr>";
-	echo "<br/><br/><br/><tr><td colspan=2></td></tr><tr><td colspan=2><center><span style='position:relative;text-align:left;font-size:14px;font-weight:bold;'>".$filecopy."</span><span style = 'position:relative;text-align:left;font-size:10px;'>"._AM_INDEXSCAN_FILESARECOPIED."</span><br/><span style='font-size:14px;font-weight:bold;'>".$filedeleted."</span><span style = 'position:relative;text-align:left;font-size:10px;'>"._AM_INDEXSCAN_FILESDELETED."</span><br/><span style='font-size:14px;font-weight:bold;'>".$filecreated."</span><span style = 'position:relative;text-align:left;font-size:10px;'>"._AM_INDEXSCAN_FILESCREATED."</span></center></tr></td></table></div><br/><br/>";
-			indexscan_cleanBackUp ();
+	$src = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1)
+        . '/modules/printliminator/admin/folder2backup/'
+        . $module;
+	$dst = 'backup/'
+        . $module;
+	indexscan_CreateBackup($src, $dst);
+	echo "<tr><td colspan=2></td></tr><tr class='header'><td colspan=2><br/><br/><center><a href='indexscan.php?op=downloadzip'>"
+        . _AM_INDEXSCAN_DOWNLOADZIP
+        . "</a></center></td></tr>";
+	echo "<br><br><br><tr><td colspan=2></td></tr><tr><td colspan=2><center><span style='position:relative;text-align:left;font-size:14px;font-weight:bold;'>"
+        . $filecopy
+        . "</span><span style = 'position:relative;text-align:left;font-size:10px;'>"
+        . _AM_INDEXSCAN_FILESARECOPIED
+        . "</span><br><span style='font-size:14px;font-weight:bold;'>"
+        . $filedeleted
+        . "</span><span style = 'position:relative;text-align:left;font-size:10px;'>"
+        . _AM_INDEXSCAN_FILESDELETED
+        . "</span><br><span style='font-size:14px;font-weight:bold;'>"
+        . $filecreated
+        . "</span><span style = 'position:relative;text-align:left;font-size:10px;'>"
+        . _AM_INDEXSCAN_FILESCREATED
+        . "</span></center></tr></td></table></div><br><br>";
+		indexscan_cleanBackUp ();
     include_once __DIR__ . '/footer.php';  
-		xoops_cp_footer();
-break;
+    break;
 
 case "downloadzip":
 	xoops_cp_header();
@@ -374,11 +418,11 @@ function indexScan_Scan4ifrm($dir_handle,$path, $WebPth)
 	global $WebPath, $content_pattern,$content_pattern_exclude,$count_files,$count_injections;
 		while (false !== ($file = readdir($dir_handle)))
 		{
-		$dir = $path.'/'.$file;
+		$dir = $path . '/' . $file;
 			if(is_dir($dir) && $file != '.' && $file !='..' )
 			{	
-				$handle = @opendir($dir) or die(_AM_INDEXSCAN_UNABLETOREADFILE.$file);
-				$WebRef = $file.'/';
+				$handle = @opendir($dir) or die(_AM_INDEXSCAN_UNABLETOREADFILE . $file);
+				$WebRef = $file . '/';
 					indexScan_Scan4ifrm($handle, $dir, $WebRef);
 					} // end if
 					
@@ -430,15 +474,28 @@ function indexScan_Scan4ifrm($dir_handle,$path, $WebPth)
 	if($ChcekFlag)
 	{
 	echo "<div class='indexscan_msg_list'>";
-		echo "<div class='indexscan_msg_head'>".$dir."<img class='indexscan_img' src='images/html.png'></img><span class='indexscan_iframe_found2'>".$indexscan_type." "._AM_INDEXSCAN_INFECTED."</span></div>";	
-		echo "<p class='indexscan_msg_body'>";
-		echo "<span class='.indexscan_codetext'><textarea rows='30' cols='40' name='code' class='php:nocontrols'>".htmlentities($test)."</textarea>";
-	echo "</span></p>"."</div>";
+	echo "<div class='indexscan_msg_head'>"
+        . $dir
+        . " <img class='indexscan_img' src='images/html.png'></img><span class='indexscan_iframe_found2'>"
+        . $indexscan_type
+        . " "
+        . _AM_INDEXSCAN_INFECTED
+        . "</span></div>";	
+	echo "<p class='indexscan_msg_body'>";
+	echo "<span class='.indexscan_codetext'><textarea rows='30' cols='40' name='code' class='php:nocontrols'>"
+        . htmlentities($test)
+        . "</textarea>";
+	echo "</span></p>"
+        . "</div>";
 	} // end if
 	else
 	{
 		echo "<div class='indexscan_msg_list'>";
-			echo "<div class='indexscan_ok'>".$dir."<span class='indexscan_show'>"._AM_INDEXSCAN_CLEAN."</span>";
+		echo "<div class='indexscan_ok'>"
+        . $dir
+        . "<span class='indexscan_show'>"
+        . _AM_INDEXSCAN_CLEAN
+        . "</span>";
 		echo "</div></div>";
 	}		// end else
 		} 	// end if
@@ -447,10 +504,8 @@ function indexScan_Scan4ifrm($dir_handle,$path, $WebPth)
 		} 	// end while
 } 			// end function
 
-
 // show hide for lazy load image and message
 echo '<script type="text/javascript">
-
 		// Showing or Hiding the progress div
 		function ShowHide(){
 			$("#slidingDiv").animate({"height": "toggle"}, { duration: 1000 });
@@ -471,28 +526,28 @@ echo '<script type="text/javascript">
  
 // jquery show/hide for divs used for scanning
 echo '<script type="text/javascript">
-	$(document).ready(function()
-	{
-	//hide the all of the element with class msg_body
-  $(".indexscan_msg_body").hide();
-  
-  //toggle the componenet with class msg_body
-  $(".indexscan_msg_head").click(function()
-  {
-    $(this).next(".indexscan_msg_body").slideToggle(600);
-  });
-});
-</script>';
+    	$(document).ready(function()
+    	{
+    	//hide the all of the element with class msg_body
+      $(".indexscan_msg_body").hide();
+      
+      //toggle the componenet with class msg_body
+      $(".indexscan_msg_head").click(function()
+      {
+        $(this).next(".indexscan_msg_body").slideToggle(600);
+      });
+    });
+    </script>';
 
 // style for source code
 echo '<link type="text/css" rel="stylesheet" href="../assets/css/SyntaxHighlighter.css"></link>
-<script language="javascript" src="../assets/js/shCore.js"></script>
-<script language="javascript" src="../assets/js/shBrushCSharp.js"></script>
-<script language="javascript" src="../assets/js/shBrushPhp.js"></script>
-<script language="javascript">
-dp.SyntaxHighlighter.ClipboardSwf = "../assets/js/clipboard.swf";
-dp.SyntaxHighlighter.HighlightAll("code");
-</script>';
+      <script language="javascript" src="../assets/js/shCore.js"></script>
+      <script language="javascript" src="../assets/js/shBrushCSharp.js"></script>
+      <script language="javascript" src="../assets/js/shBrushPhp.js"></script>
+      <script language="javascript">
+      dp.SyntaxHighlighter.ClipboardSwf = "../assets/js/clipboard.swf";
+      dp.SyntaxHighlighter.HighlightAll("code");
+      </script>';
 
 /**
  * Returns a module's option
@@ -507,7 +562,7 @@ dp.SyntaxHighlighter.HighlightAll("code");
 function indexscan_GetModuleOption($option, $repmodule='printliminator')
 {
 	global $xoopsModuleConfig, $xoopsModule;
-	static $tbloptions= Array();
+	static $tbloptions = [];
 	if(is_array($tbloptions) && array_key_exists($option,$tbloptions)) {
 		return $tbloptions[$option];
 	}
@@ -515,14 +570,14 @@ function indexscan_GetModuleOption($option, $repmodule='printliminator')
 	$retval = false;
 	if (isset($xoopsModuleConfig) && (is_object($xoopsModule) && $xoopsModule->getVar('dirname') == $repmodule && $xoopsModule->getVar('isactive'))) {
 		if(isset($xoopsModuleConfig[$option])) {
-			$retval= $xoopsModuleConfig[$option];
+			$retval = $xoopsModuleConfig[$option];
 		}
 	} else {
-		$module_handler =& xoops_gethandler('module');
-		$module =& $module_handler->getByDirname($repmodule);
-		$config_handler =& xoops_gethandler('config');
+		$module_handler = xoops_gethandler('module');
+		$module         = $module_handler->getByDirname($repmodule);
+		$config_handler = xoops_gethandler('config');
 		if ($module) {
-		    $moduleConfig =& $config_handler->getConfigsByCat(0, $module->getVar('mid'));
+		    $moduleConfig = $config_handler->getConfigsByCat(0, $module->getVar('mid'));
 	    	if(isset($moduleConfig[$option])) {
 	    		$retval= $moduleConfig[$option];
 	    	}
@@ -534,22 +589,32 @@ function indexscan_GetModuleOption($option, $repmodule='printliminator')
 
 function indexscan_get_files($ff,$extension)
   {
-	global $ignores,$count_illegalfiles;
-	$types=array();
-	$tmptypes = indexscan_GetModuleOption('indexscan_illegalfiles');
-		$types = explode("|",$tmptypes);
+	global $ignores, $count_illegalfiles;
+	$types     = [];
+	$tmptypes  = indexscan_GetModuleOption('indexscan_illegalfiles');
+	$types     = explode("|",$tmptypes);
 
 	if (in_array($ff,$ignores)) {
 		echo "<div class='indexscan_msg_list'>";
-		echo "<div class='indexscan_ok'>".$ff."<span class='indexscan_maybeok'>"._AM_INDEXSCAN_MAYBEOK."</span>";
+		echo "<div class='indexscan_ok'>"
+          . $ff
+          . "<span class='indexscan_maybeok'>"
+          . _AM_INDEXSCAN_MAYBEOK
+          . "</span>";
 		echo "</div></div>";
 	} 
 	
 	if (!in_array($extension, $types)){
 		if (!in_array($ff,$ignores)){
 			$count_illegalfiles ++;
-				$baseUrl = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1)."/".$ff;
-			echo "<div class='indexscan_suspecious' id='delete-".$baseUrl."'>".$ff."<span class='delete'><a href='javascript:void(0);'><img src='images/delete.png' height='10px' width='10px' alt='_AM_INDEXSCAN_DELETE'></img></a></span><span class='indexscan_notxoopsinstall'>"._AM_INDEXSCAN_NOTINXOOPSINSTALL."</span></div>";
+				$baseUrl = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1) . "/" . $ff;
+			echo "<div class='indexscan_suspecious' id='delete-"
+            . $baseUrl
+            . "'>"
+            . $ff
+            . "<span class='delete'><a href='javascript:void(0);'><img src='images/delete.png' height='10px' width='10px' alt='_AM_INDEXSCAN_DELETE'></img></a></span><span class='indexscan_notxoopsinstall'>"
+            . _AM_INDEXSCAN_NOTINXOOPSINSTALL
+            . "</span></div>";
 		$ci = 1;
 		}
 	} else {
@@ -558,7 +623,7 @@ function indexscan_get_files($ff,$extension)
   
 function indexscan_CreateBackup($src,$dst) {
     global $filecopy, $filedeleted, $filecreated;
-	$dir = opendir($src);
+	  $dir = opendir($src);
     @mkdir($dst);
     while(false !== ( $file = readdir($dir)) ) {
         if (( $file != '.' ) && ( $file != '..' )) {
@@ -570,8 +635,15 @@ function indexscan_CreateBackup($src,$dst) {
 			  copy($src . '/' . $file,$dst . '/' . $file);
 			} 	  
 				$filecopy ++;
-				echo "<tr><td><span class='indexscan_path'>folder2backup/".$file."</span></td><td><span class='indexscan_created_ok'>".
-				_AM_INDEXSCAN_BACKEDUP2." -> ".$dst."/".$file."</span></td></tr>";
+				echo "<tr><td><span class='indexscan_path'>folder2backup/"
+              . $file
+              . "</span></td><td><span class='indexscan_created_ok'>"
+              . _AM_INDEXSCAN_BACKEDUP2
+              . " -> "
+              . $dst
+              . "/"
+              . $file
+              . "</span></td></tr>";
         }	
 	}
     closedir($dir);
@@ -583,13 +655,18 @@ function indexscan_CreateBackup($src,$dst) {
 				if ($ff->isfile()) {
 				$nm = $ff->getfilename();
 					//if ($nm != 'index.php' AND $nm !='index.html')  {
-						if(!preg_match('/^index+/',$nm)) {
+						if(!preg_match('/^index+/', $nm)) {
 						$filedeleted ++;
 						unlink ($ff);
 					}
 				}
-				echo "<tr><td><span class='indexscan_path'>".$ff."</span></td><td><span class='indexscan_created_ok'>".
-	_AM_INDEXSCAN_BACKEDUPDELETEDFROMBACKUP." backup/".$ff."</span></td></tr>";
+				echo "<tr><td><span class='indexscan_path'>"
+              . $ff
+              . "</span></td><td><span class='indexscan_created_ok'>"
+              .	_AM_INDEXSCAN_BACKEDUPDELETEDFROMBACKUP
+              . " backup/"
+              . $ff
+              . "</span></td></tr>";
 			}
 	}	
 	$dir_iterator2 = new RecursiveDirectoryIterator('backup');
@@ -597,37 +674,42 @@ function indexscan_CreateBackup($src,$dst) {
 	foreach($iterator2 as $ffd) {
 		if ($ffd->IsDir()) {
 			if ($ffd != '.' && $ffd != '..'){
-			if (!file_exists($ffd.'/'.'index.html') AND !file_exists($ffd.'/'.'index.php')){
+			if (!file_exists($ffd . '/' . 'index.html') AND !file_exists($ffd . '/' . 'index.php')){
 			$filecreated++;
-				if (!file_exists($ffd.'/'.'index.php')) {
-			file_put_contents($ffd.'/'.'index.html', "<script>history.go(-1);</script>");	
+				if (!file_exists($ffd . '/' . 'index.php')) {
+			file_put_contents($ffd . '/' . 'index.html', "<script>history.go(-1);</script>");	
 				}
-			echo "<tr><td><span class='indexscan_path'>".$ffd."/"."index.html"."</span></td><td><span class='indexscan_created_ok'>".
-	_AM_INDEXSCAN_CREATEDINDEXINBACKUP."</span></td></tr>";
-			} 
-			if (file_exists($ffd.'/index.php')) {
+			echo "<tr><td><span class='indexscan_path'>"
+            . $ffd
+            . "/"
+            . "index.html"
+            . "</span></td><td><span class='indexscan_created_ok'>"
+            .	_AM_INDEXSCAN_CREATEDINDEXINBACKUP
+            . "</span></td></tr>";
+			    }
+			if (file_exists($ffd . '/index.php')) {
 					$filedeleted ++;
-				 	 @unlink ($ffd.'/index.html');
-					   echo "<tr><td><span class='indexscan_path'></span></td><td><span class='indexscan_created_ok'>".
-	_AM_INDEXSCAN_CLEANUPDONE."</span></td></tr>";
-		}
-					if (file_exists($ffd.'/index.html')) {
+				 	 @unlink ($ffd . '/index.html');
+					 echo "<tr><td><span class='indexscan_path'></span></td><td><span class='indexscan_created_ok'>"
+                .	_AM_INDEXSCAN_CLEANUPDONE
+                . "</span></td></tr>";
+		      }
+					if (file_exists($ffd . '/index.html')) {
 					$filedeleted ++;
-					  @unlink ($ffd.'/index.php');
-					   echo "<tr><td><span class='indexscan_path'></span></td><td><span class='indexscan_created_ok'>".
-	_AM_INDEXSCAN_CLEANUPDONE."</span></td></tr>";
-		}
-		}
+					  @unlink ($ffd . '/index.php');
+					  echo "<tr><td><span class='indexscan_path'></span></td><td><span class='indexscan_created_ok'>"
+                  .	_AM_INDEXSCAN_CLEANUPDONE
+                  . "</span></td></tr>";
+		      }
+		   }
 		} else continue;
-	
 	}
-	
 } 		
 
 function indexscan_cleanBackUp () {
 	$module = indexscan_GetModuleOption('indexscan_frombackup');
-	 $src = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1).'/modules/printliminator/admin/folder2backup/'.$module;
-	  $dst = 'backup/'.$module;
+	 $src = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1) . '/modules/printliminator/admin/folder2backup/' . $module;
+	  $dst = 'backup/' . $module;
 
 	$dir_iterator = new RecursiveDirectoryIterator($dst);
 	 $iterator = new RecursiveIteratorIterator($dir_iterator, RecursiveIteratorIterator::SELF_FIRST);
@@ -638,18 +720,18 @@ function indexscan_cleanBackUp () {
 			  if ($nm == 'index.php')  {
 				unlink ($ff);	
 			  }
-			 }
 			}
 		}
+	}
 }
 
 // Create zip file
 function indexscan_createzipfile () {
 	$module = indexscan_GetModuleOption('indexscan_frombackup');
-	  $dst = 'backup/'.$module.'/';
+	  $dst = 'backup/' . $module . '/';
 
-  $archive = new PclZip('backup/indexscan_'.$module.'_archive.zip');
-  $v_dir = dirname(__FILE__)."/backup/".$module."/";
+  $archive = new PclZip('backup/indexscan_' . $module . '_archive.zip');
+  $v_dir = dirname(__FILE__) . "/backup/" . $module . "/";
   $v_remove = $v_dir;
   // To support windows and the C: root you need to add the 
   // following 3 lines, should be ignored on linux
@@ -658,14 +740,14 @@ function indexscan_createzipfile () {
   }
   $v_list = $archive->create($v_dir, PCLZIP_OPT_REMOVE_PATH, $v_remove);
   if ($v_list == 0) {
-    die("Error : ".$archive->errorInfo(true));
+    die("Error: " . $archive->errorInfo(true));
   }	
-header('Content-disposition: attachment; filename=backup/indexscan_'.$module.'_archive.zip');
+header('Content-disposition: attachment; filename=backup/indexscan_' . $module . '_archive.zip');
 header('Content-type: application/zip');
 header("Content-Description: File Transfer"); 
 header("Content-Transfer-Encoding: binary"); 
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-readfile('backup/indexscan_'.$module.'_archive.zip');
+readfile('backup/indexscan_' . $module . '_archive.zip');
 }	
 
 		// Confirm javascript for delete file

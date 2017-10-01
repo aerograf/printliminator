@@ -1,4 +1,7 @@
 <?php
+
+//Menu XOOPS info
+
 include '../../../include/cp_header.php';
 
 if (!defined('XOOPS_ROOT_PATH')) { die('XOOPS root path not defined'); }
@@ -39,14 +42,18 @@ switch($op) {
 	}
 }
 
-echo '<form>';
-echo '<div style="float:left"><input onclick="showContent(\'xoops_i.php\')" type="button" value="' . _MI_XOOPSINFO_MAIN . '"></div>';
-echo '<div style="float:left"><input onclick="showContent(\'php.php\')" type="button" value="' . _MI_XOOPSINFO_SERVER_MAIN . '"></div>';
-echo '<div style="float:left"><input onclick="showContent(\'mysqlinfo.php\')" type="button" value="' . _MI_XOOPSINFO_MYSQL_MAIN . '"></div>';
-echo '<div style="float:left"><input onclick="showContent(\'modules.php\')" type="button" value="' . _MI_XOOPSINFO_MODULES_MAIN . '"></div>';
-echo '<div style="float:left"><input onclick="showContent(\'editors.php\')" type="button" value="' . _MI_XOOPSINFO_EDITORS_MAIN . '"></div>';
-echo '</form><br /><br />';
-echo '<hr style="clear:both;" /><br />';
+echo '<form><div style="float:left"><input onclick="showContent(\'xoops_i.php\')" type="button" value="'
+      . _MI_XOOPSINFO_MAIN
+      . '"></div><div style="float:left"><input onclick="showContent(\'php.php\')" type="button" value="'
+      . _MI_XOOPSINFO_SERVER_MAIN
+      . '"></div><div style="float:left"><input onclick="showContent(\'mysqlinfo.php\')" type="button" value="'
+      . _MI_XOOPSINFO_MYSQL_MAIN
+      . '"></div><div style="float:left"><input onclick="showContent(\'modules.php\')" type="button" value="'
+      . _MI_XOOPSINFO_MODULES_MAIN
+      . '"></div><div style="float:left"><input onclick="showContent(\'editors.php\')" type="button" value="'
+      . _MI_XOOPSINFO_EDITORS_MAIN
+      . '"></div></form><br><br><hr style="clear:both;"><br>';
+
 echo '<div id="contentBody"></div>';
 echo '<div id="loading" style="display: none">Loading...</div>';
 echo "<script>showContent('xoops_i.php')</script>";	

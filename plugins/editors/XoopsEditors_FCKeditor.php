@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'XoopsEditors Framework - FCKeditor';
-$editor['class']= '/class/xoopseditor/FCKeditor/fckeditor.php';
+$editor['name']     = 'XoopsEditors Framework - FCKeditor';
+$editor['class']    = '/class/xoopseditor/FCKeditor/fckeditor.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/?htmlarea';
-?>

@@ -14,24 +14,24 @@
 
 include '../../../include/cp_header.php';
 if (!defined('XOOPS_ROOT_PATH')) { die('XOOPS root path not defined'); }
-define('XOOPSINFO_URL',XOOPS_URL . '/modules/printliminator/');
-define('XOOPSINFO_URL_IMAGE',XOOPS_URL . '/modules/printliminator/assets/images/icons');
-define('XOOPSINFO_ADMIN_URL',XOOPS_URL . '/modules/printliminator/admin');
-define('XOOPSINFO_PATH',XOOPS_ROOT_PATH . '/modules/printliminator/');
+define('XOOPSINFO_URL', XOOPS_URL . '/modules/printliminator/');
+define('XOOPSINFO_URL_IMAGE', XOOPS_URL . '/modules/printliminator/assets/images/icons');
+define('XOOPSINFO_ADMIN_URL', XOOPS_URL . '/modules/printliminator/admin');
+define('XOOPSINFO_PATH', XOOPS_ROOT_PATH . '/modules/printliminator/');
 
 global $xoopsDB, $xoopsConfig, $xoopsModule;
 
-include_once( XOOPS_ROOT_PATH.'/class/xoopsformloader.php' );
-include_once( XOOPS_ROOT_PATH . '/modules/printliminator/include/functions_xi.php');
-@include_once( XOOPS_ROOT_PATH.'/modules/printliminator/xoops_version.php' );
+include_once( XOOPS_ROOT_PATH . '/class/xoopsformloader.php');
+include_once( XOOPS_ROOT_PATH  . '/modules/printliminator/include/functions_xi.php');
+@include_once( XOOPS_ROOT_PATH . '/modules/printliminator/xoops_version.php');
 
-if ( file_exists( XOOPS_ROOT_PATH . '/modules/printliminator/language/' . $xoopsConfig['language'] . '/modinfo.php' ) ) {
+if ( file_exists( XOOPS_ROOT_PATH . '/modules/printliminator/language/' . $xoopsConfig['language'] . '/modinfo.php') ) {
 	include_once(XOOPS_ROOT_PATH . '/modules/printliminator/language/' . $xoopsConfig['language'] . '/modinfo.php');
 } else {
 	include_once(XOOPS_ROOT_PATH . '/modules/printliminator/language/english/modinfo.php');
 }
 
-if ( file_exists( XOOPS_ROOT_PATH . '/language/' . $xoopsConfig['language'] . '/global.php' ) ) {
+if ( file_exists( XOOPS_ROOT_PATH . '/language/' . $xoopsConfig['language'] . '/global.php') ) {
 	@include_once( XOOPS_ROOT_PATH . '/language/' . $xoopsConfig['language'] . '/global.php');
 } else {
 	@include_once( XOOPS_ROOT_PATH . '/language/english/admin/global.php');
@@ -69,23 +69,23 @@ $adminObject->displayNavigation(basename(__FILE__));
 echo '<div style="margin:auto;border:2px solid black;text-align:center;border-radius:8px;">';
 	switch( $action ) {
 		case 1:
-		xoops_confirm(array('optimize' => $_REQUEST['optimize'], 'confirm' => 1), 'mysqlinfo.php', _AM_XI_MYSQL_OPTIMIZE, _AM_XI_CONFIRM);
+		xoops_confirm(['optimize' => $_REQUEST['optimize'], 'confirm' => 1], 'mysqlinfo.php', _AM_XI_MYSQL_OPTIMIZE, _AM_XI_CONFIRM);
 		break;
 
 		case 2:
-		xoops_confirm(array('repair' => $_REQUEST['repair'], 'confirm' => 1), 'mysqlinfo.php', _AM_XI_MYSQL_REPAIR, _AM_XI_CONFIRM);
+		xoops_confirm(['repair' => $_REQUEST['repair'], 'confirm' => 1], 'mysqlinfo.php', _AM_XI_MYSQL_REPAIR, _AM_XI_CONFIRM);
 		break;
 
 		case 3:
-		xoops_confirm(array('check' => $_REQUEST['check'], 'confirm' => 1), 'mysqlinfo.php', _AM_XI_MYSQL_CHECK, _AM_XI_CONFIRM);
+		xoops_confirm(['check' => $_REQUEST['check'], 'confirm' => 1], 'mysqlinfo.php', _AM_XI_MYSQL_CHECK, _AM_XI_CONFIRM);
 		break;
 
 		case 4:
-		xoops_confirm(array('analyze' => $_REQUEST['analyze'], 'confirm' => 1), 'mysqlinfo.php', _AM_XI_MYSQL_ANALYZE, _AM_XI_CONFIRM);
+		xoops_confirm(['analyze' => $_REQUEST['analyze'], 'confirm' => 1], 'mysqlinfo.php', _AM_XI_MYSQL_ANALYZE, _AM_XI_CONFIRM);
 		break;
 		}
 echo '</div>';
-	exit();
+exit();
 }
 
 $check_tables = explode('|', $xoopsModuleConfig['xi_check_table']);
@@ -167,38 +167,38 @@ if (!$confirm) {
 	$queries[] = 'LIKE "InnoDB"';
 	$queries[] = 'LIKE "storage_engine"';
 
-	echo '<table width="100%">';
-	echo '<tr>';
-	echo "<td colspan='2' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>" . _AM_XI_ADMENU3 . "</h2></td>";
-	echo '</tr>';
+	echo '<table width="100%"><tr>';
+	echo "<td colspan='2' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>"
+        . _AM_XI_ADMENU3
+        . '</h2></td></tr>';
 
 	foreach( $queries as $query ) {
 		$sql = 'SHOW VARIABLES ' . $query;
 		$res = $xoopsDB->queryF($sql);
 		while ($row = $xoopsDB->fetchArray($res) ) {
-			echo '<tr>';
-			echo '<td class="even">';
+			echo '<tr><td class="even">';
 			echo $row['Variable_name'];
 			echo '</td>';
 
 			echo '<td class="odd">';
 			echo $row['Value'];
-			echo '</td>';
-			echo '</tr>';
+			echo '</td></tr>';
 		}
 	}
 	echo '</table>';
 }
 
-echo '<table width="100%" style="margin:auto;border:2px solid black;text-align:center;border-radius:8px;">';
-echo '<tr>';
+echo '<table width="100%" style="margin:auto;border:2px solid black;text-align:center;border-radius:8px;"><tr>';
 if (!$confirm) {
-	echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>" . _MI_XI_CHECK_TABLE . "</h2></td>";
+	echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>"
+        . _MI_XI_CHECK_TABLE
+        . "</h2></td>";
 } else {
-	echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>" . _AM_XI_ADMENU3 . "</h2></td>";
-	echo '</tr>';
-	echo '<tr>';
-	echo '<th colspan="4" style="margin:auto;border-bottom:1px solid black;text-align:center;color:blue;">' . _AM_XI_MYSQL_ACTION ;
+	echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>"
+        . _AM_XI_ADMENU3
+        . '</h2></td></tr><tr>';
+	echo '<th colspan="4" style="margin:auto;border-bottom:1px solid black;text-align:center;color:blue;">'
+        . _AM_XI_MYSQL_ACTION;
 	switch( $action ) {
 		case 1:
 		echo _AM_XI_MYSQL_OPTIMIZE . '</td>';
@@ -217,26 +217,35 @@ if (!$confirm) {
 		break;
 	}
 }
-echo '</tr>';
-
-echo '<tr>';
-echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">' . _MI_XI_MYSQL_TABLE . '</th>';
+echo '</tr><tr>';
+echo '<th style="margin:auto;border-bottom:1px solid black;text-align:center;">'
+      . _MI_XI_MYSQL_TABLE
+      . '</th>';
 if (!$confirm) {
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">' . _MI_XI_MYSQL_TYPE . '</th>';
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">' . _MI_XI_MYSQL_COLLATION . '</th>';
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">' . _MI_XI_MYSQL_RECORDS . '</th>';
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">' . _MI_XI_MYSQL_SIZE . ' (' . _AM_XI_MYSQL_KOCTETS . ')</th>';
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">' . _MI_XI_MYSQL_OVERHEAD . ' (' . _AM_XI_MYSQL_KOCTETS . ')</th>';
+	echo '<th style="margin:auto;border-bottom:1px solid black;text-align:center;">'
+        . _MI_XI_MYSQL_TYPE
+        . '</th><th style="margin:auto;border-bottom:1px solid black;text-align:center;">'
+        . _MI_XI_MYSQL_COLLATION
+        . '</th><th style="margin:auto;border-bottom:1px solid black;text-align:center;">'
+        . _MI_XI_MYSQL_RECORDS
+        . '</th><th style="margin:auto;border-bottom:1px solid black;text-align:center;">'
+        . _MI_XI_MYSQL_SIZE
+        . ' ('
+        . _AM_XI_MYSQL_KOCTETS
+        . ')</th><th style="margin:auto;border-bottom:1px solid black;text-align:center;">'
+        . _MI_XI_MYSQL_OVERHEAD
+        . ' ('
+        . _AM_XI_MYSQL_KOCTETS
+        . ')</th>';
 } else {
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">Op</th>';
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">Msg_type</th>';
-	echo '	<th style="margin:auto;border-bottom:1px solid black;text-align:center;">Msg_text</th>';
+	echo '<th style="margin:auto;border-bottom:1px solid black;text-align:center;">Op</th>';
+	echo '<th style="margin:auto;border-bottom:1px solid black;text-align:center;">Msg_type</th>';
+	echo '<th style="margin:auto;border-bottom:1px solid black;text-align:center;">Msg_text</th>';
 }
 echo '</tr>';
 
 foreach( $tables as $key=>$table ) {
-	echo '<tr>';
-	echo '<td class="even" style="margin:auto;border-bottom:1px solid black;text-align:center;">';
+	echo '<tr><td class="even" style="margin:auto;border-bottom:1px solid black;text-align:center;">';
 	echo $table['Name'];
 	echo '</td>';
 
@@ -277,36 +286,48 @@ foreach( $tables as $key=>$table ) {
 }
 
 if (!$confirm) {
-	echo '<tr class="even">';
-	echo '	<td align="center"><b><font color="#CC0000">' . $db_table_c . '</font> / ' . $db_table . _MI_XI_MYSQL_TABLE_TXT . '</b></td>';
-	echo '	<td align="center" colspan="2"><b>' . _MI_XI_MYSQL_SUM . '</b></td>';
-	echo '	<td align="right"><b><font color="#CC0000">' . $db_rows_c . '</font> / ' . $db_rows . '</b></td>';
-	echo '	<td align="right"><b><font color="#CC0000">' . number_format( ($db_length_c/1000) , 2 , ',' , ' ') . '</font> / ' . number_format( ($db_length/1000) , 2 , ',' , ' ') . '</b></td>';
-	echo '	<td align="right"><b><font color="#CC0000">' . number_format( ($db_data_free_c/1000) , 2 , ',' , ' ') . '</font> / ' . number_format( ($db_data_free/1000) , 2 , ',' , ' ') . '</b></td>';
-	echo '</tr>';
+	echo '<tr class="even"><td style="text-align:center;"><b><font color="#CC0000">'
+        . $db_table_c
+        . '</font> / '
+        . $db_table
+        . _MI_XI_MYSQL_TABLE_TXT
+        . '</b></td><td style="text-align:center;" colspan="2"><b>'
+        . _MI_XI_MYSQL_SUM
+        . '</b></td><td style="text-align:right;"><b><font color="#CC0000">'
+        . $db_rows_c
+        . '</font> / '
+        . $db_rows
+        . '</b></td><td style="text-align:right;"><b><font color="#CC0000">'
+        . number_format( ($db_length_c/1000) , 2 , ',' , ' ')
+        . '</font> / '
+        . number_format( ($db_length/1000) , 2 , ',' , ' ')
+        . '</b></td><td style="text-align:right;"><b><font color="#CC0000">'
+        . number_format( ($db_data_free_c/1000) , 2 , ',' , ' ')
+        . '</font> / '
+        . number_format( ($db_data_free/1000) , 2 , ',' , ' ')
+        . '</b></td></tr>';
 }
 echo '</table>';
 
-echo '<center><hr></center>';
-
 if (!$confirm) {
 	echo '<table width="100%">';
-
 	echo "<td colspan='5' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>" . _AM_XI_ADMENU3 . "</h2></td>";
-
-	echo '<tr>';
-	echo '<th align="center">' . _AM_XI_MYSQL_ID . '</th>';
-	echo '<th align="center">' . _AM_XI_MYSQL_DB . '</th>';
-	echo '<th align="center">' . _AM_XI_MYSQL_INFO . '</th>';
-	echo '<th align="center">' . _AM_XI_MYSQL_TIME . '</th>';
-	echo '<th align="center">' . _AM_XI_MYSQL_STATUS. '</th>';
-	echo '</tr>';
+	echo '<tr><th style="text-align:center;">'
+        . _AM_XI_MYSQL_ID
+        . '</th><th style="text-align:center;">'
+        . _AM_XI_MYSQL_DB
+        . '</th><th style="text-align:center;">'
+        . _AM_XI_MYSQL_INFO
+        . '</th><th style="text-align:center;">'
+        . _AM_XI_MYSQL_TIME
+        . '</th><th style="text-align:center;">'
+        . _AM_XI_MYSQL_STATUS
+        . '</th></tr>';
 
 	$sql = 'SHOW FULL PROCESSLIST';
 	$res = $xoopsDB->queryF($sql);
 	while ($row = $xoopsDB->fetchArray($res) ) {
-		echo '<tr>';
-		echo '<td class="even" align="center">';
+		echo '<tr><td class="even" align="center">';
 		echo $row['Id'];
 		echo '</td>';
 
@@ -324,13 +345,9 @@ if (!$confirm) {
 
 		echo '<td class="odd" align="center">';
 		echo $row['State'];
-		echo '</td>';
-
-		echo '</tr>';
+		echo '</td></tr>';
 	}
 	echo '</table>';
-
-	echo '<center><hr></center>';
 
 	$tray_button = new XoopsFormElementTray('', '');
 	$tray_button->addElement( new XoopsFormButton('', 'optimize', _AM_XI_MYSQL_OPTIMIZE, 'submit') );
@@ -338,26 +355,18 @@ if (!$confirm) {
 	$tray_button->addElement( new XoopsFormButton('', 'check', _AM_XI_MYSQL_CHECK, 'submit'));
 	$tray_button->addElement( new XoopsFormButton('', 'analyze', _AM_XI_MYSQL_ANALYZE, 'submit')); 
 
-	echo '<table width="100%">';
-	echo '<tr>';
-	echo '<td class="even" align="center">';
-	echo '<form action="' . XOOPSINFO_ADMIN_URL . '/mysqlinfo.php" method="post" style="margin: auto;">';
+	echo '<table style="width:100%;"><tr><td class="even" style="text-align:center;"><form action="'
+        . XOOPSINFO_ADMIN_URL
+        . '/mysqlinfo.php" method="post" style="margin:auto;">';
 	echo $tray_button->render();
-	echo '</form>';
-	echo '</td>';
-	echo '</tr>';
-	echo '</table>';
+	echo '</form></td></tr></table>';
 } else {
 	$tray_button = new XoopsFormElementTray('', '');
 	$tray_button->addElement( new XoopsFormButton('', 'op', _AM_XI_MYSQL_RETURN, 'submit') );
 
-	echo '<table width="100%" class="outer">';
-	echo '<tr>';
-	echo '<td class="even" align="center">';
-	echo '<form action="' . XOOPSINFO_ADMIN_URL . '" method="post" style="margin: auto;">';
+	echo '<table style="width:100%;" class="outer"><tr><td class="even" style="text-align:center;"><form action="'
+        . XOOPSINFO_ADMIN_URL
+        . '" method="post" style="margin:auto;">';
 	echo $tray_button->render();
-	echo '</form>';
-	echo '</td>';
-	echo '</tr>';
-	echo '</table>';
+	echo '</form></td></tr></table>';
 }

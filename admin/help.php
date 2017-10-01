@@ -1,7 +1,8 @@
 <?php
 /**
  * Printliminator module
- *
+ * Server info
+ * 
  * @copyright	The XOOPS Project https://github.com/XoopsModules25x
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package	Printliminator

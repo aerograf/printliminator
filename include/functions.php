@@ -30,18 +30,18 @@ function system_CleanVars( &$global, $key, $default = '', $type = 'int' ) {
 }
 
 function is_editable($file) {      
-    return (preg_match("/\.txt$|\.sql$|\.php$|\.php3$|\.phtml$|\.htm$|\.html$|\.cgi$|\.pl$|\.js$|\.css$|\.inc$/i",$file));
+    return (preg_match("/\.txt$|\.sql$|\.php$|\.php3$|\.phtml$|\.htm$|\.html$|\.cgi$|\.pl$|\.js$|\.css$|\.inc$/i", $file));
     }
 
 function is_image($file) {
-    return (preg_match("/\.png$|\.bmp$|\.jpg$|\.jpeg$|\.gif$/i",$file));
+    return (preg_match("/\.png$|\.bmp$|\.jpg$|\.jpeg$|\.gif$/i", $file));
     }
     
 function withMultipleSize( $size ) {
     $size_unit ="B"; // byte
-    if ($size >= 1073741824) {$size = round($size / 1073741824 * 100) / 100 . "G".$size_unit;}
-    elseif ($size >= 1048576) {$size = round($size / 1048576 * 100) / 100 . "M".$size_unit;}
-    elseif ($size >= 1024) {$size = round($size / 1024 * 100) / 100 . "k".$size_unit;}
+    if ($size >= 1073741824) {$size = round($size / 1073741824 * 100) / 100 . "G" . $size_unit;}
+    elseif ($size >= 1048576) {$size = round($size / 1048576 * 100) / 100 . "M" . $size_unit;}
+    elseif ($size >= 1024) {$size = round($size / 1024 * 100) / 100 . "k" . $size_unit;}
     else {$size = $size . " bytes";}
     if($size==0) {$size ="-";}
     return $size;
@@ -108,47 +108,47 @@ function date_modif( $file ) {
 
 function getMimetype( $file, $quoi ) {
     global $xoopsConfig, $HTTP_USER_AGENT;
-    if(!preg_match("/MSIE/i",$HTTP_USER_AGENT))
+    if(!preg_match("/MSIE/i", $HTTP_USER_AGENT))
         {$client="netscape.png";}
     else
         {$client="html.png";}
 
-    if(is_dir($file))                {$image = "folder.png"; $file_type = _FM_AM_DIRECTORY."";}
-    else if(preg_match("/\.mid$/i",$file))   {$image = "mid.png"; $file_type = _FM_AM_FILE_MIDI."";}
-    else if(preg_match("/\.txt$/i",$file))   {$image = "txt.png"; $file_type = _FM_AM_FILE_TEXT."";}
-    else if(preg_match("/\.sql$/i",$file))   {$image = "txt.png"; $file_type = _FM_AM_FILE_TEXT."";}
-    else if(preg_match("/\.js$/i",$file))    {$image = "js.png"; $file_type = _FM_AM_FILE_JAVASCRIPT."";}
-    else if(preg_match("/\.gif$/i",$file))   {$image = "gif.png"; $file_type = _FM_AM_FILE_GIFPICTURE."";}
-    else if(preg_match("/\.jpg$/i",$file))   {$image = "jpg.png"; $file_type = _FM_AM_FILE_JPGPICTURE."";}
-    else if(preg_match("/\.html$/i",$file))  {$image = $client; $file_type = _FM_AM_FILE_HTMLPAGE."";}
-    else if(preg_match("/\.htm$/i",$file))   {$image = $client; $file_type = _FM_AM_FILE_HTMLPAGE."";}
-    else if(preg_match("/\.rar$/i",$file))   {$image = "rar.png"; $file_type = RARFile."";}
-    else if(preg_match("/\.gz$/i",$file))    {$image = "zip.png"; $file_type = _FM_AM_FILE_GZ."";}
-    else if(preg_match("/\.tgz$/i",$file))   {$image = "zip.png"; $file_type = _FM_AM_FILE_GZ."";}
-    else if(preg_match("/\.z$/i",$file))     {$image = "zip.png"; $file_type = _FM_AM_FILE_GZ."";}
-    else if(preg_match("/\.ra$/i",$file))    {$image = "ram.png"; $file_type = _REALfile."";}
-    else if(preg_match("/\.ram$/i",$file))   {$image = "ram.png"; $file_type = _REALfile."";}
-    else if(preg_match("/\.rm$/i",$file))    {$image = "ram.png"; $file_type = _REALfile."";}
-    else if(preg_match("/\.pl$/i",$file))    {$image = "pl.png"; $file_type = _FM_AM_FILE_PERLSCRIPT."";}
-    else if(preg_match("/\.zip$/i",$file))   {$image = "zip.png"; $file_type = _FM_AM_FILE_ZIP."";}
-    else if(preg_match("/\.wav$/i",$file))   {$image = "wav.png"; $file_type = _FM_AM_FILE_WAV."";}
-    else if(preg_match("/\.php$/i",$file))   {$image = "php.png"; $file_type = _FM_AM_FILE_PHPSCRIPT."";}
-    else if(preg_match("/\.php3$/i",$file))  {$image = "php.png"; $file_type = _FM_AM_FILE_PHPSCRIPT."";}
-    else if(preg_match("/\.phtml$/i",$file)) {$image = "php.png"; $file_type = _FM_AM_FILE_PHPSCRIPT."";}
-    else if(preg_match("/\.exe$/i",$file))   {$image = "exe.png"; $file_type = _FM_AM_FILE_EXE."";}
-    else if(preg_match("/\.bmp$/i",$file))   {$image = "bmp.png"; $file_type = _FM_AM_FILE_BMPPICTURE."";}
-    else if(preg_match("/\.png$/i",$file))   {$image = "gif.png"; $file_type = _FM_AM_FILE_PNGPICTURE."";}
-    else if(preg_match("/\.css$/i",$file))   {$image = "css.png"; $file_type = _FM_AM_FILE_CSS."";}
-    else if(preg_match("/\.mp3$/i",$file))   {$image = "mp3.png"; $file_type = _MP3File."";}
-    else if(preg_match("/\.xls$/i",$file))   {$image = "xls.png"; $file_type = _FM_AM_FILE_XLS."";}
-    else if(preg_match("/\.doc$/i",$file))   {$image = "doc.png"; $file_type = _FM_AM_FILE_WORD."";}
-    else if(preg_match("/\.pdf$/i",$file))   {$image = "pdf.png"; $file_type = _FM_AM_FILE_PDF."";}
-    else if(preg_match("/\.mov$/i",$file))   {$image = "mov.png"; $file_type = _FM_AM_FILE_MOV."";}
-    else if(preg_match("/\.avi$/i",$file))   {$image = "avi.png"; $file_type = _FM_AM_FILE_AVI."";}
-    else if(preg_match("/\.mpg$/i",$file))   {$image = "mpg.png"; $file_type = _FM_AM_FILE_MPG."";}
-    else if(preg_match("/\.mpeg$/i",$file))  {$image = "mpeg.png"; $file_type = _FM_AM_FILE_MPEG."";}
-    else if(preg_match("/\.swf$/i",$file))   {$image = "flash.png"; $file_type = _FM_AM_FILE_FLASH."";}
-    else                             {$image = "defaut.png"; $file_type = _FM_AM_FILE."";}
+    if(is_dir($file))                {$image = "folder.png"; $file_type = _FM_AM_DIRECTORY . "";}
+    else if(preg_match("/\.mid$/i", $file))   {$image = "mid.png"; $file_type = _FM_AM_FILE_MIDI . "";}
+    else if(preg_match("/\.txt$/i", $file))   {$image = "txt.png"; $file_type = _FM_AM_FILE_TEXT . "";}
+    else if(preg_match("/\.sql$/i", $file))   {$image = "txt.png"; $file_type = _FM_AM_FILE_TEXT . "";}
+    else if(preg_match("/\.js$/i", $file))    {$image = "js.png"; $file_type = _FM_AM_FILE_JAVASCRIPT . "";}
+    else if(preg_match("/\.gif$/i", $file))   {$image = "gif.png"; $file_type = _FM_AM_FILE_GIFPICTURE . "";}
+    else if(preg_match("/\.jpg$/i", $file))   {$image = "jpg.png"; $file_type = _FM_AM_FILE_JPGPICTURE . "";}
+    else if(preg_match("/\.html$/i", $file))  {$image = $client; $file_type = _FM_AM_FILE_HTMLPAGE . "";}
+    else if(preg_match("/\.htm$/i", $file))   {$image = $client; $file_type = _FM_AM_FILE_HTMLPAGE . "";}
+    else if(preg_match("/\.rar$/i", $file))   {$image = "rar.png"; $file_type = RARFile . "";}
+    else if(preg_match("/\.gz$/i", $file))    {$image = "zip.png"; $file_type = _FM_AM_FILE_GZ . "";}
+    else if(preg_match("/\.tgz$/i", $file))   {$image = "zip.png"; $file_type = _FM_AM_FILE_GZ . "";}
+    else if(preg_match("/\.z$/i", $file))     {$image = "zip.png"; $file_type = _FM_AM_FILE_GZ . "";}
+    else if(preg_match("/\.ra$/i", $file))    {$image = "ram.png"; $file_type = _REALfile . "";}
+    else if(preg_match("/\.ram$/i", $file))   {$image = "ram.png"; $file_type = _REALfile . "";}
+    else if(preg_match("/\.rm$/i", $file))    {$image = "ram.png"; $file_type = _REALfile . "";}
+    else if(preg_match("/\.pl$/i", $file))    {$image = "pl.png"; $file_type = _FM_AM_FILE_PERLSCRIPT . "";}
+    else if(preg_match("/\.zip$/i", $file))   {$image = "zip.png"; $file_type = _FM_AM_FILE_ZIP . "";}
+    else if(preg_match("/\.wav$/i", $file))   {$image = "wav.png"; $file_type = _FM_AM_FILE_WAV . "";}
+    else if(preg_match("/\.php$/i", $file))   {$image = "php.png"; $file_type = _FM_AM_FILE_PHPSCRIPT . "";}
+    else if(preg_match("/\.php3$/i", $file))  {$image = "php.png"; $file_type = _FM_AM_FILE_PHPSCRIPT . "";}
+    else if(preg_match("/\.phtml$/i", $file)) {$image = "php.png"; $file_type = _FM_AM_FILE_PHPSCRIPT . "";}
+    else if(preg_match("/\.exe$/i", $file))   {$image = "exe.png"; $file_type = _FM_AM_FILE_EXE . "";}
+    else if(preg_match("/\.bmp$/i", $file))   {$image = "bmp.png"; $file_type = _FM_AM_FILE_BMPPICTURE . "";}
+    else if(preg_match("/\.png$/i", $file))   {$image = "gif.png"; $file_type = _FM_AM_FILE_PNGPICTURE . "";}
+    else if(preg_match("/\.css$/i", $file))   {$image = "css.png"; $file_type = _FM_AM_FILE_CSS . "";}
+    else if(preg_match("/\.mp3$/i", $file))   {$image = "mp3.png"; $file_type = _MP3File . "";}
+    else if(preg_match("/\.xls$/i", $file))   {$image = "xls.png"; $file_type = _FM_AM_FILE_XLS . "";}
+    else if(preg_match("/\.doc$/i", $file))   {$image = "doc.png"; $file_type = _FM_AM_FILE_WORD . "";}
+    else if(preg_match("/\.pdf$/i", $file))   {$image = "pdf.png"; $file_type = _FM_AM_FILE_PDF . "";}
+    else if(preg_match("/\.mov$/i", $file))   {$image = "mov.png"; $file_type = _FM_AM_FILE_MOV . "";}
+    else if(preg_match("/\.avi$/i", $file))   {$image = "avi.png"; $file_type = _FM_AM_FILE_AVI . "";}
+    else if(preg_match("/\.mpg$/i", $file))   {$image = "mpg.png"; $file_type = _FM_AM_FILE_MPG . "";}
+    else if(preg_match("/\.mpeg$/i", $file))  {$image = "mpeg.png"; $file_type = _FM_AM_FILE_MPEG . "";}
+    else if(preg_match("/\.swf$/i", $file))   {$image = "flash.png"; $file_type = _FM_AM_FILE_FLASH . "";}
+    else                             {$image = "defaut.png"; $file_type = _FM_AM_FILE . "";}
 
     if ($quoi == "image")
         {return $image;}
@@ -212,12 +212,12 @@ function delDir($dir) {
 
 function enlever_controlM($file) {
     $fic = file($file);
-    $fp = fopen($file,"w");
-    while (list ($key,$val) = each($fic))
+    $fp = fopen($file, "w");
+    while (list ($key, $val) = each($fic))
         {
-        $val = str_replace(CHR(10),"",$val);
-        $val = str_replace(CHR(13),"",$val);
-        fputs($fp,"$val\n");
+        $val = str_replace(CHR(10), "", $val);
+        $val = str_replace(CHR(13), "", $val);
+        fputs($fp, "$val\n");
         }
     fclose( $fp );
     }
@@ -225,43 +225,43 @@ function enlever_controlM($file) {
 
 function validateFileName( $name, $max_caracteres = 30) {
     $name = stripslashes($name);
-    $name = str_replace("'","",$name);
-    $name = str_replace("\"","",$name);
-    $name = str_replace("\"","",$name);
-    $name = str_replace("&","",$name);
-    $name = str_replace(",","",$name);
-    $name = str_replace(";","",$name);
-    $name = str_replace("/","",$name);
-    $name = str_replace("\\","",$name);
-    $name = str_replace("`","",$name);
-    $name = str_replace("<","",$name);
-    $name = str_replace(">","",$name);
-    $name = str_replace(" ","_",$name);
-    $name = str_replace(":","",$name);
-    $name = str_replace("*","",$name);
-    $name = str_replace("|","",$name);
-    $name = str_replace("?","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("@","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("!","",$name);
-    $name = str_replace("�","",$name);
-    $name = str_replace("+","",$name);
-    $name = str_replace("^","",$name);
-    $name = str_replace("(","",$name);
-    $name = str_replace(")","",$name);
-    $name = str_replace("#","",$name);
-    $name = str_replace("=","",$name);
-    $name = str_replace("$","",$name);
-    $name = str_replace("%","",$name);
+    $name = str_replace("'", "", $name);
+    $name = str_replace("\"", "", $name);
+    $name = str_replace("\"", "", $name);
+    $name = str_replace("&", "", $name);
+    $name = str_replace(",", "", $name);
+    $name = str_replace(";", "", $name);
+    $name = str_replace("/", "", $name);
+    $name = str_replace("\\", "", $name);
+    $name = str_replace("`", "", $name);
+    $name = str_replace("<", "", $name);
+    $name = str_replace(">", "", $name);
+    $name = str_replace(" ", "_", $name);
+    $name = str_replace(":", "", $name);
+    $name = str_replace("*", "", $name);
+    $name = str_replace("|", "", $name);
+    $name = str_replace("?", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("@", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("!", "", $name);
+    $name = str_replace("�", "", $name);
+    $name = str_replace("+", "", $name);
+    $name = str_replace("^", "", $name);
+    $name = str_replace("(", "", $name);
+    $name = str_replace(")", "", $name);
+    $name = str_replace("#", "", $name);
+    $name = str_replace("=", "", $name);
+    $name = str_replace("$", "", $name);
+    $name = str_replace("%", "", $name);
     $name= substr ($name, 0, $max_caracteres);
     return $name;
     }

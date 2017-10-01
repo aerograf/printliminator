@@ -1,4 +1,5 @@
 <?php
+// Header file manager
 defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 defined('NWLINE')or define('NWLINE', "\n");
 

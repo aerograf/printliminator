@@ -29,7 +29,7 @@ function Template_GetModulesList() {
 	$modules_select = new XoopsFormSelect(_AM_XI_MIME_MODULES, 'mid', $mid);
 	$modules_select->setExtra('onchange="document.location=this.options[this.selectedIndex].value"');
 	foreach ($module_list as $key => $value) {
-		$modules_select->addOption('templates.php?fct=templates&mid='.$key . '&status=' . $status . '&theme=' . $theme , $value);
+		$modules_select->addOption('templates.php?fct=templates&mid=' . $key . '&status=' . $status . '&theme=' . $theme , $value);
 	}
 	$modules_select->setValue('templates.php?fct=templates&mid=' . $mid . '&status=' . $status . '&theme=' . $theme);
 
@@ -38,13 +38,13 @@ function Template_GetModulesList() {
 
 function XoopsInfo_getModuleInfo( $dirname= 'xoopsinfo') {
 	$hModule = xoops_getHandler('module');
-	$Module = $hModule->getByDirname( $dirname );
+	$Module  = $hModule->getByDirname( $dirname );
 	return $Module;
 }
 
 function XoopsInfo_moduleoption($option, $repmodule='xoopsinfo') {
 	global $xoopsModuleConfig, $xoopsModule;
-	static $tbloptions= Array();
+	static $tbloptions = [];
 	if(is_array($tbloptions) && array_key_exists($option,$tbloptions)) {
 		return $tbloptions[$option];
 	}
@@ -114,12 +114,11 @@ function XoopsInfo_GetLastVersion() {
 			echo '<div class="bg1" style="margin:20px 100px; padding:5px; border:2px solid #FF0000; text-align:center; font-weight:bold;">';
 			echo _AM_XI_MAKE_UPGRADE . '<a href="' ;
 			if ( array_key_exists( 'download_website', $modversion ) && $modversion['download_website']!= '' ) {
-				echo $modversion['download_website'] . '" target="_blank"><br /><br /><font color="#0000CC">' . $modversion['developer_website_name'];
+				echo $modversion['download_website'] . '" target="_blank"><br><br><font color="#0000CC">' . $modversion['developer_website_name'];
 			} else {
-				echo $modversion['developer_website_url'] . '" target="_blank"><br /><br /><font color="#0000CC">' . $modversion['developer_website_name'];
+				echo $modversion['developer_website_url'] . '" target="_blank"><br><br><font color="#0000CC">' . $modversion['developer_website_name'];
 			}
-			echo '</font></a>';
-			echo '</div>';
+			echo '</font></a></div>';
 		} else {
 			echo '<div class="bg1" style="margin:20px 100px; padding:5px; border:2px solid #FF0000; text-align:center; font-weight:bold;">';
 			echo _AM_XI_NO_UPGRADE;

@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'Compact';
-$editor['class']= '';
+$editor['name']     = 'Compact';
+$editor['class']    = '';
 $editor['dirname']  = '';
 $editor['project']  = '';
-?>

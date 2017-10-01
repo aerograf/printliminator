@@ -21,11 +21,7 @@ if ( file_exists( XOOPS_ROOT_PATH . '/modules/printliminator/language/' . $xoops
 	include_once(XOOPS_ROOT_PATH . '/modules/printliminator/language/english/admin.php');
 }
 
-echo '<table width="100%">';
-echo '<tr>';
-echo "<td class='bold shadowlight alignmiddle' style='text-align:center;'><h2>" . _AM_XI_ADMENU2 . "</h2></td>";
-echo '</tr>';
-echo '<tr>';
-echo '<td><iframe src="phpinfo.php" scrolling="auto" frameborder="1" width="100%" height="1024"></iframe></td>';
-echo '</tr>';
-echo '</table>';
+echo '<table style="width:100%;"><tr><td class="bold shadowlight alignmiddle" style="text-align:center;"><h2>'
+      . _AM_XI_ADMENU2
+      . '</h2></td></tr><tr><td><iframe src="phpinfo.php" scrolling="auto" frameborder="1" width="100%" height="1024">';
+echo '</iframe></td></tr></table>';

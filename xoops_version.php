@@ -17,7 +17,7 @@ xoops_load('xoopseditorhandler');
 $editorHandler = XoopsEditorHandler::getInstance();
 $xoops_url     = parse_url(XOOPS_URL);
 
-$modversion = array(
+$modversion = [
     'name'                => _MI_PRINTLIMINATOR_NAME,
     'version'             => 1.22,
     'description'         => _MI_PRINTLIMINATOR_DESC,
@@ -50,13 +50,13 @@ $modversion = array(
     'onUpdate'            => 'include/update.php',
     'min_php'             => '5.6',
     'min_xoops'           => '2.5.8+',
-    'min_db'              => array('mysql' => '5.5'),
+    'min_db'              => ['mysql' => '5.5'],
 // ------------------- Файл базы данных ------------------- //
-    'sqlfile'             => array('mysql' => 'sql/mysql.sql'),
+    'sqlfile'             => ['mysql' => 'sql/mysql.sql'],
 // ------------------- Таблицы ------------------- //
-    'tables'              => array(
+    'tables'              => [
         'printliminator_startup_page'
-    ),
+    ],
 // ------------------- Admin Menu ------------------- //
     'system_menu'         => 1,
     'hasAdmin'            => 1,
@@ -65,10 +65,10 @@ $modversion = array(
     'use_smarty'          => 1,
     'hasMain'             => 1,
     'hasProfile'          => 0
-);
+];
 
 // ------------------- Help files ------------------- //
-$modversion['helpsection'] = array(
+$modversion['helpsection'] = [
     ['name' => _MI_PRINTLIMINATOR_OVERVIEW, 'link' => 'page=help'],
     ['name' => _MI_PRINTLIMINATOR_PRINTLIMINATOR, 'link' => 'page=printliminator'],
     ['name' => _MI_PRINTLIMINATOR_QRCODE, 'link' => 'page=qrcode'],
@@ -79,7 +79,7 @@ $modversion['helpsection'] = array(
     ['name' => _MI_PRINTLIMINATOR_DISCLAIMER, 'link' => 'page=disclaimer'],
     ['name' => _MI_PRINTLIMINATOR_LICENSE, 'link' => 'page=license'],
     ['name' => _MI_PRINTLIMINATOR_SUPPORT, 'link' => 'page=support'],
-);
+];
 
 // ------------------- System info ------------------- //
     global $xoopsDB;
@@ -93,27 +93,27 @@ $modversion['helpsection'] = array(
     define('_HELP_XOOPS_8',$_SERVER['HTTP_USER_AGENT']);
 
 // ------------------- Templates ------------------- //
-$modversion['templates'] = array(
-    array(
+$modversion['templates'] = [
+    [
         'file'        => 'admin/' . $moduleDirName . '_admin_about.tpl',
         'description' => _MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC
-    ),
-    array(
+    ],
+    [
         'file'        => 'admin/' . $moduleDirName . '_admin_help.tpl',
         'description' => _MI_PRINTLIMINATOR_MANAGER_HELP_DESC
-    ),
-    array(
+    ],
+    [
         'file'        => $moduleDirName . '_qrcode_div_in.tpl',
         'description' => _MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC
-    ),
-    array(
+    ],
+    [
         'file'        => $moduleDirName . '_share42_div_in.tpl',
         'description' => _MI_PRINTLIMINATOR_SHARE42_DIV_DESC
-    ),
-);
+    ],
+];
 
 // ------------------- Blocks ------------------- //    
-$modversion['blocks'][] = array(
+$modversion['blocks'][] = [
     'file'        => 'blocks_mytype.php',
     'name'        => _MI_PRINTLIMINATOR_BLOCK_PRINT,
     'description' => _MI_PRINTLIMINATOR_BLOCK_PRINT_DESC,
@@ -121,8 +121,8 @@ $modversion['blocks'][] = array(
     'edit_func'   => 'b_' . $moduleDirName . '_print_edit',
     'options'     => '',
     'template'    => $moduleDirName . '_block.tpl'
-);
-$modversion['blocks'][] = array(
+];
+$modversion['blocks'][] = [
     'file'        => 'blocks_qrcode.php',
     'name'        => _MI_PRINTLIMINATOR_BLOCK_QRCODE,
     'description' => _MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC,
@@ -130,8 +130,8 @@ $modversion['blocks'][] = array(
     'edit_func'   => 'b_' . $moduleDirName . '_qrcode_edit',
     'options'     => '2',
     'template'    => $moduleDirName . '_qrcode.tpl'
-);
-$modversion['blocks'][] = array(
+];
+$modversion['blocks'][] = [
     'file'        => 'blocks_qrcode.php',
     'name'        => _MI_PRINTLIMINATOR_BLOCK_QRCODE_DIV,
     'description' => _MI_PRINTLIMINATOR_BLOCK_QRCODE_DESC_DIV,
@@ -139,111 +139,113 @@ $modversion['blocks'][] = array(
     'edit_func'   => 'b_' . $moduleDirName . '_qrcode_div_edit',
     'options'     => '1||0%|0px',
     'template'    => $moduleDirName . '_qrcode_div.tpl'
-);
+];
 
 // ------------------- Preferences ------------------- //
 // ------------------- FileManager ------------------- //
-$i                                       = 1;
-$modversion['config'][$i]['name']        = 'logfile';
-$modversion['config'][$i]['title']       = '_MI_PRINTLIMINATOR_CAT1';
-$modversion['config'][$i]['description'] = '_MI_PRINTLIMINATOR_FILE_MANAGER_DESC';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'odd';
-
-$i++;
+$modversion['config'][]          = [
+                  'name'         => 'logfile',
+                  'title'        => _MI_PRINTLIMINATOR_CAT1,
+                  'description'  => _MI_PRINTLIMINATOR_FILE_MANAGER_DESC,
+                  'formtype'     => 'line_break',
+                  'valuetype'    => 'textbox',
+                  'default'      => 'odd'
+];
 include_once XOOPS_ROOT_PATH . "/class/xoopslists.php";
-$modversion["config"][$i]["name"]        = "editor";
-$modversion["config"][$i]["title"]       = "_MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR";
-$modversion["config"][$i]["description"] = "_MI_PRINTLIMINATOR_FILE_MANAGER_FORM_EDITORDSC";
-$modversion["config"][$i]["formtype"]    = "select";
-$modversion["config"][$i]["valuetype"]   = "text";
-$modversion["config"][$i]["default"]     = "textarea";
-$modversion["config"][$i]["options"]     = XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . "/class/xoopseditor");
-$modversion["config"][$i]["category"]    = "global";
+$modversion['config'][]          = [
+                  'name'         => 'editor',
+                  'title'        => _MI_PRINTLIMINATOR_FILE_MANAGER_EDITOR,
+                  'description'  => _MI_PRINTLIMINATOR_FILE_MANAGER_FORM_EDITORDSC,
+                  'formtype'     => "select",
+                  'valuetype'    => "text",
+                  'default'      => "textarea",
+                  'options'      => XoopsLists::getDirListAsArray(XOOPS_ROOT_PATH . "/class/xoopseditor"),
+                  'category'     => "global"
+];
 // ------------------- end FileManager ------------------- //
 // ------------------- IndexScan ------------------- //
-$i++;
-$modversion['config'][$i]['name']        = 'logfile';
-$modversion['config'][$i]['title']       = '_MI_PRINTLIMINATOR_CAT2';
-$modversion['config'][$i]['description'] = '_MI_PRINTLIMINATOR_INDEXSCAN_DESC';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'odd';
-
-$i++;
-$modversion['config'][$i]['name']        = 'indexscan_frombackup';
-$modversion['config'][$i]['title']       = '_MI_INDEXSCAN_FROMBACKUP';
-$modversion['config'][$i]['description'] = '_MI_INDEXSCAN_FROMBACKUP_DESC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = 'testing';
-
-$i++;
-$modversion['config'][$i]['name']        = 'indexscan_rootorsub';
-$modversion['config'][$i]['title']       = '_MI_INDEXSCAN_ROOTORSUB';
-$modversion['config'][$i]['description'] = '_MI_INDEXSCAN_ROOTORSUB_DESC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = '../../../';
-
-$i++;
-$modversion['config'][$i]['name']        = 'indexscan_illegalfiles';
-$modversion['config'][$i]['title']       = '_MI_INDEXSCAN_ILLEGALFILETYPES';
-$modversion['config'][$i]['description'] = '_MI_INDEXSCAN_ILLEGALFILETYPES_DESC';
-$modversion['config'][$i]['formtype']    = 'textarea';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = 'php|html|htm|jpg|png|gif|js|ico|txt|css|htaccess|eot|sql|swf|tpl|ttf';
-
-$i++;
-$modversion['config'][$i]['name']        = 'exep_01';
-$modversion['config'][$i]['title']       = '_MI_INDEXSCAN_EXEP1';
-$modversion['config'][$i]['description'] = '_MI_INDEXSCAN_EXEP1_DESC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = '';
-
-$i++;
-$modversion['config'][$i]['name']        = 'exep_02';
-$modversion['config'][$i]['title']       = '_MI_INDEXSCAN_EXEP2';
-$modversion['config'][$i]['description'] = '_MI_INDEXSCAN_EXEP2_DESC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = '';
-
-$i++;
-$modversion['config'][$i]['name']        = 'exep_03';
-$modversion['config'][$i]['title']       = '_MI_INDEXSCAN_EXEP3';
-$modversion['config'][$i]['description'] = '_MI_INDEXSCAN_EXEP3_DESC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = '';
-
-$i++;
-$modversion['config'][$i]['name']        = 'exep_04';
-$modversion['config'][$i]['title']       = '_MI_INDEXSCAN_EXEP4';
-$modversion['config'][$i]['description'] = '_MI_INDEXSCAN_EXEP4_DESC';
-$modversion['config'][$i]['formtype']    = 'textbox';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = '';
+$modversion['config'][]          = [
+                  'name'         => 'logfile',
+                  'title'        => _MI_PRINTLIMINATOR_CAT2,
+                  'description'  => _MI_PRINTLIMINATOR_INDEXSCAN_DESC,
+                  'formtype'     => 'line_break',
+                  'valuetype'    => 'textbox',
+                  'default'      => 'odd'
+];
+$modversion['config'][]          = [
+                  'name'         => 'indexscan_frombackup',
+                  'title'        => _MI_INDEXSCAN_FROMBACKUP,
+                  'description'  => _MI_INDEXSCAN_FROMBACKUP_DESC,
+                  'formtype'     => 'textbox',
+                  'valuetype'    => 'text',
+                  'default'      => 'testing'
+];
+$modversion['config'][]          = [
+                  'name'         => 'indexscan_rootorsub',
+                  'title'        => _MI_INDEXSCAN_ROOTORSUB,
+                  'description'  => _MI_INDEXSCAN_ROOTORSUB_DESC,
+                  'formtype'     => 'textbox',
+                  'valuetype'    => 'text',
+                  'default'      => '../../../'
+];
+$modversion['config'][]          = [
+                  'name'         => 'indexscan_illegalfiles',
+                  'title'        => _MI_INDEXSCAN_ILLEGALFILETYPES,
+                  'description'  => _MI_INDEXSCAN_ILLEGALFILETYPES_DESC,
+                  'formtype'     => 'textarea',
+                  'valuetype'    => 'text',
+                  'default'      => 'php|html|htm|jpg|png|gif|js|ico|txt|css|htaccess|eot|sql|swf|tpl|ttf'
+];
+$modversion['config'][]          = [
+                  'name'         => 'exep_01',
+                  'title'        => _MI_INDEXSCAN_EXEP1,
+                  'description'  => _MI_INDEXSCAN_EXEP1_DESC,
+                  'formtype'     => 'textbox',
+                  'valuetype'    => 'text',
+                  'default'      => ''
+];
+$modversion['config'][]          = [
+                  'name'         => 'exep_02',
+                  'title'        => _MI_INDEXSCAN_EXEP2,
+                  'description'  => _MI_INDEXSCAN_EXEP2_DESC,
+                  'formtype'     => 'textbox',
+                  'valuetype'    => 'text',
+                  'default'      => ''
+];
+$modversion['config'][]          = [
+                  'name'         => 'exep_03',
+                  'title'        => _MI_INDEXSCAN_EXEP3,
+                  'description'  => _MI_INDEXSCAN_EXEP3_DESC,
+                  'formtype'     => 'textbox',
+                  'valuetype'    => 'text',
+                  'default'      => ''
+];
+$modversion['config'][]          = [
+                  'name'         => 'exep_04',
+                  'title'        => _MI_INDEXSCAN_EXEP4,
+                  'description'  => _MI_INDEXSCAN_EXEP4_DESC,
+                  'formtype'     => 'textbox',
+                  'valuetype'    => 'text',
+                  'default'      => ''
+];
 // ------------------- end IndexScan ------------------- //  
 // ------------------- XoopsInfo ------------------- //
-$i++;
-$modversion['config'][$i]['name']        = 'logfile';
-$modversion['config'][$i]['title']       = '_MI_PRINTLIMINATOR_CAT3';
-$modversion['config'][$i]['description'] = '_MI_XOOPSINFO_MAIN';
-$modversion['config'][$i]['formtype']    = 'line_break';
-$modversion['config'][$i]['valuetype']   = 'textbox';
-$modversion['config'][$i]['default']     = 'odd';
-
-$i++;
-$modversion['config'][$i]['name']        = 'xi_check_table';
-$modversion['config'][$i]['title']       = '_MI_XI_CHECK_TABLE';
-$modversion['config'][$i]['description'] = '_MI_XI_CHECK_TABLE_DSC';
-$modversion['config'][$i]['formtype']    = 'textarea';
-$modversion['config'][$i]['valuetype']   = 'text';
-$modversion['config'][$i]['default']     = 'session|online|priv_msgs|protector_access|protector_log';
-
+$modversion['config'][]          = [
+                  'name'         => 'logfile',
+                  'title'        => _MI_PRINTLIMINATOR_CAT3,
+                  'description'  => _MI_XOOPSINFO_MAIN,
+                  'formtype'     => 'line_break',
+                  'valuetype'    => 'textbox',
+                  'default'      => 'odd'
+];
+$modversion['config'][]          = [
+                  'name'         => 'xi_check_table',
+                  'title'        => _MI_XI_CHECK_TABLE,
+                  'description'  => _MI_XI_CHECK_TABLE_DSC,
+                  'formtype'     => 'textarea',
+                  'valuetype'    => 'text',
+                  'default'      => 'session|online|priv_msgs|protector_access|protector_log'
+];
 // ------------------- end XoopsInfo ------------------- //
 // ------------------- Notification ------------------- //
 $modversion['hasNotification'] = 0;

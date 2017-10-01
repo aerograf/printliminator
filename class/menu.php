@@ -12,7 +12,7 @@
 
 class printliminatorMenu
 {
-    public $_items = array();
+    public $_items = [];
 
     public function addItem($id, $name="", $link="", $icon=null) {
         if (isset($this->_items[$id])) {
@@ -57,4 +57,3 @@ class printliminatorMenu
         }
     }
 }
-?>

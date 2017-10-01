@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'XoopsEditors Framework - Koivi Editor';
-$editor['class']= '/class/xoopseditor/koivi/formwysiwygtextarea.php';
+$editor['name']     = 'XoopsEditors Framework - Koivi Editor';
+$editor['class']    = '/class/xoopseditor/koivi/formwysiwygtextarea.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/?htmlarea';
-?>

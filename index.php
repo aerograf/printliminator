@@ -50,7 +50,9 @@ $gperm_handler = xoops_getHandler('groupperm');
 				$mod = $module_handler->get($curpage->getVar('module_id'));
 				if ($mod && $gperm_handler->checkRight('module_read', $mod->mid(), $xoopsUser->getGroups())) {
 					// Found the first matching group in the list. Take this one...
-					$page_url = XOOPS_URL . '/modules/'.$mod->getVar('dirname');
+					$page_url = XOOPS_URL
+                      . '/modules/'
+                      .$mod->getVar('dirname');
 					break 2;
 				}
 			}
@@ -66,7 +68,9 @@ $gperm_handler = xoops_getHandler('groupperm');
 		foreach ($pageList as $curpage) {
 			$mod = $module_handler->get($curpage->getVar('module_id'));
 			if ($mod && $gperm_handler->checkRight('module_read', $mod->mid(), XOOPS_GROUP_ANONYMOUS)) {
-				$page_url = XOOPS_URL . '/modules/'.$mod->getVar('dirname');
+				$page_url = XOOPS_URL
+                    . '/modules/'
+                    .$mod->getVar('dirname');
 				break;
 			}
 		}
@@ -79,7 +83,9 @@ $gperm_handler = xoops_getHandler('groupperm');
 		foreach ($moduleList as $mod) {
 			if ($mod->name() != $modversion['name']) {
 				if ($gperm_handler->checkRight('module_read', $mod->mid(), XOOPS_GROUP_ANONYMOUS)) {
-					$page_url = XOOPS_URL . '/modules/'.$mod->dirname();
+					$page_url = XOOPS_URL
+                      . '/modules/'
+                      .$mod->dirname();
 				}
 			}
 		}

@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'HtmlArea Editor';
-$editor['class']= '/class/xoopseditor/htmlarea/formhtmlarea.php';
+$editor['name']     = 'HtmlArea Editor';
+$editor['class']    = '/class/xoopseditor/htmlarea/formhtmlarea.php';
 $editor['dirname']  = '';
 $editor['project']  = '';
-?>

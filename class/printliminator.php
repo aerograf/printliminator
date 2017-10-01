@@ -46,7 +46,7 @@ class PrintliminatorPrintliminator extends XoopsObject
     /**
  * constructor
  **/
-    function __construct()
+    public function __construct()
     {
         $this->XoopsObject();
         $this->initVar('group_id', XOBJ_DTYPE_INT, null, false);
@@ -54,7 +54,7 @@ class PrintliminatorPrintliminator extends XoopsObject
         $this->initVar('start_order', XOBJ_DTYPE_INT, null, false);
     }
     
-	public function PrintliminatorPrintliminator()
+	  public function PrintliminatorPrintliminator()
     {
 		$this->__construct();
 	}
@@ -75,7 +75,7 @@ class PrintliminatorPrintliminator extends XoopsObject
  */
 class PrintliminatorPrintliminatorHandler extends XoopsPersistableObjectHandler
 {
-    function __construct($db) {
+    public function __construct($db) {
         $this->XoopsPersistableObjectHandler($db, 'printliminator_startup_page', 'PrintliminatorPrintliminator', 'group_id', false);
     }
 
@@ -86,7 +86,7 @@ class PrintliminatorPrintliminatorHandler extends XoopsPersistableObjectHandler
      * @return bool
      */
 
-    function deleteAll(CriteriaElement $criteria = NULL, $force = true, $asObject = false)
+    public function deleteAll(CriteriaElement $criteria = NULL, $force = true, $asObject = false)
     {
         if (isset($criteria) && is_subclass_of($criteria, 'criteriaelement')) {
             $sql = 'DELETE FROM '.$this->table;
@@ -100,5 +100,3 @@ class PrintliminatorPrintliminatorHandler extends XoopsPersistableObjectHandler
         return false;
     }
 }
-
-?>

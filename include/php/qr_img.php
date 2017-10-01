@@ -85,7 +85,7 @@ if ($qrcode_module_size>0) {
 $qrcode_data_string=rawurldecode($qrcode_data_string);
 $data_length=strlen($qrcode_data_string);
 if ($data_length<=0) {
-    trigger_error("QRcode : Data do not exist.",E_USER_ERROR);
+    trigger_error("QRcode : Data do not exist.", E_USER_ERROR);
     exit;
 }
 $data_counter=0;
@@ -124,15 +124,15 @@ $data_bits[$data_counter]=4;
 
 /*  --- determine encode mode */
 
-if (preg_match("/[^0-9]/",$qrcode_data_string)!=0){
-    if (preg_match("/[^0-9A-Z \$\*\%\+\.\/\:\-]/",$qrcode_data_string)!=0) {
+if (preg_match("/[^0-9]/", $qrcode_data_string)!=0){
+    if (preg_match("/[^0-9A-Z \$\*\%\+\.\/\:\-]/", $qrcode_data_string)!=0) {
 
 
      /*  --- 8bit byte mode */
 
-        $codeword_num_plus=array(0,0,0,0,0,0,0,0,0,0,
+        $codeword_num_plus = [0,0,0,0,0,0,0,0,0,0,
 8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
-8,8,8,8,8,8,8,8,8,8,8,8,8,8);
+8,8,8,8,8,8,8,8,8,8,8,8,8,8];
 
         $data_value[$data_counter]=4;
         $data_counter++;
@@ -152,9 +152,9 @@ if (preg_match("/[^0-9]/",$qrcode_data_string)!=0){
 
     /* ---- alphanumeric mode */
 
-        $codeword_num_plus=array(0,0,0,0,0,0,0,0,0,0,
+        $codeword_num_plus = [0,0,0,0,0,0,0,0,0,0,
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-4,4,4,4,4,4,4,4,4,4,4,4,4,4);
+4,4,4,4,4,4,4,4,4,4,4,4,4,4];
 
         $data_value[$data_counter]=2;
         $data_counter++;
@@ -163,12 +163,12 @@ if (preg_match("/[^0-9]/",$qrcode_data_string)!=0){
         $codeword_num_counter_value=$data_counter;
 
 
-        $alphanumeric_character_hash=array("0"=>0,"1"=>1,"2"=>2,"3"=>3,"4"=>4,
+        $alphanumeric_character_hash = ["0"=>0,"1"=>1,"2"=>2,"3"=>3,"4"=>4,
 "5"=>5,"6"=>6,"7"=>7,"8"=>8,"9"=>9,"A"=>10,"B"=>11,"C"=>12,"D"=>13,"E"=>14,
 "F"=>15,"G"=>16,"H"=>17,"I"=>18,"J"=>19,"K"=>20,"L"=>21,"M"=>22,"N"=>23,
 "O"=>24,"P"=>25,"Q"=>26,"R"=>27,"S"=>28,"T"=>29,"U"=>30,"V"=>31,
 "W"=>32,"X"=>33,"Y"=>34,"Z"=>35," "=>36,"$"=>37,"%"=>38,"*"=>39,
-"+"=>40,"-"=>41,"."=>42,"/"=>43,":"=>44);
+"+"=>40,"-"=>41,"."=>42,"/"=>43,":"=>44];
 
         $i=0;
         $data_counter++;
@@ -188,9 +188,9 @@ if (preg_match("/[^0-9]/",$qrcode_data_string)!=0){
 
     /* ---- numeric mode */
 
-    $codeword_num_plus=array(0,0,0,0,0,0,0,0,0,0,
+    $codeword_num_plus=[0,0,0,0,0,0,0,0,0,0,
 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,
-4,4,4,4,4,4,4,4,4,4,4,4,4,4);
+4,4,4,4,4,4,4,4,4,4,4,4,4,4];
 
     $data_value[$data_counter]=1;
     $data_counter++;
@@ -227,20 +227,20 @@ while($i<$data_counter){
 }
 
 
-$ecc_character_hash=array("L"=>"1",
-"l"=>"1",
-"M"=>"0",
-"m"=>"0",
-"Q"=>"3",
-"q"=>"3",
-"H"=>"2",
-"h"=>"2");
+$ecc_character_hash = ["L"=>"1",
+                      "l"=>"1",
+                      "M"=>"0",
+                      "m"=>"0",
+                      "Q"=>"3",
+                      "q"=>"3",
+                      "H"=>"2",
+                      "h"=>"2"];
 
  $ec=@$ecc_character_hash[$qrcode_error_correct]; 
 
  if (!$ec){$ec=0;}
 
-$max_data_bits_array=array(
+$max_data_bits_array=[
 0,128,224,352,512,688,864,992,1232,1456,1728,
 2032,2320,2672,2920,3320,3624,4056,4504,5016,5352,
 5712,6256,6880,7312,8000,8496,9024,9544,10136,10984,
@@ -260,7 +260,7 @@ $max_data_bits_array=array(
 1440,1648,1952,2088,2360,2600,2936,3176,3560,3880,
 4096,4544,4912,5312,5744,6032,6464,6968,7288,7880,
 8264,8920,9368,9848,10288,10832,11408,12016,12656,13328
-);
+];
 if (!is_numeric($qrcode_version)){
     $qrcode_version=0;
 }
@@ -281,22 +281,22 @@ if (!$qrcode_version){
      $max_data_bits=$max_data_bits_array[$qrcode_version+40*$ec];
 }
 if ($qrcode_version>$version_ul){
-  trigger_error("QRcode : too large version.",E_USER_ERROR);
+  trigger_error("QRcode : too large version.", E_USER_ERROR);
 }
 
 $total_data_bits+=$codeword_num_plus[$qrcode_version];
     $data_bits[$codeword_num_counter_value]+=$codeword_num_plus[$qrcode_version];
 
-$max_codewords_array=array(0,26,44,70,100,134,172,196,242,
+$max_codewords_array = [0,26,44,70,100,134,172,196,242,
 292,346,404,466,532,581,655,733,815,901,991,1085,1156,
 1258,1364,1474,1588,1706,1828,1921,2051,2185,2323,2465,
-2611,2761,2876,3034,3196,3362,3532,3706);
+2611,2761,2876,3034,3196,3362,3532,3706];
 
 $max_codewords=$max_codewords_array[$qrcode_version];
 $max_modules_1side=17+($qrcode_version <<2);
 
-$matrix_remain_bit=array(0,0,7,7,7,7,7,0,0,0,0,0,0,0,3,3,3,3,3,3,3,
-4,4,4,4,4,4,4,3,3,3,3,3,3,3,0,0,0,0,0,0);
+$matrix_remain_bit=[0,0,7,7,7,7,7,0,0,0,0,0,0,0,3,3,3,3,3,3,3,
+4,4,4,4,4,4,4,3,3,3,3,3,3,3,0,0,0,0,0,0];
 
 /* ---- read version ECC data file */
 
@@ -321,8 +321,8 @@ $rs_block_order=unpack("C*",$rso);
 $format_information_x2=unpack("C*",$fi_x);
 $format_information_y2=unpack("C*",$fi_y);
 
-$format_information_x1=array(0,1,2,3,4,5,7,8,8,8,8,8,8,8,8);
-$format_information_y1=array(8,8,8,8,8,8,8,8,7,5,4,3,2,1,0);
+$format_information_x1=[0,1,2,3,4,5,7,8,8,8,8,8,8,8,8];
+$format_information_y1=[8,8,8,8,8,8,8,8,7,5,4,3,2,1,0];
 
 $max_data_codewords=($max_data_bits >>3);
 
@@ -346,7 +346,7 @@ if ($total_data_bits<=$max_data_bits-4){
         $data_bits[$data_counter]=$max_data_bits-$total_data_bits;
     } else {
         if ($total_data_bits>$max_data_bits){
-	    trigger_error("QRcode : Overflow error",E_USER_ERROR);
+	    trigger_error("QRcode : Overflow error", E_USER_ERROR);
 	    exit;
         }
     }
@@ -521,7 +521,7 @@ $i=0;
 $all_matrix=$max_modules_1side * $max_modules_1side; 
 while ($i<8){
     $demerit_n1=0;
-    $ptn_temp=array();
+    $ptn_temp=[];
     $bit= 1<< $i;
     $bit_r=(~$bit)&255;
     $bit_mask=str_repeat(chr($bit),$all_matrix);
@@ -553,14 +553,14 @@ while ($i<8){
    foreach($ptn_temp[0] as $str_temp){
        $demerit_n2+=(strlen($str_temp)-1);
    }
-   $ptn_temp=array();
+   $ptn_temp=[];
    preg_match_all($n2_search2,$ver_or,$ptn_temp);
    foreach($ptn_temp[0] as $str_temp){
        $demerit_n2+=(strlen($str_temp)-1);
    }
    $demerit_n2*=3;
   
-   $ptn_temp=array();
+   $ptn_temp=[];
 
    preg_match_all($n1_search,$hor,$ptn_temp);
    foreach($ptn_temp[0] as $str_temp){
@@ -582,7 +582,7 @@ $mask_content=1 << $mask_number;
 # --- format information
 
 $format_information_value=(($ec << 3) | $mask_number);
-$format_information_array=array("101010000010010","101000100100101",
+$format_information_array=["101010000010010","101000100100101",
 "101111001111100","101101101001011","100010111111001","100000011001110",
 "100111110010111","100101010100000","111011111000100","111001011110011",
 "111110110101010","111100010011101","110011000101111","110001100011000",
@@ -590,7 +590,7 @@ $format_information_array=array("101010000010010","101000100100101",
 "001110011100111","001100111010000","000011101100010","000001001010101",
 "000110100001100","000100000111011","011010101011111","011000001101000",
 "011111100110001","011101000000110","010010010110100","010000110000011",
-"010111011011010","010101111101101");
+"010111011011010","010101111101101"];
 $i=0;
 while ($i<15){
     $content=substr($format_information_array[$format_information_value],$i,1);
@@ -635,11 +635,10 @@ while ($i<$mxe){
 #--- output image
 #
 */
-Header("Content-type: image/".$qrcode_image_type);
-ImageCopyResized($output_image,$base_image,0,0,0,0,$qrcode_image_size,$qrcode_image_size,$mib,$mib);
+Header("Content-type: image/" . $qrcode_image_type);
+ImageCopyResized($output_image, $base_image, 0, 0, 0, 0, $qrcode_image_size, $qrcode_image_size, $mib, $mib);
 if ($qrcode_image_type == "jpeg"){
     ImageJpeg($output_image);
 } else {
     ImagePng($output_image);
 }
-?>

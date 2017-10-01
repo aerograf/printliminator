@@ -29,7 +29,6 @@ switch ($op) {
         exit();
         break;
 
-
     case 'edit' :
         $save = isset($save);
         $edited_code = (isset($edited_code) ? stripslashes($edited_code) : '');
@@ -42,13 +41,21 @@ switch ($op) {
         $adminObject  = \Xmf\Module\Admin::getInstance();
         $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-        echo "<br /><hr /><br />\n";
-        echo "<div>\n";
-        echo "<p><img src='images/actions/edit.png'> " . _FM_AM_FILENAME . " : ";
-        echo "<b>" . $fic . "</b></p>\n";
-        echo _FM_AM_PERMISSION . " : <b>" . getPermissions($filename, TRUE, TRUE) . (!is_writable($filename) ? " " . _FM_AM_READ_ONLY : "") . "</b>";
-        echo "</div>\n";
-        echo "<br />";
+        echo "<br><hr><br>";
+        echo "<div>";
+        echo "<p><img src='images/actions/edit.png'> "
+              . _FM_AM_FILENAME
+              . " : ";
+        echo "<b>"
+              . $fic
+              . "</b></p>";
+        echo _FM_AM_PERMISSION
+              . " : <b>"
+              . getPermissions($filename, TRUE, TRUE)
+              . (!is_writable($filename) ? " "
+              . _FM_AM_READ_ONLY : "")
+              . "</b>";
+        echo "</div><br>";
         echo "<form op='" . $current_file . "' method='post'>\n";
         echo "<input type='hidden' name='id' value='" .$id. "'>\n";
         echo "<input type='hidden' name='fic' value='" . $fic . "'>\n";
@@ -87,31 +94,32 @@ switch ($op) {
         $editor = new XoopsFormEditor('edited_code', 'edited_code', $options, true, 'textarea');
         echo $editor->render();
 
-        echo "<br \><br \>\n";
-        echo "<input type='image' src='images/actions/save.png' alt='" . _FM_AM_SAVE . "' border='0'>\n";
+        echo "<br><br>";
+        echo "<input type='image' src='images/actions/save.png' alt='" . _FM_AM_SAVE . "' border='0'>";
         echo "<a href='" . $current_file . "?id=" . $id . "&rep=" . $rep . "&order_by=" . $order_by . "&sens=" . $sens . "'>";
         echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' border='0'>";
-        echo "</a>\n";
-        echo "</form><br /><hr /><br />\n";
+        echo "</a></form><br><hr><br>";
         include_once __DIR__ . '/footer.php';
-        xoops_cp_footer();
         break;
-
 
     case "copy" :
         xoops_cp_header();
         $adminObject  = \Xmf\Module\Admin::getInstance();
         $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-        echo "<br /><hr /><br />\n";
-        echo "<div>\n";
-        echo "<p><img src='images/actions/copy.png'> " . _FM_AM_SELECTED_FILE . " : ";
-        echo "<b>$fic</b></p>\n";
-        echo "<p><img src='images/actions/paste.png'> " . _FM_AM_PASTE_IN . " : ";
-        echo "" . (($dest == "") ? "/" : $dest) . "</p>\n";
-        echo "</div>\n";
-        echo "<br />" . _FM_AM_SELECT_ANOTHER . " :<br />\n";
-        echo "<table>";
+        echo "<br><hr><br>";
+        echo "<div>";
+        echo "<p><img src='images/actions/copy.png'> "
+              . _FM_AM_SELECTED_FILE
+              . " : ";
+        echo "<b>$fic</b></p>";
+        echo "<p><img src='images/actions/paste.png'> "
+              . _FM_AM_PASTE_IN
+              . " : ";
+        echo "" . (($dest == "") ? "/" : $dest) . "</p>";
+        echo "</div><br>"
+              . _FM_AM_SELECT_ANOTHER
+              . " :<br><table>";
         $handle = opendir(XOOPS_ROOT_PATH . DS . $dest);
         while ($file = readdir($handle))
             {
@@ -121,7 +129,9 @@ switch ($op) {
                 if($up==$dest || $up==".") {$up="";}
                 if ($up != $dest)
                     {
-                    echo "<td><img src=\"images/actions/parent.png\"></td><td><a href=\"$current_file?id=$id&op=copy&order_by=$order_by&sens=$sens&dest=$up&fic=$fic&rep=$rep\">" . _FM_AM_PARENTDIR . "</td>";
+                    echo "<td><img src=\"images/actions/parent.png\"></td><td><a href=\"$current_file?id=$id&op=copy&order_by=$order_by&sens=$sens&dest=$up&fic=$fic&rep=$rep\">"
+                          . _FM_AM_PARENTDIR
+                          . "</td>";
                     }
                 }
             else if($file!=".." && $file!="." && is_dir(XOOPS_ROOT_PATH . DS . $dest . DS . $file))
@@ -138,30 +148,25 @@ switch ($op) {
                     {
                     echo "$dest/";
                     }
-                echo "$val&rep=$rep&order_by=$order_by&sens=$sens&fic=$fic\">$val</a></tr>\n";
+                echo "$val&rep=$rep&order_by=$order_by&sens=$sens&fic=$fic\">$val</a></tr>";
                 }
             }
-        echo "</table>";
-
-        echo "<br />";
-
-        echo "<form op='" . $current_file . "' method='post'>\n";
-        echo "<input type='hidden' name='op' value='copy_ok'>\n";
-        echo "<input type='hidden' name='fic' value='". $fic . "'>\n";
-        echo "<input type='hidden' name='dest' value='". $dest . "'>\n";
-        echo "<input type='hidden' name='rep' value='". $rep . "'>\n";
-        echo "<input type='hidden' name='id' value='". $id . "'>\n";
-        echo "<input type='hidden' name='order_by' value='". $order_by . "'>\n";
-        echo "<input type='hidden' name='sens' value='". $sens . "'>\n";
-        echo "<input type='image' src='images/actions/copy.png' alt='" . _FM_AM_COPY . "' style='border: none;'>\n";
+        echo "</table><br>";
+        echo "<form op='" . $current_file . "' method='post'>";
+        echo "<input type='hidden' name='op' value='copy_ok'>";
+        echo "<input type='hidden' name='fic' value='". $fic . "'>";
+        echo "<input type='hidden' name='dest' value='". $dest . "'>";
+        echo "<input type='hidden' name='rep' value='". $rep . "'>";
+        echo "<input type='hidden' name='id' value='". $id . "'>";
+        echo "<input type='hidden' name='order_by' value='". $order_by . "'>";
+        echo "<input type='hidden' name='sens' value='". $sens . "'>";
+        echo "<input type='image' src='images/actions/copy.png' alt='" . _FM_AM_COPY . "' style='border: none;'>";
         echo "<a href='" . $current_file . "?id=" . $id . "&rep=" . $rep . "&order_by=" . $order_by . "&sens=" . $sens . "'>";
         echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' style='border: none;'>";
-        echo "</a>\n";
-        echo "</form><br /><hr /><br />\n";
+        echo "</a>";
+        echo "</form><br><hr><br>";
         include_once __DIR__ . '/footer.php';
-        xoops_cp_footer();
         break;
-
 
     case "copy_ok" :
         $destination = XOOPS_ROOT_PATH . DS;
@@ -178,21 +183,19 @@ switch ($op) {
         exit;
         break;
 
-
     case "view" :
         $FileName = basename($file);
-        echo "<html>\n";
-        echo "<head><title>" . _FM_AM_FILE . " : " . $FileName . "</title></head>\n";
+        echo "<html>";
+        echo "<head><title>" . _FM_AM_FILE . " : " . $FileName . "</title></head>";
         echo "<center>" . _FM_AM_FILE . " : ";
-        echo "<img src=\"images/mimetypes/" . getMimetype(XOOPS_ROOT_PATH . DS . $file, "image") . "\" align=\"ABSMIDDLE\">\n";
-        echo "<b>" . $FileName . "</b><br><br><hr>\n";
-        echo "<a href='javascript:window.print()'><img src='images/actions/print.png' alt='" . _FM_AM_PRINT . "' border='0'></a>\n";
-        echo "<a href='javascript:window.close()'><img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' border='0'></a>\n";
-        echo "<br>\n";
-        echo "<hr><br>";
+        echo "<img src=\"images/mimetypes/" . getMimetype(XOOPS_ROOT_PATH . DS . $file, "image") . "\" align=\"ABSMIDDLE\">";
+        echo "<b>" . $FileName . "</b><br><br><hr>";
+        echo "<a href='javascript:window.print()'><img src='images/actions/print.png' alt='" . _FM_AM_PRINT . "' border='0'></a>";
+        echo "<a href='javascript:window.close()'><img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' border='0'></a>";
+        echo "<br><hr><br>";
         if (!is_image($file))
             {
-            echo "</center>\n";
+            echo "</center>";
             $fp  =@fopen(XOOPS_ROOT_PATH . DS . $file, "r");
             if ($fp)
                 {
@@ -211,36 +214,33 @@ switch ($op) {
                 {
                 echo "" . _FM_AM_UNABLE_TO_OPEN . " : " . XOOPS_ROOT_PATH . DS . $file;
                 }
-            echo "<center>\n";
+            echo "<center>";
             }
         else
             {
-            echo "<img src='" . XOOPS_URL . DS . $file . "'>\n";
+            echo "<img src='" . XOOPS_URL . DS . $file . "'>";
             }
-        echo "<hr>\n";
-        echo "<a href='javascript:window.print()'><img src='images/actions/print.png' alt='" . _FM_AM_PRINT . "' border='0'></a>\n";
-        echo "<a href='javascript:window.close()'><img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' border='0'></a>\n";
-        echo "<hr></center>\n";
-        echo "</body>\n";
-        echo "</html>\n";
+        echo "<hr>";
+        echo "<a href='javascript:window.print()'><img src='images/actions/print.png' alt='" . _FM_AM_PRINT . "' border='0'></a>";
+        echo "<a href='javascript:window.close()'><img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' border='0'></a>";
+        echo "<hr></center>";
+        echo "</body></html>";
         exit;
         break;
-
 
     case "move" :
         xoops_cp_header();
         $adminObject  = \Xmf\Module\Admin::getInstance();
         $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-        echo "<br /><hr /><br />\n";
-        echo "<div>\n";
+        echo "<br><hr><br>";
+        echo "<div>";
         echo "<p><img src='images/actions/move.png'> " . _FM_AM_SELECTED_FILE . " : ";
-        echo "<b>$fic</b></p>\n";
+        echo "<b>$fic</b></p>";
         echo "<p><img src='images/actions/paste.png'> " . _FM_AM_PASTE_IN . " : ";
-        echo "" . (($dest == "") ? "/" : $dest) . "</p>\n";
-        echo "</div>\n";
-        echo "<br />" . _FM_AM_SELECT_ANOTHER . " :<br />\n";
-        echo "<table>";
+        echo "" . (($dest == "") ? "/" : $dest) . "</p>";
+        echo "</div>";
+        echo "<br>" . _FM_AM_SELECT_ANOTHER . " :<br><table>";
         $handle = opendir(XOOPS_ROOT_PATH . DS . $dest);
         while ($file = readdir($handle))
             {
@@ -250,7 +250,9 @@ switch ($op) {
                 if($up==$dest || $up==".") {$up="";}
                 if ($up != $dest)
                     {
-                    echo "<td><img src='images/actions/parent.png'></td><td><a href=\"$current_file?id=$id&order_by=$order_by&sens=$sens&op=move&dest=$up&fic=$fic&rep=$rep\">" . _FM_AM_PARENTDIR . "";
+                    echo "<td><img src='images/actions/parent.png'></td><td><a href=\"$current_file?id=$id&order_by=$order_by&sens=$sens&op=move&dest=$up&fic=$fic&rep=$rep\">"
+                          . _FM_AM_PARENTDIR
+                          . "";
                     }
                 }
             else if($file!=".." && $file!="." && is_dir(XOOPS_ROOT_PATH . DS . $dest . DS . $file)) {$list_dir[]=$file;}
@@ -266,30 +268,24 @@ switch ($op) {
                     {
                     echo "$dest/";
                     }
-                echo "$val&rep=$rep&order_by=$order_by&sens=$sens&fic=$fic\">$val</a></tr>\n";
+                echo "$val&rep=$rep&order_by=$order_by&sens=$sens&fic=$fic\">$val</a></tr>";
                 }
             }
-        echo "</table>";
-
-        echo "<br />";
-
-        echo "<form op='" . $current_file . "' method='post'>\n";
-        echo "<input type='hidden' name='op' value='move_ok'>\n";
-        echo "<input type='hidden' name='fic' value='". $fic . "'>\n";
-        echo "<input type='hidden' name='dest' value='". $dest . "'>\n";
-        echo "<input type='hidden' name='rep' value='". $rep . "'>\n";
-        echo "<input type='hidden' name='id' value='". $id . "'>\n";
-        echo "<input type='hidden' name='order_by' value='". $order_by . "'>\n";
-        echo "<input type='hidden' name='sens' value='". $sens . "'>\n";
-        echo "<input type='image' src='images/actions/move.png' alt='" . _FM_AM_MOVE . "' style='border: none;'>\n";
+        echo "</table><br>";
+        echo "<form op='" . $current_file . "' method='post'>";
+        echo "<input type='hidden' name='op' value='move_ok'>";
+        echo "<input type='hidden' name='fic' value='". $fic . "'>";
+        echo "<input type='hidden' name='dest' value='". $dest . "'>";
+        echo "<input type='hidden' name='rep' value='". $rep . "'>";
+        echo "<input type='hidden' name='id' value='". $id . "'>";
+        echo "<input type='hidden' name='order_by' value='". $order_by . "'>";
+        echo "<input type='hidden' name='sens' value='". $sens . "'>";
+        echo "<input type='image' src='images/actions/move.png' alt='" . _FM_AM_MOVE . "' style='border: none;'>";
         echo "<a href='" . $current_file . "?id=" . $id . "&rep=" . $rep . "&order_by=" . $order_by . "&sens=" . $sens . "'>";
-        echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' style='border: none;'>";
-        echo "</a>\n";
-        echo "</form><br /><hr /><br />\n";
+        echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' style='border: none;'></a>";
+        echo "</form><br /><hr /><br />";
         include_once __DIR__ . '/footer.php';
-        xoops_cp_footer();
         break;
-
 
     case "move_ok" :
         $destination = XOOPS_ROOT_PATH . DS;
@@ -313,28 +309,27 @@ switch ($op) {
         exit;
         break;
 
-
     case "delete" :
         xoops_cp_header();
         $adminObject  = \Xmf\Module\Admin::getInstance();
         $adminObject->displayNavigation(basename(__FILE__));
         tool_bar(FALSE);
-        echo "<br /><hr /><br />\n";
-        echo "<div>\n";
+        echo "<br><hr><br><div>";
         if(is_dir(XOOPS_ROOT_PATH . DS . $fic))
             {$mime = _FM_AM_DIRECTORY;}
         else
             {$mime= _FM_AM_FILE;}
         echo _FM_AM_PATH_REALLY_DELETE . " " . $mime . " <b>" . $fic . "</b> ?";
-        echo "<br /><br />";
-        echo "<a href=\"$current_file?op=delete_ok&rep=$rep&fic=$fic&id=$id&order_by=$order_by&sens=$sens\">"._FM_AM_YES."</a>&nbsp;&nbsp;&nbsp;\n";
-        echo "<a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\">"._FM_AM_NO."</a>\n";
-        echo "<br />";
-        echo "</div><br /><hr /><br />\n";
+        echo "<br><br>";
+        echo "<a href=\"$current_file?op=delete_ok&rep=$rep&fic=$fic&id=$id&order_by=$order_by&sens=$sens\"><button>"
+              . _FM_AM_YES
+              . "</button></a>&nbsp;&nbsp;&nbsp;";
+        echo "<a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\"><button>"
+              . _FM_AM_NO
+              . "</button></a><br>";
+        echo "</div><br><hr><br>";
         include_once __DIR__ . '/footer.php';        
-        xoops_cp_footer();
         break;
-
 
     case "delete_ok" :
         $messtmp = "";
@@ -344,17 +339,17 @@ switch ($op) {
             if (is_dir($a_effacer))
                 {
                 delDir($a_effacer);
-                $messtmp .= "'._FM_AM_THE_DIRECTORY.' <b>$fic</b> '._FM_AM_DELETED.'";
+                $messtmp .= _FM_AM_THE_DIRECTORY . " <b>" . $fic . "</b> " . _FM_AM_DELETED;
                 }
             else
                 {
                 unlink( $a_effacer );
-                $messtmp .= "'._FM_AM_THE_FILE.' <b>$fic</b> '._FM_AM_DELETED.'";
+                $messtmp .= _FM_AM_THE_FILE . " <b>" . $fic . "</b> " . _FM_AM_DELETED;
                 }
             }
         else
             {
-            $messtmp .= ""._FM_AM_REMOVED."";
+            $messtmp .= _FM_AM_REMOVED;
             }
         $messtmp .= "<br><br><a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\">" . _FM_AM_GOBACK . "</a>";
         $messtmp .= "";
@@ -362,38 +357,31 @@ switch ($op) {
         exit;
         break;
 
-
     case "rename" :
         xoops_cp_header();
         $adminObject  = \Xmf\Module\Admin::getInstance();
         $adminObject->displayNavigation(basename(__FILE__));
         $nom_fic = basename($fic);
         tool_bar(FALSE);
-        echo "<br /><hr /><br />\n";
-        echo "<div>\n";
-        echo "<form op='" . $current_file . "' method='post'>\n";
-        echo "<input type='hidden' name='op' value='move_ok'>\n";
-        echo "<input type='hidden' name='fic' value='". $fic . "'>\n";
-        echo "<input type='hidden' name='dest' value='". $dest . "'>\n";
-        echo "<input type='hidden' name='rep' value='". $rep . "'>\n";
-        echo "<input type='hidden' name='id' value='". $id . "'>\n";
-        echo "<input type='hidden' name='order_by' value='". $order_by . "'>\n";
-        echo "<input type='hidden' name='sens' value='". $sens . "'>\n";
+        echo "<br><hr><br><div>";
+        echo "<form op='" . $current_file . "' method='post'>";
+        echo "<input type='hidden' name='op' value='move_ok'>";
+        echo "<input type='hidden' name='fic' value='". $fic . "'>";
+        echo "<input type='hidden' name='dest' value='". $dest . "'>";
+        echo "<input type='hidden' name='rep' value='". $rep . "'>";
+        echo "<input type='hidden' name='id' value='". $id . "'>";
+        echo "<input type='hidden' name='order_by' value='". $order_by . "'>";
+        echo "<input type='hidden' name='sens' value='". $sens . "'>";
         echo _FM_AM_RENAME . " <b>" . $nom_fic . "</b> " . _FM_AM_TO . " ";
-        echo "<input type='text' name='fic_new' value='" . $nom_fic . "'>\n";
-
-        echo "<br />";
-
-        echo "<input type='image' src='images/actions/rename.png' alt='" . _FM_AM_RENAME . "' style='border: none;'>\n";
+        echo "<input type='text' name='fic_new' value='" . $nom_fic . "'>";
+        echo "<br>";
+        echo "<input type='image' src='images/actions/rename.png' alt='" . _FM_AM_RENAME . "' style='border: none;'>";
         echo "<a href='" . $current_file . "?id=" . $id . "&rep=" . $rep . "&order_by=" . $order_by . "&sens=" . $sens . "'>";
         echo "<img src='images/actions/close.png' alt='" . _FM_AM_CLOSE . "' style='border: none;'>";
-        echo "</a>\n";
-        echo "</form>\n";
-        echo "</div><br /><hr /><br />\n";
+        echo "</a></form>";
+        echo "</div><br><hr><br>";
         include_once __DIR__ . '/footer.php';
-        xoops_cp_footer();
         break;
-
 
     case "rename_ok" :
         $err = '';
@@ -408,7 +396,8 @@ switch ($op) {
             }
         else if (file_exists($new))
             {
-            $messtmp.= "<b>" . $fic_new . "</b> " . _FM_AM_ALREADY_EXISTS; $err=1;
+            $messtmp.= "<b>" . $fic_new . "</b> " . _FM_AM_ALREADY_EXISTS;
+            $err=1;
             }
         else
             {
@@ -425,11 +414,10 @@ switch ($op) {
             header("Location:$current_file?rep=$rep&order_by=$order_by&sens=$sens&id=$id");
             exit;
             }
-        echo "<center>\n";
+        echo "<center>";
         echo $messtmp;
-        echo "</center>\n";
+        echo "</center>";
         break;
-
 
     case "mkdir" :
         $err = "";
@@ -449,25 +437,24 @@ switch ($op) {
                 {$messtmp .= "$rep";}
             $messtmp .= "</b>";
             }
-        $messtmp .= "<br><br><a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\">"._FM_AM_GOBACK."</a>";
+        $messtmp .= "<br><br><a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\">" . _FM_AM_GOBACK . "</a>";
         $messtmp .= "";
         if ( $err == "" )
             {
             header("Location:$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens");
             exit;
             }
-        echo "<center>\n";
-        echo "$messtmp";
-        echo "</center>\n";
+        echo "<center>";
+        echo $messtmp;
+        echo "</center>";
         break;
-
 
     case "file_create" :
         $err = "";
         $messtmp = "";
         $nomfic = validateFileName($nomfic);
         if ($nomfic == "")
-            {$messtmp.=""._FM_AM_MUST_VALID_NAME.""; $err=1;}
+            {$messtmp.="" . _FM_AM_MUST_VALID_NAME . ""; $err=1;}
         else if (file_exists(XOOPS_ROOT_PATH . DS . $rep . DS . $nomfic))
         	{$messtmp.= _FM_AM_FILE_EXISTS; $err=1;}
         else
@@ -478,7 +465,7 @@ switch ($op) {
                 fputs( $fp, "<html>\n<head>\n<title>Document sans titre</title>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n</head>\n<body bgcolor=\"#FFFFFF\" text=\"#000000\">\n\n</body>\n</html>\n" );
                 }
             fclose($fp);
-            $messtmp .= "" . _FM_AM_THE_FILE . " <b>$nomfic</b> " . _FM_AM_CREATED_IN . " <b>";
+            $messtmp .= "" . _FM_AM_THE_FILE . " <b>" . $nomfic . "</b> " . _FM_AM_CREATED_IN . " <b>";
             if ($rep == "")
                 {$messtmp .= "/";}
             else
@@ -492,11 +479,10 @@ switch ($op) {
             header( "Location:$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens" );
             exit;
             }
-        echo "<center>\n";
-        echo "$messtmp";
-        echo "</center>\n";
+        echo "<center>";
+        echo $messtmp;
+        echo "</center>";
         break;
-
 
     case "upload" :
         $messtmp = "";
@@ -517,16 +503,15 @@ switch ($op) {
                 	{
                 	enlever_controlM("$destination/$userfile_name");
                 	}
-                $message=""._FM_AM_THE_FILE." <b>$userfile_name</b> " . _FM_AM_SUCCESS . " <b>$rep</b>";
+                $message="" . _FM_AM_THE_FILE . " <b>" . $userfile_name . "</b> " . _FM_AM_SUCCESS . " <b>$rep</b>";
                 }
             }
-        $messtmp .= "$message<br>";
-        $messtmp .= "<br><br><a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\">"._FM_AM_ERROR_UP."</a>";
+        $messtmp .= $message . "<br>";
+        $messtmp .= "<br><br><a href=\"$current_file?rep=$rep&id=$id&order_by=$order_by&sens=$sens\">" . _FM_AM_ERROR_UP . "</a>";
         $messtmp .= "";
         header("Location:$current_file?rep=$rep&order_by=$order_by&sens=$sens&id=$id");
         exit;
         break;
-
 
     case "disconnect" :
         if (file_exists("logs" . DS . $id . ".php"))
@@ -551,7 +536,6 @@ switch ($op) {
         header("Location:$current_file");
         break;
 
-
     default :
         xoops_cp_header();
         $adminObject  = \Xmf\Module\Admin::getInstance();
@@ -568,69 +552,111 @@ switch ($op) {
             {$nom_rep = XOOPS_ROOT_PATH . DS . $rep;}
         if ( !file_exists( XOOPS_ROOT_PATH ) )
             {
-            echo _FM_AM_PATH_NOT_CORRECT . "<br /><br /><a href='" . $current_file . "'>" . _FM_AM_GOBACK . "</a>\n";
+            echo _FM_AM_PATH_NOT_CORRECT . "<br><br><a href='"
+                                            . $current_file
+                                            . "'>"
+                                            . _FM_AM_GOBACK
+                                            . "</a>";
             exit;
             }
         if ( !is_dir( $nom_rep ) )
             {
-            echo "" . _FM_AM_REMOVED . "<br /><br /><a href='javascript:window.history.back()'>" . _FM_AM_GOBACK . "</a>\n";
+            echo ""
+                  . _FM_AM_REMOVED
+                  . "<br><br><a href='javascript:window.history.back()'>"
+                  . _FM_AM_GOBACK
+                  . "</a>";
             exit;
             }
 
         if( $sens == 1 ){$sens=0;}else{$sens=1;}
         tool_bar(FALSE);
         if( $sens == 1 ){$sens=0;}else{$sens=1;}
-        echo "<script language='javascript'>\n";
+        echo "<script language='javascript'>";
         echo "function popup(link) {\n";
         echo "var fen=window.open('$current_file?id=$id&op=view&file='+link,'filemanager','status=yes,scrollbars=yes,resizable=yes,width=500,height=400');\n";
         echo "}\n";
-        echo "</script>\n";
+        echo "</script>";
 
-
-
-        echo "<table style='width:100%; border:none;vertical-align:middle;border:1px dotted black;'>\n";
-        echo "<tr><td>\n";
-        echo "<tr style='font-size:medium;text-align:center;background-color:#cccccc;'>\n";
+        echo "<table style='width:100%; border:none;vertical-align:middle;border:1px dotted black;'>";
+        echo "<tr><td><tr style='font-size:medium;text-align:center;background-color:#cccccc;'>";
         if( $rep != "" )
             {$link = "&rep=" . $rep;}
         else
             {$link = "";}
-        echo "<td><b><a href='" . $current_file . "?id=" .$id . "&order_by=nom&sens=" . $sens . $link . "'>" . _FM_AM_FILENAME . "</a>";
+        echo "<td><b><a href='"
+              . $current_file
+              . "?id="
+              . $id
+              . "&order_by=nom&sens="
+              . $sens
+              . $link
+              . "'>"
+              . _FM_AM_FILENAME
+              . "</a>";
         if ( $order_by == "nom" || $order_by == "" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td>\n";
-        echo"<td><b><a href='" . $current_file . "?id=" . $id . "&order_by=permission&sens=" . $sens . $link . "'>" . _FM_AM_PERMISSION . "</a>";
+        echo "</b></td><td><b><a href='"
+              . $current_file
+              . "?id="
+              . $id
+              . "&order_by=permission&sens="
+              . $sens
+              . $link
+              . "'>"
+              . _FM_AM_PERMISSION
+              . "</a>";
         if ( $order_by == "permission" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td>\n";
-        echo"<td><b><a href=\"$current_file?id=$id&order_by=size&sens=$sens" . $link . "\">" . _FM_AM_FILESIZE . "</a>";
+        echo "</b></td><td><b><a href=\"$current_file?id=$id&order_by=size&sens=$sens"
+              . $link
+              . "\">"
+              . _FM_AM_FILESIZE
+              . "</a>";
         if ( $order_by == "size" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td>\n";
-        echo "<td><b><a href=\"$current_file?id=$id&order_by=type&sens=$sens" . $link . "\">" . _FM_AM_FILETYPE . "</a>";
+        echo "</b></td><td><b><a href=\"$current_file?id=$id&order_by=type&sens=$sens"
+              . $link
+              . "\">"
+              . _FM_AM_FILETYPE
+              . "</a>";
         if ( $order_by == "type" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td>\n";
-        echo "<td><b><a href=\"$current_file?id=$id&order_by=mod&sens=$sens" . $link . "\">" . _FM_AM_MODIFIED . "</a>\n";
+        echo "</b></td><td><b><a href=\"$current_file?id=$id&order_by=mod&sens=$sens"
+              . $link
+              . "\">"
+              . _FM_AM_MODIFIED
+              . "</a>";
         if ( $order_by == "mod" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td>\n";
-        echo "<td align='center'><b>" . _FM_AM_ACTIONS . "</b></td>\n";
-        echo "</tr>\n";
+        echo "</b></td><td align='center'><b>"
+              . _FM_AM_ACTIONS
+              . "</b></td></tr>";
         if($sens==1){$sens  =0;}else{$sens=1;}
         if ( $rep != "" ) {
             $nom = dirname($rep);
-            echo "<tr><td style='text-align:left;'>";
-            echo "<a href='" . $current_file . "?id=" .$id . "&sens=" . $sens . "&order_by=" . $order_by;
+            echo "<tr><td style='text-align:left;'><a href='"
+                  . $current_file
+                  . "?id="
+                  . $id
+                  . "&sens="
+                  . $sens
+                  . "&order_by="
+                  . $order_by;
             if ( $rep != $nom && $nom != "." ) {echo "&rep=" . $nom;}
-            echo "' title='" . _FM_AM_PARENTDIR . "'>";
-            echo "<img src='images/actions/folder.png' alt='" . _FM_AM_PARENTDIR . "' style='border:none'>" . " .." . "</a></td>";
-            echo "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>\n";
+            echo "' title='"
+                  . _FM_AM_PARENTDIR
+                  . "'><img src='images/actions/folder.png' alt='"
+                  . _FM_AM_PARENTDIR
+                  . "' style='border:none'>"
+                  . " .."
+                  . "</a></td>";
+            echo "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>";
             }
         list($list,$TotalSize) = listing($nom_rep, $order_by, $sens);
         if ( is_array( $list ) )
@@ -650,35 +676,37 @@ switch ($op) {
                     $link = 'javascript:popup("' . $link . '")';
                     $display_FM_AM_COPY = TRUE;
                     }
-                echo "<tr>\n";
-
+                echo "<tr>";
                 echo "<td style='text-align:left;vertical-align:middle;border-bottom: 1px dotted black;padding:2px 0 2px 0;'>\n";
                 if ( is_editable($file) || is_image($file) || is_dir($nom_rep . DS . $file) )
                     echo "<a href='$link'>";
                 echo "<img src='images/mimetypes/" . getMimetype($nom_rep . DS . $file, "image" ) . "' style='border:none;'> ";
-                echo "$file";
+                echo $file;
                 if ( is_editable($file) || is_image($file) || is_dir($nom_rep . DS . $file) )
-                    echo "</a>\n";
-                echo "</td>\n";
-                echo "<td style='width:11%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>" . getPermissions($nom_rep . DS . $file, true, true ) . "</td>\n";
-                echo "<td style='width:11%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>" . withMultipleSize(filesize($nom_rep . DS . $file)) . "</td>\n";
-                echo "<td style='width:15%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>" . getMimetype($nom_rep . DS . $file, "type" ) . "</td>\n";
-                echo "<td style='width:17%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>" . date_modif($nom_rep . DS . $file) . "</td>\n";
-                echo "<td style='width:21%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>";
+                echo "</a>";
+                echo "</td><td style='width:11%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                      . getPermissions($nom_rep . DS . $file, true, true )
+                      . "</td><td style='width:11%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                      . withMultipleSize(filesize($nom_rep . DS . $file))
+                      . "</td><td style='width:15%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                      . getMimetype($nom_rep . DS . $file, "type" )
+                      . "</td><td style='width:17%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                      . date_modif($nom_rep . DS . $file)
+                      . "</td><td style='width:21%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>";
 
                 if ( $display_FM_AM_COPY == TRUE ) {
                     echo "<a href='" . $current_file . "?id=" . $id . "&op=copy&sens=" . $sens . "&order_by=" . $order_by . "&rep=";
                     echo (($rep != "") ? $rep . "&fic=" . $rep . DS : "&fic=");
-                    echo $file . "' title='" . _FM_AM_COPY . "'><img src='images/actions/copy.png' alt='" . _FM_AM_COPY . "' style='border:none;'></a>\n";
+                    echo $file . "' title='" . _FM_AM_COPY . "'><img src='images/actions/copy.png' alt='" . _FM_AM_COPY . "' style='border:none;'></a>";
                     }
                 else {
-                    echo "<img src='images/pixel.png' style='width:22px; height:22px; border:none;'>\n";
+                    echo "<img src='images/pixel.png' style='width:22px; height:22px; border:none;'>";
                     }
 
                 if ( $display_FM_AM_COPY == TRUE ) {
                     echo "<a href='" . $current_file . "?id=" . $id . "&op=move&order_by=" . $order_by . "&sens=" . $sens . "&rep=";
                     echo (($rep != "") ? $rep . "&fic=" . $rep . DS : "&fic=");
-                    echo $file . "' title='" . _FM_AM_MOVE . "'><img src='images/actions/move.png' alt='" . _FM_AM_MOVE . "' style='border:none;'></a>\n";
+                    echo $file . "' title='" . _FM_AM_MOVE . "'><img src='images/actions/move.png' alt='" . _FM_AM_MOVE . "' style='border:none;'></a>";
                     }
                 else {
                     echo "<img src='images/pixel.png' style='width:22px; height:22px; border:none;'>\n";
@@ -686,100 +714,82 @@ switch ($op) {
 
                 echo "<a href='" . $current_file . "?id=" . $id . "&order_by=" . $order_by . "&sens=" . $sens . "&op=rename&rep=";
                 echo (($rep != "") ? $rep . "&fic=" . $rep . DS : "&fic=");
-                echo $file . "' title='" . _FM_AM_RENAME . "'><img src='images/actions/rename.png' alt='" . _FM_AM_RENAME . "' style='border:none;'></a>\n";
+                echo $file . "' title='" . _FM_AM_RENAME . "'><img src='images/actions/rename.png' alt='" . _FM_AM_RENAME . "' style='border:none;'></a>";
 
                 echo "<a href='" . $current_file . "?id=" . $id . "&op=delete&order_by=" . $order_by . "&sens=" . $sens. "&rep=";
                 echo (($rep != "") ? $rep . "&fic=" . $rep . DS : "&fic=");
-                echo $file . "' title='" . _FM_AM_DELETE . "'><img src='images/actions/delete.png' alt='" . _FM_AM_DELETE . "' style='border:none;'></a>\n";
+                echo $file . "' title='" . _FM_AM_DELETE . "'><img src='images/actions/delete.png' alt='" . _FM_AM_DELETE . "' style='border:none;'></a>";
 
                 if (is_editable($file) && !is_dir(XOOPS_ROOT_PATH . DS . $file)) {
                     echo "<a href='" . $current_file . "?id=" . $id . "&order_by=" . $order_by . "&sens=" . $sens . "&op=edit&rep=";
                     echo (($rep != "") ? $rep . "&fic=" . $rep . DS : "&fic=");
-                    echo $file . "' title='" . _FM_AM_EDIT . "'><img src='images/actions/edit.png' alt='" . _FM_AM_EDIT . "' style='border:none;'></a>\n";
+                    echo $file . "' title='" . _FM_AM_EDIT . "'><img src='images/actions/edit.png' alt='" . _FM_AM_EDIT . "' style='border:none;'></a>";
                     }
                 else {
-                    echo "<img src='images/pixel.png' style='width:22px; height:22px; border:none;'>\n";
+                    echo "<img src='images/pixel.png' style='width:22px; height:22px; border:none;'>";
                     }
 
                 if ( $display_FM_AM_COPY == TRUE ) {
                     echo "<a href='" . $current_file . "?id=" . $id . "&op=download&file=";
                     echo (($rep != "") ? $rep . DS : "");
                     echo $file . "' title='" . _FM_AM_DOWNLOAD . "'>";
-                    echo "<img src='images/actions/download.png' alt='" . _FM_AM_DOWNLOAD . "' style='width:20px; height:20px; border:none;'></a>\n";
+                    echo "<img src='images/actions/download.png' alt='" . _FM_AM_DOWNLOAD . "' style='width:20px; height:20px; border:none;'></a>";
                     }
-                echo "</td>\n";
-                echo "</tr>\n";
+                echo "</td></tr>";
                 }
             }
 
-        echo "<tr>\n";
-        echo "<td>&nbsp;</td>\n";
-        echo "<td width='11%'>&nbsp;</td>\n";
-        echo "<td width='11%'>" . $TotalSize . "</td>\n";
-        echo "<td width='15%'>&nbsp;</td>\n";
-        echo "<td width='17%'>&nbsp;</td>\n";
-        echo "<td width='21%'>&nbsp;</td>\n";
-        echo "</tr>\n";
-        echo "</table>\n";
+        echo "<tr><td>&nbsp;</td><td style='width:11%'>&nbsp;</td>";
+        echo "<td style='width:11%'><strong>" . $TotalSize . "<strong></td>";
+        echo "<td style='width:15%'>&nbsp;</td><td style='width:17%'>&nbsp;</td>";
+        echo "<td style='width:21%'>&nbsp;</td></tr></table>";
 
-
-
-        echo "<br /><hr /><br /><div style='float:left;width:30%;text-align:center;'>";
+        echo "<br><hr><br><div style='float:left;width:30%;text-align:center;'>";
         echo "<img src='images/actions/upload.png' />" . _FM_AM_UPLOAD_IN_DIR;
-        echo "<b>" . (( $rep == "" )? "/" : $rep) . "</b>\n";
-        echo "<form enctype='multipart/form-data' op='" . $current_file . "' method='post'>\n";
-        echo "&nbsp;&nbsp;\n";
-        echo "<input type='file' name='userfile' size='30'>\n";
-        echo "<input type='hidden' name='op' value='upload'>\n";
-        echo "<input type='hidden' name='id' value='" . $id . "'>\n";
-        echo "<input type='hidden' name='rep' value='" . $rep . "'>\n";
-        echo "<input type='hidden' name='order_by' value='" . $order_by . "'>\n";
-        echo "<input type='hidden' name='sens' value='" . $sens . "'>\n";
-        echo "<input type='submit' name='Submit' value='" . _FM_AM_UPLOAD . "'>\n";
-        echo "</form>\n";
-        echo "</div>";
-
-        //echo "<br />";
+        echo "<b>" . (( $rep == "" )? "/" : $rep) . "</b>";
+        echo "<form enctype='multipart/form-data' op='" . $current_file . "' method='post'>";
+        echo "&nbsp;&nbsp;";
+        echo "<input type='file' name='userfile' size='30'>";
+        echo "<input type='hidden' name='op' value='upload'>";
+        echo "<input type='hidden' name='id' value='" . $id . "'>";
+        echo "<input type='hidden' name='rep' value='" . $rep . "'>";
+        echo "<input type='hidden' name='order_by' value='" . $order_by . "'>";
+        echo "<input type='hidden' name='sens' value='" . $sens . "'>";
+        echo "<input type='submit' name='Submit' value='" . _FM_AM_UPLOAD . "'>";
+        echo "</form></div>";
 
         echo "<div style='float:left;width:30%;text-align:center;'>";
         echo "<img src='images/actions/folder.png' />" . _FM_AM_NEWDIR;
-        echo "<b>" . (( $rep == "" )? "/" : $rep) . "</b>\n";
-        echo "<form method='post' op='" . $current_file . "'>\n";
-        echo "&nbsp;&nbsp;\n";
-        echo "<input type='text' name='nomdir' size='30'>\n";
-        echo "<input type='hidden' name='rep' value='" . $rep . "'>\n";
-        echo "<input type='hidden' name='op' value='mkdir'>\n";
-        echo "<input type='hidden' name='id' value='" . $id . "'>\n";
-        echo "<input type='hidden' name='order_by' value='" . $order_by . "'>\n";
-        echo "<input type='hidden' name='sens' value='" . $sens . "'>\n";
-        echo "<input type='submit' name='Submit' value='" . _FM_AM_CREATE . "'>\n";
-        echo "</form>\n";
-        echo "</div>";
-
-        //echo "<br />";
+        echo "<b>" . (( $rep == "" )? "/" : $rep) . "</b>";
+        echo "<form method='post' op='" . $current_file . "'>";
+        echo "&nbsp;&nbsp;";
+        echo "<input type='text' name='nomdir' size='30'>";
+        echo "<input type='hidden' name='rep' value='" . $rep . "'>";
+        echo "<input type='hidden' name='op' value='mkdir'>";
+        echo "<input type='hidden' name='id' value='" . $id . "'>";
+        echo "<input type='hidden' name='order_by' value='" . $order_by . "'>";
+        echo "<input type='hidden' name='sens' value='" . $sens . "'>";
+        echo "<input type='submit' name='Submit' value='" . _FM_AM_CREATE . "'>";
+        echo "</form></div>";
 
         echo "<div style='float:left;width:30%;text-align:center;'>";
         echo "<img src='images/actions/defaut.png' />" . _FM_AM_CREATENEW;
-        echo "<b>" . (( $rep == "" )? "/" : $rep) . "</b>\n";
-        echo "<form method='post' op='" . $current_file . "'>\n";
-        echo "&nbsp;&nbsp;\n";
-        echo "<input type='text' name='nomfic' size='30'>\n";
-        echo "<input type='hidden' name='rep' value='" . $rep . "'>\n";
-        echo "<input type='hidden' name='op' value='file_create'>\n";
-        echo "<input type='hidden' name='id' value='" . $id . "'>\n";
-        echo "<input type='hidden' name='order_by' value='" . $order_by . "'>\n";
-        echo "<input type='hidden' name='sens' value='" . $sens . "'>\n";
-        echo "<input type='submit' name='Submit' value='" . _FM_AM_CREATE . "'>\n";
-        echo "</form>";
-        echo "</div><br /><br /><hr /><br />";
+        echo "<b>" . (( $rep == "" )? "/" : $rep) . "</b>";
+        echo "<form method='post' op='" . $current_file . "'>";
+        echo "&nbsp;&nbsp;";
+        echo "<input type='text' name='nomfic' size='30'>";
+        echo "<input type='hidden' name='rep' value='" . $rep . "'>";
+        echo "<input type='hidden' name='op' value='file_create'>";
+        echo "<input type='hidden' name='id' value='" . $id . "'>";
+        echo "<input type='hidden' name='order_by' value='" . $order_by . "'>";
+        echo "<input type='hidden' name='sens' value='" . $sens . "'>";
+        echo "<input type='submit' name='Submit' value='" . _FM_AM_CREATE . "'>";
+        echo "</form></div><br><br><hr><br>";
         include_once __DIR__ . '/footer.php';
-        xoops_cp_footer();
         break;
     }
 
-
 // +++++++++++++++++++++++++++++ FUNCTIONS +++++++++++++++++++++++++++++
-
 
 function listing( $nom_rep, $order_by, $sens ) {
     global $current_file;
@@ -824,7 +834,7 @@ function listing( $nom_rep, $order_by, $sens ) {
         else
             {if ( $sens == 0 ) {ksort( $list_fic );} else {krsort( $list_fic );}}
         }
-    if ( is_array( $list_rep ) ) {
+    if ( is_array($list_rep) ) {
     if ( $order_by == "mod" )
         {if ( $sens == 0 ) {arsort( $list_rep );} else {asort( $list_rep );}}
     else
@@ -835,14 +845,13 @@ function listing( $nom_rep, $order_by, $sens ) {
     
     $TotalSize = withMultipleSize($TotalSize);
     return array( $list, $TotalSize );
-    }
-
+}
 
 function tool_bar($go_back = FALSE) {
     global $current_file, $id, $order_by, $sens, $xoopsUser, $xoopsConfig, $rep;
     $user = '';
     $addchemin = '';
-    echo "<table width='100%'><tr><td><b>\n";
+    echo "<table width='100%'><tr><td><b>";
     if ( $go_back == FALSE )
     echo "<a href='";
     echo $current_file . "?id=" . $id . "&order_by=" . $order_by . "&sens=" . $sens;
@@ -865,10 +874,18 @@ function tool_bar($go_back = FALSE) {
             }
         }
     echo "</b></td>";
-    echo "<td align='right'>\n";
-    echo "<a href='javascript:location.reload()' title='" . _FM_AM_REFRESHPAGE . "'><img src='images/actions/refresh.png' alt='" . _FM_AM_REFRESHPAGE . "' style='border:none;'></a>&nbsp;&nbsp;\n";
-    echo "<a href='help.php' title='" . _FM_AM_HELP . "'><img src='images/actions/help.png' alt='" . _FM_AM_HELP . "' style='border:none;'></a>&nbsp;&nbsp;\n";
+    echo "<td align='right'>";
+    echo "<a href='javascript:location.reload()' title='"
+          . _FM_AM_REFRESHPAGE
+          . "'><img src='images/actions/refresh.png' alt='"
+          . _FM_AM_REFRESHPAGE
+          . "' style='border:none;'></a>&nbsp;&nbsp;";
+    echo "<a href='help.php' title='"
+          . _FM_AM_HELP
+          . "'><img src='images/actions/help.png' alt='"
+          . _FM_AM_HELP
+          . "' style='border:none;'></a>&nbsp;&nbsp;";
     if (($xoopsUser) && ($xoopsUser->isAdmin()))
-        echo ""; 
-    echo "</td></tr></table>\n";
-    }
+    echo ""; 
+    echo "</td></tr></table>";
+}

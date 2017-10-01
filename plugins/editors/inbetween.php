@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'Inbetween';
-$editor['class']= '/class/xoopseditor/inbetween/forminbetweentextarea.php';
+$editor['name']     = 'Inbetween';
+$editor['class']    = '/class/xoopseditor/inbetween/forminbetweentextarea.php';
 $editor['dirname']  = 'inbetween';
 $editor['project']  = '';
-?>

@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'DHTML';
-$editor['class']= '';
+$editor['name']     = 'DHTML';
+$editor['class']    = '';
 $editor['dirname']  = '';
 $editor['project']  = '';
-?>

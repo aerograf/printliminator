@@ -1,7 +1,7 @@
 <?php
 /**
 * XOOPS - PHP Content Management System
-* Copyright (c) 2001 - 2006 <http://www.xoops.org/>
+* Copyright (c) 2001 - 2017 <https://www.xoops.org/>
 *
 * Module: xoopsinfo 2.0
 * Licence : GPL
@@ -69,16 +69,17 @@ while (false !== ($entry = $d->read())) {
 }
 $d->close();
 
-echo '<table width="100%">';
-
-echo '<tr>';
-echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>" . _AM_XI_ADMENU5 . "</h2></td>";
-echo '</tr>';
-
-echo '<tr>';
-echo '<th align="center">' . _AM_XI_EDITOR_CHECK. '</th>';
-echo '<th align="center">' . _AM_XI_EDITOR_NAME. '</th>';
-echo '</tr>';
+echo '<table width="100%"><tr>';
+echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>"
+      . _AM_XI_ADMENU5
+      . "</h2></td>";
+echo '</tr><tr>';
+echo '<th align="center">'
+      . _AM_XI_EDITOR_CHECK
+      . '</th>';
+echo '<th align="center">'
+      . _AM_XI_EDITOR_NAME
+      . '</th></tr>';
 
 foreach ($editors as $key => $editor) {
 	$isModule = false;
@@ -90,15 +91,35 @@ foreach ($editors as $key => $editor) {
 	// Check editor class file
 	echo '<td class="even" align="center">';
 	if ( $editor['class'] && is_readable( XOOPS_ROOT_PATH . $editor['class'] ) && $isModule) {
-		echo '<img src="' . XOOPSINFO_URL_IMAGE . '/on.gif" alt="' . _AM_XI_EDITOR_OK . '"align="absmiddle" />';
+		echo '<img src="'
+          . XOOPSINFO_URL_IMAGE
+          . '/on.gif" alt="'
+          . _AM_XI_EDITOR_OK
+          . '"align="absmiddle" />';
 	} elseif ( $editor['class'] && is_readable( XOOPS_ROOT_PATH . $editor['class'] ) && $editor['dirname'] && !$isModule ) {
-		echo '<img src="' . XOOPSINFO_URL_IMAGE . '/notinstalled.gif" alt="' . _AM_XI_EDITOR_MODULE . '"align="absmiddle" />';
+		echo '<img src="'
+          . XOOPSINFO_URL_IMAGE
+          . '/notinstalled.gif" alt="'
+          . _AM_XI_EDITOR_MODULE
+          . '"align="absmiddle" />';
 	} elseif ( $editor['class'] && !is_readable( XOOPS_ROOT_PATH . $editor['class'] ) && $isModule ) {
-		echo '<img src="' . XOOPSINFO_URL_IMAGE . '/noclass.gif" alt="' . _AM_XI_EDITOR_CLASS . '"align="absmiddle" />';
+		echo '<img src="'
+          . XOOPSINFO_URL_IMAGE
+          . '/noclass.gif" alt="'
+          . _AM_XI_EDITOR_CLASS
+          . '"align="absmiddle" />';
 	} elseif ( $editor['class'] && !is_readable( XOOPS_ROOT_PATH . $editor['class'] ) && !$isModule ) {
-		echo '<img src="' . XOOPSINFO_URL_IMAGE . '/off.gif" alt="' . _AM_XI_EDITOR_ERROR . '"align="absmiddle" />';
+		echo '<img src="'
+          . XOOPSINFO_URL_IMAGE
+          . '/off.gif" alt="'
+          . _AM_XI_EDITOR_ERROR
+          . '"align="absmiddle" />';
 	} else {
-		echo '<img src="' . XOOPSINFO_URL_IMAGE . '/on.gif" alt="' . _AM_XI_EDITOR_OK . '"align="absmiddle" />';
+		echo '<img src="'
+          . XOOPSINFO_URL_IMAGE
+          . '/on.gif" alt="'
+          . _AM_XI_EDITOR_OK
+          . '"align="absmiddle" />';
 	}
 	echo '</td>';
 
@@ -106,28 +127,34 @@ foreach ($editors as $key => $editor) {
 	// Editor's name
 	echo '<td class="odd">';
 	if ( $editor['project'] ) {
-		echo '<a target="_blank" href="' . $editor['project'] . '">';
+		echo '<a target="_blank" href="'
+          . $editor['project']
+          . '">';
 	}
 	echo $editor['name'];
 	if ( $editor['project'] ) {
 		echo '</a>';
 	}
-	echo '<br />' . $editor['class'] . '</td>' ;
-	echo '</tr>';
+	echo '<br>'
+        . $editor['class']
+        . '</td></tr>';
 }
-echo '</table>';
-echo '<br />';
-
+echo '</table><br>';
 echo '<table width="80%" align="center" border="0" cellpadding="5" cellspacing="0">';
-
-echo '<tr>
-<td width="50%"><img src="' . XOOPSINFO_URL_IMAGE . '/on.gif" alt=""align="absmiddle" />&nbsp;' . _AM_XI_EDITOR_OK . '</th>
-<td width="50%"><img src="' . XOOPSINFO_URL_IMAGE . '/off.gif" alt=""align="absmiddle" />&nbsp;' . _AM_XI_EDITOR_ERROR . '</th>
-</tr>';
-
-echo '<tr>
-<td width="50%"><img src="' . XOOPSINFO_URL_IMAGE . '/notinstalled.gif" alt=""align="absmiddle" />&nbsp;' . _AM_XI_EDITOR_MODULE . '</th>
-<td width="50%"><img src="' . XOOPSINFO_URL_IMAGE . '/noclass.gif" alt=""align="absmiddle" />&nbsp;' . _AM_XI_EDITOR_CLASS . '</th>
-</tr>';
-
-echo '</table><br /><br />';
+echo '<tr><td width="50%"><img src="'
+      . XOOPSINFO_URL_IMAGE
+      . '/on.gif" alt=""align="absmiddle" />&nbsp;'
+      . _AM_XI_EDITOR_OK
+      . '</th><td width="50%"><img src="'
+      . XOOPSINFO_URL_IMAGE
+      . '/off.gif" alt=""align="absmiddle" />&nbsp;'
+      . _AM_XI_EDITOR_ERROR . '</th></tr>';
+echo '<tr><td width="50%"><img src="'
+      . XOOPSINFO_URL_IMAGE
+      . '/notinstalled.gif" alt=""align="absmiddle" />&nbsp;'
+      . _AM_XI_EDITOR_MODULE
+      . '</th><td width="50%"><img src="'
+      . XOOPSINFO_URL_IMAGE
+      . '/noclass.gif" alt=""align="absmiddle" />&nbsp;'
+      . _AM_XI_EDITOR_CLASS . '</th></tr>';
+echo '</table><br><br>';

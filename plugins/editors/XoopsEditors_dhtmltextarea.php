@@ -12,8 +12,8 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'XoopsEditors Framework - dhtmltextarea';
-$editor['class']= '/class/xoopseditor/dhtmltextarea/dhtmltextarea.php';
+$editor['name']     = 'XoopsEditors Framework - dhtmltextarea';
+$editor['class']    = '/class/xoopseditor/dhtmltextarea/dhtmltextarea.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/?htmlarea';
 ?>

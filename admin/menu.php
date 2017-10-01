@@ -25,47 +25,47 @@ $pathModIcon32 = $moduleHelper->getModule()->getInfo('modicons32');
 $moduleHelper->loadLanguage('modinfo');
 $moduleHelper->loadLanguage('admin');
 
-$adminmenu = array(
-    array(
+$adminmenu = [
+    [
           'title'   =>    _MI_PRINTLIMINATOR_MANAGER_INDEX,
           'link'    =>    'admin/index.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_INDEX_DESC,
           'icon'    =>    'assets/images/icons/index.png'
-          ),
-    array(
+    ],
+    [
           'title'   =>    _MI_PRINTLIMINATOR_FILE_MANAGER,
           'link'    =>    'admin/filemanager.php',
           'desc'    =>    _MI_PRINTLIMINATOR_FILE_MANAGER_DESC,
           'icon'    =>    'assets/images/icons/fm_fm.png'
-          ),
-    array(
+    ],
+    [
           'title'   =>    _MI_XOOPSINFO_MAIN,
           'link'    =>    'admin/xoopsinfo.php',
           'desc'    =>    '',
           'icon'    =>    'assets/images/icons/xoopsinfo_m.png'
-          ),
-    array(
+    ],
+    [
           'title'   =>    _MI_INDEXSCAN_MAIN,
           'link'    =>    'admin/indexscan.php',
           'desc'    =>    '',
           'icon'    =>    'assets/images/icons/administration.png'
-          ),
-    array(
+    ],
+    [
           'title'   =>    _MI_PRINTLIMINATOR_STARTUP_MANAGER,
           'link'    =>    'admin/startup.php',
           'desc'    =>    '',
           'icon'    =>    'assets/images/icons/startup.png'
-          ),                    
-    array(
+    ],                    
+    [
           'title'   =>    _MI_PRINTLIMINATOR_MANAGER_ABOUT,
           'link'    =>    'admin/about.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_ABOUT_DESC,
           'icon'    =>    'assets/images/icons/about.png'
-          )/*,
-    array(
+    ]/*,
+    [
           'title'   =>    _MI_PRINTLIMINATOR_MANAGER_HELP,
           'link'    =>    'admin/help.php',
           'desc'    =>    _MI_PRINTLIMINATOR_MANAGER_HELP_DESC,
           'icon'    =>    'assets/images/icons/help.png'
-          )*/
-);
+    ]*/
+];

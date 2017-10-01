@@ -28,7 +28,7 @@ function TypesMime_GetModulesList() {
 	$modules_select = new XoopsFormSelect(_AM_XI_MIME_MODULES, 'mid', $mid);
 	$modules_select->setExtra('onchange="document.location=this.options[this.selectedIndex].value"');
 	foreach ($module_list as $key => $value) {
-		$modules_select->addOption('mimetypes.php?fct=mimetypes&mid='.$key , $value);
+		$modules_select->addOption('mimetypes.php?fct=mimetypes&mid=' . $key , $value);
 	}
 	$modules_select->setValue('mimetypes.php?fct=mimetypes&mid=' . $mid);
 
@@ -79,8 +79,8 @@ function list_mimetypes() {
 	$form_select = new XoopsFormSelect(_AM_XI_MIME_DISPLAY, 'status');
 	$form_select->setExtra('onchange="document.location=this.options[this.selectedIndex].value"');
 	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=-1&type=' . $type, _AM_XI_MIME_ALL);
-	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=0&type='  . $type , _AM_XI_MIME_HIDE);
-	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=1&type='  . $type , _AM_XI_MIME_VIEW);
+	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=0&type='  . $type, _AM_XI_MIME_HIDE);
+	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=1&type='  . $type, _AM_XI_MIME_VIEW);
 	$form_select->setValue('mimetypes.php?mid=' . $mid . '&status=' . $status . '&type=' . $type);
 
 	$modules_select = TypesMime_GetModulesList();
@@ -97,53 +97,95 @@ function list_mimetypes() {
 
 	echo '<form action ="mimetypes.php" method="post">';
 	echo '<table width="100%" align="center" class="outer">';
-	echo '<tr>';
-	echo '	<td colspan="4" align="center">';
+	echo '<tr><td colspan="4" align="center">';
 	admintitle(_AM_XI_ADMENU7);
-	echo '	</td>';
-	echo '</tr>';
-
-	echo '<tr>';
-	echo '	<td colspan="4" align="center">';
-	echo '	<table width="100%" align="center">';
-	echo '	<td>' . _AM_XI_MIME_MODULES . $modules_select->render() . '</td>';
-	echo '	<td>' . _AM_XI_MIME_MTYPE    . $types_select->render() . '</td>';
-	echo '	<td>' . _AM_XI_MIME_DISPLAY . $form_select->render() . '</td>';
-	echo '	<td align="right">' . $button_tray->render() . '</td>';
-	echo '	</table>';
-	echo '	</td>';
-	echo '</tr>';
-
-	echo '<tr>';
-	echo '<th align="center">'    . _AM_XI_MIME_EXT . '</th>';
-	echo '<th align="center">'   . _AM_XI_MIME_NAME . '</th>';
-	echo '<th align="center">'    . _AM_XI_MIME_STATUS . '</th>';
-	echo '<th align="center">'    . _AM_XI_MIME_ACTION . '</th>';
-	echo '</tr>';
+	echo '</td></tr><tr><td colspan="4" align="center"><table width="100%" align="center"><td>'
+        . _AM_XI_MIME_MODULES
+        . $modules_select->render()
+        . '</td><td>'
+        . _AM_XI_MIME_MTYPE
+        . $types_select->render()
+        . '</td><td>'
+        . _AM_XI_MIME_DISPLAY
+        . $form_select->render()
+        . '</td><td align="right">'
+        . $button_tray->render()
+        . '</td></table></td></tr><tr><th align="center">'
+        . _AM_XI_MIME_EXT
+        . '</th><th align="center">'
+        . _AM_XI_MIME_NAME
+        . '</th><th align="center">'
+        . _AM_XI_MIME_STATUS
+        . '</th><th align="center">'
+        . _AM_XI_MIME_ACTION
+        . '</th></tr>';
 
 	if ($mimetypes_count > 0) {
 		foreach ($mimetypes_list as $key => $mimetypes) {
 			if ( $mimetypes->mime_status() ) {
-				$status = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mime_id() . '&op=hide" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/mimetypes.on.gif" align="absmiddle"  alt="' . _AM_XI_MIME_VIEW . '->' . _AM_XI_MIME_HIDE . '" /></a>';
+				$status = '<a href="mimetypes.php?'
+                  . $uri
+                  . '&mime_id='
+                  . $mimetypes->mime_id()
+                  . '&op=hide" /><img src="'
+                  . XOOPS_URL
+                  . '/modules/xoopsinfo/images/icons/mimetypes.on.gif" align="absmiddle"  alt="'
+                  . _AM_XI_MIME_VIEW
+                  . '->'
+                  . _AM_XI_MIME_HIDE
+                  . '" /></a>';
 			} else {
-				$status = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mime_id() . '&op=view" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/mimetypes.off.gif" align="absmiddle" alt="' . _AM_XI_MIME_HIDE . '->' . _AM_XI_MIME_VIEW . '" /></a>';
+				$status = '<a href="mimetypes.php?'
+                  . $uri
+                  . '&mime_id='
+                  . $mimetypes->mime_id()
+                  . '&op=view" /><img src="'
+                  . XOOPS_URL
+                  . '/modules/xoopsinfo/images/icons/mimetypes.off.gif" align="absmiddle" alt="'
+                  . _AM_XI_MIME_HIDE
+                  . '->' .
+                  _AM_XI_MIME_VIEW
+                  . '" /></a>';
 			}
 
-			$edit = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mime_id() . '&op=edit" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/edit.gif" align="absmiddle"  alt="' . _AM_XI_MIME_EDIT   . '" /></a>';
-			$dele = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mime_id() . '&op=dele" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/dele.gif" align="absmiddle"  alt="' . _AM_XI_MIME_DELE   . '" /></a>';
+			$edit = '<a href="mimetypes.php?'
+              . $uri
+              . '&mime_id='
+              . $mimetypes->mime_id()
+              . '&op=edit" /><img src="'
+              . XOOPS_URL
+              . '/modules/xoopsinfo/images/icons/edit.gif" align="absmiddle"  alt="'
+              . _AM_XI_MIME_EDIT
+              . '" /></a>';
+			$dele = '<a href="mimetypes.php?'
+              . $uri
+              . '&mime_id='
+              . $mimetypes->mime_id()
+              . '&op=dele" /><img src="'
+              . XOOPS_URL
+              . '/modules/xoopsinfo/images/icons/dele.gif" align="absmiddle"  alt="'
+              . _AM_XI_MIME_DELE
+              . '" /></a>';
 
-			echo '<tr>';
-			echo '<td align="center" class="even"><b>'   . $mimetypes->mime_ext() . '</b></td>';
-			echo '<td align="left"class="odd">' . $mimetypes->mime_name() . '</td>';
-			echo '<td align="center" class="odd">' . $status . '</td>';
-			echo '<td align="center" class="odd">' . $edit . '&nbsp;&nbsp;&nbsp;' . $dele . '</td>';
-			echo '</tr>';
+			echo '<tr><td align="center" class="even"><b>'
+            . $mimetypes->mime_ext()
+            . '</b></td><td align="left"class="odd">'
+            . $mimetypes->mime_name()
+            . '</td><td align="center" class="odd">'
+            . $status
+            . '</td><td align="center" class="odd">'
+            . $edit
+            . '&nbsp;&nbsp;&nbsp;'
+            . $dele
+            . '</td></tr>';
 		}
 	}
 	echo '</table>';
 
 	$pagenav = new XoopsPageNav($mimetypes_count, 20, $start, 'start', $uri);
-	echo '<br /><div style="text-align:right;">' . $pagenav->renderNav() . '</div>';
+	echo '<br><div style="text-align:right;">'
+        . $pagenav->renderNav()
+        . '</div>';
 	echo "</div>";
 	echo $hidden_mid->render();
 	echo '</form>';
@@ -217,9 +259,9 @@ function list_mimetypes_perms() {
 	$form_select = new XoopsFormSelect(_AM_XI_MIME_DISPLAY, 'status');
 	$form_select->setExtra('onchange="document.location=this.options[this.selectedIndex].value"');
 	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=-1&type=' . $type, _AM_XI_MIME_ALL);
-	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=0&type='  . $type , _AM_XI_MIME_HIDE);
-	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=1&type='  . $type , _AM_XI_MIME_VIEW);
-	$form_select->setValue('mimetypes.php?mid='    . $mid . '&status=' . $status . '&type=' . $type);
+	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=0&type=' . $type , _AM_XI_MIME_HIDE);
+	$form_select->addOption('mimetypes.php?mid=' . $mid . '&status=1&type=' . $type , _AM_XI_MIME_VIEW);
+	$form_select->setValue('mimetypes.php?mid=' . $mid . '&status=' . $status . '&type=' . $type);
 
 	$modules_select = TypesMime_GetModulesList();
 	$types_select = GetTypeList();
@@ -233,33 +275,33 @@ function list_mimetypes_perms() {
 
 	echo '<form action ="mimetypes.php" method="post">';
 	echo '<table width="100%" align="center" class="outer">';
-	echo '<tr>';
-	echo '	<td colspan="5" align="center">';
-	admintitle( _AM_XI_ADMENU7 . '<br />' . _AM_XI_MIME_MODULES . ' <font color="#CC0000">' . $mimetypes_Handler->mime_module($mid) . '</font>');
-	echo '	</td>';
-	echo '</tr>';
+	echo '<tr><td colspan="5" align="center">';
+	admintitle( _AM_XI_ADMENU7 . '<br>' . _AM_XI_MIME_MODULES . ' <font color="#CC0000">' . $mimetypes_Handler->mime_module($mid) . '</font>');
+	echo '</td></tr>';
 
-	echo '<tr>';
-	echo '    <td colspan="5" align="center">';
-	echo '    <table width="100%" align="center">';
-
+	echo '<tr><td colspan="5" align="center"><table width="100%" align="center">';
 	if ( $xoopsModule->dirname() == 'xoopsinfo' ) {
 		echo '<td>' . _AM_XI_MIME_MODULES . $modules_select->render() . '</td>';
 	}
-	echo '    <td>' . _AM_XI_MIME_MTYPE    . $types_select->render() . '</td>';
-	echo '    <td>' . _AM_XI_MIME_DISPLAY . $form_select->render() . '</td>';
-	echo '    <td align="right">' . $butt_new->render() . '</td>';
-	echo '    </table>';
-	echo '    </td>';
-	echo '</tr>';
-
-	echo '<tr>';
-	echo '<th align="center" width="50px">'    . _AM_XI_MIME_EXT . '</th>';
-	echo '<th align="center">' . _AM_XI_MIME_NAME . '</th>';
-	echo '<th align="center" width="180px">'    . _AM_XI_MIME_GROUPS . '</th>';
-	echo '<th align="center" width="50px">'    . _AM_XI_MIME_STATUS . '</th>';
-	echo '<th align="center" width="50px">'    . _AM_XI_MIME_ACTION . '</th>';
-	echo '</tr>';
+	echo '<td>'
+        . _AM_XI_MIME_MTYPE
+        . $types_select->render()
+        . '</td><td>'
+        . _AM_XI_MIME_DISPLAY
+        . $form_select->render()
+        . '</td><td align="right">'
+        . $butt_new->render()
+        . '</td></table></td></tr><tr><th align="center" width="50px">'
+        . _AM_XI_MIME_EXT
+        . '</th><th align="center">'
+        . _AM_XI_MIME_NAME
+        . '</th><th align="center" width="180px">'
+        . _AM_XI_MIME_GROUPS
+        . '</th><th align="center" width="50px">'
+        . _AM_XI_MIME_STATUS
+        . '</th><th align="center" width="50px">'
+        . _AM_XI_MIME_ACTION
+        . '</th></tr>';
 
 	if ($mimetypes_count > 0) {
 		foreach ($mimetypes_list as $key => $mimetypes) {
@@ -279,41 +321,91 @@ function list_mimetypes_perms() {
 			$form_maxsize = new XoopsFormText(_AM_XI_MIME_SIZE, 'mperm_maxsize[' . $mimetypes->mime_id() . ']', 8, 10, $mperm_maxsize);
 
 			if ( $mimetypes->mperm_status() ) {
-				$status = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mperm_mime() . '&op=hide" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/mimetypes.on.gif" align="absmiddle"  alt="' . _AM_XI_MIME_VIEW . '->' . _AM_XI_MIME_HIDE . '" /></a>';
+				$status = '<a href="mimetypes.php?'
+                  . $uri
+                  . '&mime_id='
+                  . $mimetypes->mperm_mime()
+                  . '&op=hide" /><img src="'
+                  . XOOPS_URL
+                  . '/modules/xoopsinfo/images/icons/mimetypes.on.gif" align="absmiddle"  alt="'
+                  . _AM_XI_MIME_VIEW
+                  . '->'
+                  . _AM_XI_MIME_HIDE
+                  . '" /></a>';
 			} else {
-				$status = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mperm_mime() . '&op=view" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/mimetypes.off.gif" align="absmiddle" alt="' . _AM_XI_MIME_HIDE . '->' . _AM_XI_MIME_VIEW . '" /></a>';
+				$status = '<a href="mimetypes.php?'
+                  . $uri
+                  . '&mime_id='
+                  . $mimetypes->mperm_mime()
+                  . '&op=view" /><img src="'
+                  . XOOPS_URL
+                  . '/modules/xoopsinfo/images/icons/mimetypes.off.gif" align="absmiddle" alt="'
+                  . _AM_XI_MIME_HIDE
+                  . '->'
+                  . _AM_XI_MIME_VIEW
+                  . '" /></a>';
 			}
 
-			$edit = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mime_id() . '&op=edit" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/edit.gif" align="absmiddle"  alt="' . _AM_XI_MIME_EDIT   . '" /></a>';
-			$dele = '<a href="mimetypes.php?' . $uri . '&mime_id=' . $mimetypes->mime_id() . '&op=dele" /><img src="' . XOOPS_URL . '/modules/xoopsinfo/images/icons/dele.gif" align="absmiddle"  alt="' . _AM_XI_MIME_DELE   . '" /></a>';
+			$edit = '<a href="mimetypes.php?'
+              . $uri
+              . '&mime_id='
+              . $mimetypes->mime_id()
+              . '&op=edit" /><img src="'
+              . XOOPS_URL
+              . '/modules/xoopsinfo/images/icons/edit.gif" align="absmiddle"  alt="'
+              . _AM_XI_MIME_EDIT
+              . '" /></a>';
+			$dele = '<a href="mimetypes.php?'
+              . $uri
+              . '&mime_id='
+              . $mimetypes->mime_id()
+              . '&op=dele" /><img src="'
+              . XOOPS_URL
+              . '/modules/xoopsinfo/images/icons/dele.gif" align="absmiddle"  alt="'
+              . _AM_XI_MIME_DELE
+              . '" /></a>';
 
-			echo '<tr>';
-			echo '<td align="center" class="even"><b>'   . $mimetypes->mime_ext() . '</b></td>';
-			echo '<td align="left"class="odd"><b>' . $mimetypes->mime_name() . '</b><br/><div style="text-align:right">' .
-					_AM_XI_MIME_WIDTH   . ' : ' . $form_maxwidth->render()   . '<br/>' .
-					_AM_XI_MIME_HEIGHT   . ' : ' . $form_maxheight->render()   . '<br/>' .
-					_AM_XI_MIME_SIZE   . ' : ' . $form_maxsize->render()   . $form_mperm_id->render() . $form_mperm_mime->render() . $form_mperm_module->render() . '</div></td>';
-			echo '<td align="center" class="odd">' . $groups_select->render() . '</td>';
-			echo '<td align="center" class="odd">' . $status . '</td>';
-			echo '<td align="center" class="odd">' . $edit . '&nbsp;&nbsp;&nbsp;' . $dele . '</td>';
-			echo '</tr>';
+			echo '<tr><td align="center" class="even"><b>'
+            . $mimetypes->mime_ext()
+            . '</b></td><td align="left"class="odd"><b>'
+            . $mimetypes->mime_name()
+            . '</b><br/><div style="text-align:right">'
+            .	_AM_XI_MIME_WIDTH
+            . ' : '
+            . $form_maxwidth->render()
+            . '<br/>'
+            . _AM_XI_MIME_HEIGHT
+            . ' : '
+            . $form_maxheight->render()
+            . '<br/>'
+            . _AM_XI_MIME_SIZE
+            . ' : '
+            . $form_maxsize->render()
+            . $form_mperm_id->render()
+            . $form_mperm_mime->render()
+            . $form_mperm_module->render()
+            . '</div></td><td align="center" class="odd">'
+            . $groups_select->render()
+            . '</td><td align="center" class="odd">'
+            . $status
+            . '</td><td align="center" class="odd">'
+            . $edit
+            . '&nbsp;&nbsp;&nbsp;'
+            . $dele
+            . '</td></tr>';
 		}
 	}
 	$butt_create = new XoopsFormButton('', 'op', _AM_XI_MIME_SAVEALL, 'submit');
 	$butt_create->setExtra('onclick="this.form.elements.op.value=\'saveall\'"');
 
-	echo '<tr>';
-	echo '   <td colspan="5" align="center" class="even">';
+	echo '<tr><td colspan="5" align="center" class="even">';
 	echo $butt_create->render();
-	echo '   </td>';
-	echo '<tr>';
-
-
-	echo '</table>';
+	echo '</td><tr></table>';
 
 	$pagenav = new XoopsPageNav($mimetypes_count, 20, $start, 'start', $uri);
-	echo '<br /><div style="text-align:right;">' . $pagenav->renderNav() . '</div>';
-	echo "</div>";
+	echo '<br><div style="text-align:right;">'
+        . $pagenav->renderNav()
+        . '</div></div>';
 	echo $hidden_mid->render();
 	echo '</form>';
 }
@@ -336,9 +428,9 @@ function edit_mimetypes_modules() {
 	$sform->addelement(new XoopsFormSelectGroup(_AM_XI_MIME_GROUPS, 'mperm_groups', true, $groups, 5, true));
 	$sform->addelement(new XoopsFormRadioYN(_AM_XI_MIME_STATUS, 'mperm_status', $mime->getVar('mperm_status'), ' ' . _YES . '', ' ' . _NO . '') );
 
-	$mperm_maxwidth = ( $mime->getVar('mperm_maxwidth') ) ? $mime->getVar('mperm_maxwidth') : 120;
+	$mperm_maxwidth  = ( $mime->getVar('mperm_maxwidth') ) ? $mime->getVar('mperm_maxwidth') : 120;
 	$mperm_maxheight = ( $mime->getVar('mperm_maxheight') ) ? $mime->getVar('mperm_maxheight') : 120;
-	$mperm_maxsize = ( $mime->getVar('mperm_maxsize') ) ? $mime->getVar('mperm_maxsize') : 50000;
+	$mperm_maxsize   = ( $mime->getVar('mperm_maxsize') ) ? $mime->getVar('mperm_maxsize') : 50000;
 	$sform->addElement(new XoopsFormText(_AM_XI_MIME_WIDTH, 'mperm_maxwidth', 3, 4, $mperm_maxwidth ) );
 	$sform->addElement(new XoopsFormText(_AM_XI_MIME_HEIGHT, 'mperm_maxheight', 3, 4, $mperm_maxheight ) );
 	$sform->addElement(new XoopsFormText(_AM_XI_MIME_SIZE, 'mperm_maxsize', 8, 10, $mperm_maxsize), true);
@@ -404,10 +496,14 @@ function install_MimeTypes( $dirname= '' ) {
 							$mymsgs[] = '&nbsp;&nbsp;Adding Mimetype <b>' . $mimeType['mime_ext'] . '</b> to the database.' ;
 							$mime_id = $mimetypeObj->getVar('mime_id');
 						} else {
-							$mymsgs[] = '&nbsp;&nbsp;<span style="color:#ff0000;">ERROR: Could not insert Mimetype <b>' . $mimeType['mime_ext'] . '</b> to the database.</span>' ;
+							$mymsgs[] = '&nbsp;&nbsp;<span style="color:#ff0000;">ERROR: Could not insert Mimetype <b>'
+                          . $mimeType['mime_ext']
+                          . '</b> to the database.</span>' ;
 						}
 					} else {
-						$mymsgs[] = '&nbsp;&nbsp;Mimetype <b>' . $mimeType['mime_ext'] . '</b> already existing.' ;
+						$mymsgs[] = '&nbsp;&nbsp;Mimetype <b>'
+                        . $mimeType['mime_ext']
+                        . '</b> already existing.' ;
 						$mimetypeObj = new xoopsmimetypes();
 						$mimetypeObj->load_byExt( $mimeType['mime_ext'] );
 						$mime_id = $mimetypeObj->getVar('mime_id');
@@ -426,12 +522,18 @@ function install_MimeTypes( $dirname= '' ) {
 						$mimetype_permsObj->setVar('mperm_maxheight',   $mimeType['mperm_maxheight']);
 						$mimetype_permsObj->setVar('mperm_maxsize', $mimeType['mperm_maxsize']);
 						if (!$mimeperms_handler->insert($mimetype_permsObj, true) ) {
-							$mymsgs[] = '&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000;">ERROR: Could not insert Mimetype permission <b>' . $mimeType['mime_ext'] . '</b> to the database.</span>' ;
+							$mymsgs[] = '&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff0000;">ERROR: Could not insert Mimetype permission <b>'
+                          . $mimeType['mime_ext']
+                          . '</b> to the database.</span>' ;
 						} else {
-							$mymsgs[] = '&nbsp;&nbsp;&nbsp;&nbsp;Adding Mimetype permission <b>' . $mimeType['mime_ext'] . '</b> to the database.' ;
+							$mymsgs[] = '&nbsp;&nbsp;&nbsp;&nbsp;Adding Mimetype permission <b>'
+                          . $mimeType['mime_ext']
+                          . '</b> to the database.' ;
 						}
 					} else {
-						$mymsgs[] = '&nbsp;&nbsp;&nbsp;&nbsp;Mimetype Permissions<b>' . $mimeType['mime_ext'] . '</b> already existing.' ;
+						$mymsgs[] = '&nbsp;&nbsp;&nbsp;&nbsp;Mimetype Permissions<b>'
+                        . $mimeType['mime_ext']
+                        . '</b> already existing.' ;
 					}
 					unset($mimetype_permsObj);
 				}
@@ -462,9 +564,13 @@ function uninstall_MimeTypes( $dirname= '' ) {
 
 					$mimetype_permsObj = $mimeperms_handler->get_byMimeModule( $mime_id, $ModuleInfo->getVar('mid') );
 					if ( !$mimeperms_handler->delete($mimetype_permsObj[0], true) ) {
-						$msgs[] = '&nbsp;&nbsp;<span style="color:#ff0000;">ERROR: Could not delete Mime Type permission from the database. Extension : <b>' . $mimeType['mime_ext'] . '</b></span>';
+						$msgs[] = '&nbsp;&nbsp;<span style="color:#ff0000;">ERROR: Could not delete Mime Type permission from the database. Extension : <b>'
+                      . $mimeType['mime_ext']
+                      . '</b></span>';
 					} else {
-						$msgs[] = '&nbsp;&nbsp;Mime Type permission deleted from the database. Extension : <b>' . $mimeType['mime_ext'] . '</b>';
+						$msgs[] = '&nbsp;&nbsp;Mime Type permission deleted from the database. Extension : <b>'
+                      . $mimeType['mime_ext']
+                      . '</b>';
 					}
 				}
 			}

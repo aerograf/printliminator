@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'FCK Editor';
-$editor['class']= '/class/xoopseditor/fckeditor/formfckeditor.php';
+$editor['name']     = 'FCK Editor';
+$editor['class']    = '/class/xoopseditor/fckeditor/formfckeditor.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/showfiles.php?group_id=1155';
-?>

@@ -12,8 +12,7 @@
 *              - DuGris (http://www.dugris.info)
 */
 
-$editor['name']= 'Koivi Editor';
-$editor['class']= '/class/xoopseditor/koivi/formkoivi.php';
+$editor['name']     = 'Koivi Editor';
+$editor['class']    = '/class/xoopseditor/koivi/formkoivi.php';
 $editor['dirname']  = '';
 $editor['project']  = 'http://dev.xoops.org/modules/xfmod/project/showfiles.php?group_id=1038';
-?>
