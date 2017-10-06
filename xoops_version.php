@@ -250,5 +250,8 @@ $modversion['config'][]          = [
 // ------------------- Notification ------------------- //
 $modversion['hasNotification'] = 0;
 
-if (!empty($_POST['fct']) && !empty($_POST['op']) && $_POST['fct'] == 'modulesadmin' && $_POST['op'] == 'update_ok' && $_POST[$moduleDirName] == $modversion[$moduleDirName]) {
+if (!empty($_POST['fct']) && !empty($_POST['op']) && !empty($_POST['diranme']) && 'modulesadmin' === $_POST['fct']
+    && 'update_ok' === $_POST['op']
+    && $_POST['dirname'] === $modversion['dirname']) {
+    include __DIR__ . '/include/update.php';
 }
