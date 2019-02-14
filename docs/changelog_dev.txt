@@ -2,4 +2,4 @@ It is planned:
 1. multilingual support ++
 2. Expansion of the functional ++
 3. Improved functionality ++
-4. Module Optimization
+4. Module Optimization ++

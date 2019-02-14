@@ -162,8 +162,8 @@ function joinTables( $t1, $t2, $sens ) {
         {$tab1 = $t1; $tab2 = $t2;}
     else
         {$tab1 = $t2; $tab2 = $t1;}
-    if(is_array($tab1)) {while (list($key,$val) = each($tab1)) {$list[$key] = $val;}}
-    if(is_array($tab2)) {while (list($key,$val) = each($tab2)) {$list[$key] = $val;}}
+    if(is_array($tab1)) {foreach ($tab1 as $key=>$val) {$list[$key] = $val;}}
+    if(is_array($tab2)) {foreach ($tab2 as $key=>$val) {$list[$key] = $val;}}
     return $list;
     }
 

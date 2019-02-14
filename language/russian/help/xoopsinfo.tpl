@@ -25,5 +25,5 @@
     <div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_XOOPSINFO_4}></div>
     <div style="border:2px solid black; border-radius:8px;width:90%;padding:10px;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_XOOPSINFO_5}></div>
     <div style="width:100%;text-align:right;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_XOOPSINFO_6}></div>
-    <br /><br /><hr /><br />
+    <br><br><hr /><br>
 </div>

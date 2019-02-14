@@ -661,7 +661,7 @@ switch ($op) {
         list($list,$TotalSize) = listing($nom_rep, $order_by, $sens);
         if ( is_array( $list ) )
             {
-            while (list($file, $mime)  = each($list))
+            foreach ($list as $file=>$mime)
                 {
                 if (is_dir($nom_rep . DS . $file) ) {
                     $link = "$current_file?id=$id&sens=$sens&order_by=$order_by&rep=";
@@ -864,7 +864,7 @@ function tool_bar($go_back = FALSE) {
     else {
         echo "/" . "</a>";
         $array_chemin = explode("/", $rep);
-        while (list($cle, $val) = each($array_chemin)) {
+        foreach ($array_chemin as $cle=>$val) {
             if ( $val != "" ) {
                 if($addchemin != "") {$addchemin= $addchemin . "/" . $val;} else {$addchemin = $val;}
 

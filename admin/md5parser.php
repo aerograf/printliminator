@@ -10,7 +10,11 @@ $verifyMessage="";
           . $file
           . _AM_INDEXSCAN_NOTVERIFY
           . "<img src='images/alert.png'></img>"
-          . "<br>";
+          . "<br><br><a href='help.php#indexscan' title='"
+          . _FM_AM_HELP
+          . "'><img src='images/actions/help.png' alt='"
+          . _FM_AM_HELP
+          . "' style='border:none;'></a>&nbsp;&nbsp;";
 				}
 		elseif ( md5_file($indexscanfile) == $checksum ) {
 }

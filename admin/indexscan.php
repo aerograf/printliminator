@@ -340,7 +340,8 @@ case "CheckIllegalFiles":
 			$ff = str_replace('\s','',$ff);
 			$ff = str_replace('\t','',$ff);
 			$ff = str_replace('\r','',$ff);
-			$extension = end(explode(".", $ff));
+            $tmp = explode(".", $ff);
+            $extension = end($tmp);
 	indexscan_get_files($ff,$extension);
 	} else continue;
 			}	

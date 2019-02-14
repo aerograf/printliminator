@@ -9,7 +9,7 @@
  * @author 	aerograf <https://www.shmel.org>
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
-
+/*
 define("_AM_PRINTLIMINATOR_HELP1" , "--<a href='#printer'>The Printliminator</a>-- & --<a href='#qrcode'>QR Code</a>-- & --<a href='#filemanager'>File Manager</a>-- & --<a href='#indexscan'>Index Scan</a>-- & --<a href='#share42'>Share42</a>-- & --<a href='#xoopsinfo'>XoopsInfo</a>--");
 define("_AM_PRINTLIMINATOR_HELP2" , "<div id='printer'></div><a target='_blank' href='https://css-tricks.github.io/The-Printliminator/'><img src='../assets/images/web-store-tile.png'></a>");
 define("_AM_PRINTLIMINATOR_HELP3" , "<img src='../assets/images/screenshot.png'>");
@@ -98,3 +98,4 @@ define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_3" , "<br /><p><b><i>The following inf
 define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_4" , "<br /><p><b>Turn on debug:</b><br />To switch on debug, go to system admin-->preferences and then general settings. You will see a 'Debug mode' field. Choose 'PHP Debug'. Then go to the page that has problems and copy and paste any error messages under php-debug messages in the template below. Do this for each debug type (PHP, MySQL, Smarty).<br /><br />PHP Debug Messages:<br />MySQL Debug Messages:<br />Smarty Debug Messages:<br /></p><br /><p><b><i>The following template should serve as a solid guideline for how to request support.</i></b></p><br />");
 define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_5" , "<p>Title: Clear and descriptive title <br /><br />Description: A detailed description of the problem you are having. Please include as much information as possible regarding what you were doing right before the problem happened and any steps you have taken to resolve the problem. <br /><br />Make sure you include as much of the following technical information as possible in your post. Without this information it will be very difficult to provide support for you. <br /><br />Website URL:<br />XOOPS Version:<br />Theme you are using:<br />Template Set you are using:<br />Module Name and Version:<br />PHP Version:<br />MySQL Version:<br />Server Software:<br />Operating System:<br />Browser Information<br />PHP Debug Messages:<br />MySQL Debug Messages:<br />Smarty Debug Messages:<br /></p>");
 define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_6" , "<br /><p><b><i>XOOPS Info File version 1.21</i></b><br />Last Updated: 26.06.2017<br />By: XOOPS Support Team</p>");
+*/
