@@ -40,7 +40,7 @@ if (!defined('XOOPS_ROOT_PATH')) {
  * @copyright	copyright (c) 2000-2003 The XOOPS Project (http://www.xoops.org)
  *
  */
-class PrintliminatorPrintliminator extends XoopsObject
+class PrintliminatorPrintliminator extends \XoopsObject
 {
 
     /**
@@ -48,7 +48,7 @@ class PrintliminatorPrintliminator extends XoopsObject
  **/
     public function __construct()
     {
-        $this->XoopsObject();
+        //$this->XoopsObject();
         $this->initVar('group_id', XOBJ_DTYPE_INT, null, false);
         $this->initVar('module_id', XOBJ_DTYPE_INT, null, false);
         $this->initVar('start_order', XOBJ_DTYPE_INT, null, false);
@@ -73,10 +73,10 @@ class PrintliminatorPrintliminator extends XoopsObject
  * @copyright	copyright (c) 2000-2003 The XOOPS Project (http://www.xoops.org)
  *
  */
-class PrintliminatorPrintliminatorHandler extends XoopsPersistableObjectHandler
+class PrintliminatorPrintliminatorHandler extends \XoopsPersistableObjectHandler
 {
     public function __construct($db) {
-        $this->XoopsPersistableObjectHandler($db, 'printliminator_startup_page', 'PrintliminatorPrintliminator', 'group_id', false);
+        parent::__construct($db, 'printliminator_startup_page', 'PrintliminatorPrintliminator', 'group_id', false);
     }
 
     /**
