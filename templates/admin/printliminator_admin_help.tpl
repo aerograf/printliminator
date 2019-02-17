@@ -1,9 +1,29 @@
 <!-- $Id $ -->
-
+<style type="text/css">
+.topbutton {
+width:100px;
+border:2px solid #ccc;
+background:#f7f7f7;
+text-align:center;
+padding:10px;
+position:fixed;
+bottom:50px;
+right:50px;
+cursor:pointer;
+color:#333;
+font-family:verdana;
+font-size:12px;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-khtml-border-radius: 5px;
+}
+</style>
+<a href="#" title="<{$smarty.const._AM_PRINTLIMINATOR_TOP}>" class="topbutton"><{$smarty.const._AM_PRINTLIMINATOR_TOP}></a>
 <table><tr><td>
 <div id="Printliminator_Title" class="bold shadowlight alignmiddle">
     <div id="Printliminator_Help">
-        <{$smarty.const._AM_PRINTLIMINATOR_HELP1}>
+        <{$smarty.const._AM_PRINTLIMINATOR_MANAGER_HELP}>
     </div>
     <div id="Printliminator_Action">
     </div>
@@ -13,7 +33,7 @@
 <table><tr><td>
 <div id="Printliminator_Title" class="bold shadowlight alignmiddle">
     <div id="Printliminator_Help">
-        <{$smarty.const._AM_PRINTLIMINATOR_MANAGER_HELP}>
+        <{$smarty.const._AM_PRINTLIMINATOR_HELP1}>
     </div>
     <div id="Printliminator_Action">
     </div>
@@ -51,14 +71,14 @@
     <div id="Printliminator_Action">
     </div>
 </div>
-<div style="float:left; width:15%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_2}></div>
-<div style="float:left; width:85%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_3}></div>
-<br><br><hr /><br>
-<div style="float:left; width:15%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_4}></div>
-<div style="float:left; width:85%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_5}></div> 
-<br><br><hr /><br>
-<div style="float:left; width:15%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_6}></div>
-<div style="float:left; width:85%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_7}></div> 
+<div style="width:15%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_2}></div>
+<div style="width:85%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_3}></div>
+<br><br><hr><br>
+<div style="width:15%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_4}></div>
+<div style="width:85%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_5}></div> 
+<br><br><hr><br>
+<div style="width:15%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_6}></div>
+<div style="width:85%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_FM_7}></div> 
 </td></tr></table>
 <br><br><hr><br>
 <!-- Index Scan -->
@@ -71,15 +91,15 @@
     </div>
 </div>
 <div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_2}></div>
-<br><br><hr /><br>
+<br><br><hr><br>
 <div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_3}></div>
-<br><br><hr /><br>
+<br><br><hr><br>
 <div style="width:100%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_4}></div>
-<br><br><hr /><br>
+<br><br><hr><br>
 <div style="float:left;width:50%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_5}></div>
 <div style="float:left;width:50%;"><{$smarty.const._AM_PRINTLIMINATOR_HELP_IS_6}></div>  
 </td></tr></table>
-<br><br><hr /><br>
+<br><br><hr><br>
 <!-- Share42 -->
 <table><tr><td>
 <div id="Printliminator_Title" class="bold shadowlight alignmiddle">

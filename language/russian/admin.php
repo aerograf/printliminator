@@ -281,3 +281,5 @@ define("_AM_XI_EDITOR_OK","Подключен");
 define("_AM_XI_EDITOR_ERROR","Нет файлов : class/... ");
 define("_AM_XI_EDITOR_MODULE","Не установлен - файлы находятся : class/... ");
 define("_AM_XI_EDITOR_CLASS","Установлен - файлов не найдено : class/... ");
+
+define("_AM_PRINTLIMINATOR_TOP","Вверх");
