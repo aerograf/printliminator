@@ -2,10 +2,11 @@
 $dir = "";
 $file="indexscan.php";
 $verifyMessage="";
-			$checksum ="3de759e272b9e8b036b47b45368c9c5c"; // php checksum Linux
-			$checksumNT = "21f26ddcac000cce7da7a8f72fb6ffc9"; // php checksum Winnt
-			$indexscanfile =  $dir . $file; 
-				if ( md5_file($indexscanfile) != $checksum && md5_file($indexscanfile) != $checksumNT) {
+			$checksum ="9f830dc5ac147aba24306869de07e57a"; // php checksum Linux
+			$checksumNT = "538d3f8d1a9279360a92ac1e4b8e410a"; // php checksum Winnt
+			$indexscanfile =  $dir . $file;
+            echo $checksum; 
+				if (md5_file($indexscanfile) != $checksum && md5_file($indexscanfile) != $checksumNT) {
 					$verifyMessage .= '<h3 style="color:red">'
           . $file
           . _AM_INDEXSCAN_NOTVERIFY
