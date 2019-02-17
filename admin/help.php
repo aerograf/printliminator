@@ -12,6 +12,7 @@
 **/
 
 include_once __DIR__ . '/header.php';
+
 //System info
 define(_HELP_XOOPS_1,XOOPS_URL);
 define(_HELP_XOOPS_2,XOOPS_VERSION);

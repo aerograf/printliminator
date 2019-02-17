@@ -148,7 +148,7 @@ define("_AM_INDEXSCAN_FOUNDMISSING","<b>missing</b> index files found\n");
 define("_AM_INDEXSCAN_MAKINGHEADER","Creating missing index.html files");
 define("_AM_INDEXSCAN_CREATED","index.html created");
 define("_AM_INDEXSCAN_CREATEDINDEXFILES","indexfiler created");
-define("_AM_INDEXSCAN_CHECKFORFILES","<tr class='header'><center><h2>Checking files for IFRAME Infection</h2></tr></center><center><small>Not that not all uses of Ifram is injections.<br>Check the code in the files found before you delete.<br><hr></small></center>");
+define("_AM_INDEXSCAN_CHECKFORFILES","<tr class='header'><center><h2>Checking files for IFRAME Infection</h2></tr></center><center><small>Not that not all uses of Ifram is injections.<br>Check the code in the files found before you delete.<br></small></center>");
 define("_AM_INDEXSCAN_UNABLETOREADFILE","Unable to open file ");
 define("_AM_INDEXSCAN_INFECTED"," found!!");
 define("_AM_INDEXSCAN_CLEAN","OK");

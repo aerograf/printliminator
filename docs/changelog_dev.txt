@@ -3,3 +3,4 @@ It is planned:
 2. Expansion of the functional ++
 3. Improved functionality ++
 4. Module Optimization ++
+5. Add functionality to the file manager

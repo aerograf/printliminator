@@ -148,7 +148,7 @@ define("_AM_INDEXSCAN_FOUNDMISSING","<b>отсутствуют</b> index фай�
 define("_AM_INDEXSCAN_MAKINGHEADER","Создание отсутствующих файлов index.html");
 define("_AM_INDEXSCAN_CREATED","index.html создан");
 define("_AM_INDEXSCAN_CREATEDINDEXFILES","создано index файлов");
-define("_AM_INDEXSCAN_CHECKFORFILES","<tr class='header'><center><h2>Проверка файлов на присутствие IFRAM</h2></tr></center><center><small>Не все файлы имеющие Iframe были инфецированы.<br>Проверьте код в файлах, до удаления.<br><hr></small></center>");
+define("_AM_INDEXSCAN_CHECKFORFILES","<tr class='header'><center><h2>Проверка файлов на присутствие IFRAM</h2></tr></center><center><small>Не все файлы имеющие Iframe были инфецированы.<br>Проверьте код в файлах, до удаления.<br></small></center>");
 define("_AM_INDEXSCAN_UNABLETOREADFILE","Невозможно открыть файл ");
 define("_AM_INDEXSCAN_INFECTED"," найденно!!");
 define("_AM_INDEXSCAN_CLEAN","OK");
@@ -188,7 +188,7 @@ define('_AM_STARTUP_FORM_DESCRIPTION_1', 'После установки/вклю
 define('_AM_STARTUP_FORM_DESCRIPTION_2', 'Здесь Вы можете определить модуль запуска для каждой группы, установить порядок, чтобы определить, какой модуль имеет приоритет если пользователь находится в нескольких группах.');
 define('_AM_STARTUP_FORM_GROUP_SELECT', 'Веберете группу или несколько групп');
 define('_AM_STARTUP_FORM_MODULE_SELECT', 'Выберите стартовый модуль для групп');
-define('_AM_STARTUP_FORM_GROUP_NAME', 'Имя групп');
+define('_AM_STARTUP_FORM_GROUP_NAME', 'Имя группы');
 define('_AM_STARTUP_FORM_MODULE_NAME', 'Имя модуля');
 define('_AM_STARTUP_FORM_ORDER', 'Установите приоритет для групп');
 define('_AM_STARTUP_FORM_ACTION', 'Действие');

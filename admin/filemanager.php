@@ -684,15 +684,15 @@ switch ($op) {
                 echo $file;
                 if ( is_editable($file) || is_image($file) || is_dir($nom_rep . DS . $file) )
                 echo "</a>";
-                echo "</td><td style='width:11%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                echo "</td><td style='width:11%;text-align:center;vertical-align:middle;border-bottom: 1px dotted black;'>"
                       . getPermissions($nom_rep . DS . $file, true, true )
-                      . "</td><td style='width:11%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                      . "</td><td style='width:11%;text-align:center;vertical-align:middle;border-bottom: 1px dotted black;'>"
                       . withMultipleSize(filesize($nom_rep . DS . $file))
-                      . "</td><td style='width:15%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                      . "</td><td style='width:15%;text-align:center;vertical-align:middle;border-bottom: 1px dotted black;'>"
                       . getMimetype($nom_rep . DS . $file, "type" )
-                      . "</td><td style='width:17%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>"
+                      . "</td><td style='width:17%;text-align:center;vertical-align:middle;border-bottom: 1px dotted black;'>"
                       . date_modif($nom_rep . DS . $file)
-                      . "</td><td style='width:21%;text-align:left;vertical-align:middle;border-bottom: 1px dotted black;'>";
+                      . "</td><td style='width:21%;text-align:center;vertical-align:middle;border-bottom: 1px dotted black;'>";
 
                 if ( $display_FM_AM_COPY == TRUE ) {
                     echo "<a href='" . $current_file . "?id=" . $id . "&op=copy&sens=" . $sens . "&order_by=" . $order_by . "&rep=";
@@ -740,7 +740,7 @@ switch ($op) {
             }
 
         echo "<tr><td>&nbsp;</td><td style='width:11%'>&nbsp;</td>";
-        echo "<td style='width:11%'><strong>" . $TotalSize . "<strong></td>";
+        echo "<td style='width:11%;text-align:center;'><strong>" . $TotalSize . "<strong></td>";
         echo "<td style='width:15%'>&nbsp;</td><td style='width:17%'>&nbsp;</td>";
         echo "<td style='width:21%'>&nbsp;</td></tr></table>";
 

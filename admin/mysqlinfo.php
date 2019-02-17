@@ -13,11 +13,15 @@
 */
 
 include '../../../include/cp_header.php';
+
 if (!defined('XOOPS_ROOT_PATH')) { die('XOOPS root path not defined'); }
+
 define('XOOPSINFO_URL', XOOPS_URL . '/modules/printliminator/');
 define('XOOPSINFO_URL_IMAGE', XOOPS_URL . '/modules/printliminator/assets/images/icons');
 define('XOOPSINFO_ADMIN_URL', XOOPS_URL . '/modules/printliminator/admin');
 define('XOOPSINFO_PATH', XOOPS_ROOT_PATH . '/modules/printliminator/');
+
+include_once __DIR__ . '/header.php';
 
 global $xoopsDB, $xoopsConfig, $xoopsModule;
 
@@ -66,6 +70,7 @@ $action = isset($_REQUEST['analyze'])? 4 : $action;
 if ($confirm == 0 && $action > 0) {
 $adminObject  = \Xmf\Module\Admin::getInstance();
 $adminObject->displayNavigation(basename(__FILE__));
+
 echo '<div style="margin:auto;border:2px solid black;text-align:center;border-radius:8px;">';
 	switch( $action ) {
 		case 1:
@@ -100,12 +105,12 @@ $db_rows_c = 0;
 
 $db_data_free = 0;
 $db_data_free_c = 0;
-$
+
 $i = 0;
 
 $sql = 'SHOW TABLE STATUS';
 $res = $xoopsDB->queryF($sql);
-
+$xoopsTpl->display("db:admin/" . $xoopsModule->getVar("dirname") . "_admin_xinfo.tpl");
 while ($row = $xoopsDB->fetchArray($res) ) {
 	$row_name = str_replace( $xoopsDB->prefix() . '_', '', $row['Name']);
 
@@ -188,7 +193,7 @@ if (!$confirm) {
 	echo '</table>';
 }
 
-echo '<table width="100%" style="margin:auto;border:2px solid black;text-align:center;border-radius:8px;"><tr>';
+echo '<br><table width="100%" style="margin:auto;border:2px solid black;text-align:center;border-radius:8px;"><tr>';
 if (!$confirm) {
 	echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>"
         . _MI_XI_CHECK_TABLE
@@ -359,7 +364,7 @@ if (!$confirm) {
         . XOOPSINFO_ADMIN_URL
         . '/mysqlinfo.php" method="post" style="margin:auto;">';
 	echo $tray_button->render();
-	echo '</form></td></tr></table>';
+	echo '</form></td></tr></table><br><br>';
 } else {
 	$tray_button = new XoopsFormElementTray('', '');
 	$tray_button->addElement( new XoopsFormButton('', 'op', _AM_XI_MYSQL_RETURN, 'submit') );
@@ -368,5 +373,7 @@ if (!$confirm) {
         . XOOPSINFO_ADMIN_URL
         . '" method="post" style="margin:auto;">';
 	echo $tray_button->render();
-	echo '</form></td></tr></table>';
+	echo '</form></td></tr></table><br><br>';
 }
+
+include_once __DIR__ . '/footer.php';

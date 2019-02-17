@@ -43,12 +43,13 @@ $adminObject  = \Xmf\Module\Admin::getInstance();
 $adminObject->displayNavigation(basename(__FILE__));
 	  echo "<div class='bold shadowlight alignmiddle' style='clear:both;width:100%;vertical-align:middle;text-align:center;'><h3>"
           . _AM_STARTUP_FORM_DESCRIPTION_2
-          . "</h3></div><hr style='border: dotted 1px;' />";
+          . "</h3></div>";
     //Enable module
-    if (strpos(file_get_contents("../../../include/checklogin.php"), '$url = XOOPS_URL."/index.php"'))
+    if (strpos(file_get_contents("../../../include/checklogin.php"), '$url = XOOPS_URL."/index.php"')){
     echo "<div style='float:left;width:25px;vertical-align:middle;text-align:center;'><img style='height:14px;'' src='../assets/images/admin/on.gif'></div>";  
-    else echo "<div style='float:left;width:25px;vertical-align:middle;text-align:center;'><img style='height:14px;'' src='../assets/images/admin/off.gif'></div>";
-    
+    }else{ 
+    echo "<div style='float:left;width:25px;vertical-align:middle;text-align:center;'><img style='height:14px;'' src='../assets/images/admin/off.gif'></div>";
+    }
     if (strpos(file_get_contents("../../../include/checklogin.php"), '$url = XOOPS_URL."/index.php"; // Printliminator STARTUP HACK')){
         echo '<div style="float:left;width:10%;"><form action="" method="POST"><input type="submit" name="submit_del" value="'
               . _AM_STARTUP_ENABLE_OFF
@@ -219,8 +220,8 @@ echo "<form action='startup.php' method='post' name='startorder' id='startorder'
 	}
 
 echo '</tbody><tr><td colspan=4>&nbsp;</td></tr><tr>
-			<td colspan=4 align="center"><input type="submit" name="btnUpdate" value="'
+	  <td colspan=4 align="center"><input type="submit" name="btnUpdate" value="'
       . _AM_STARTUP_ORDER_UPDATE
-      . '"></td></tr></form></table><br><hr><br>';
+      . '"></td></tr></form></table><br><br>';
       
 include_once __DIR__ . '/footer.php';	

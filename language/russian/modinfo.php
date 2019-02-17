@@ -9,6 +9,7 @@
  * @author 	aerograf <https://www.shmel.org>
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
+defined('XOOPS_ROOT_PATH') || die('Restricted access');
 
 // Categories
 define('_MI_PRINTLIMINATOR_CAT1','<font color="#0040FF" size="6"><b>--- FileManager ---</b></font> ');
@@ -19,7 +20,7 @@ define('_MI_PRINTLIMINATOR_CAT3','<font color="#0040FF" size="6"><b>--- Xoops In
 define("_MI_PRINTLIMINATOR_NAME" , "Printliminator");
 
 // A brief description of this module
-define("_MI_PRINTLIMINATOR_DESC" , "Printliminator модуль XOOPS");
+define("_MI_PRINTLIMINATOR_DESC" , "Printliminator модуль обслуживания XOOPS");
 
 // Admin menu links
 define("_MI_PRINTLIMINATOR_MANAGER_INDEX" , "Главная");
@@ -69,11 +70,11 @@ define("_MI_INDEXSCAN_EXEP3_DESC","");
 define("_MI_INDEXSCAN_EXEP4","Не сканировать папку 04");
 define("_MI_INDEXSCAN_EXEP4_DESC","");
 define("_MI_INDEXSCAN_ROOTORSUB","Установка корневой или подпапки");
-define("_MI_INDEXSCAN_ROOTORSUB_DESC","Напишите здесь, откуда вы хотите начать сканирование<br/>'../../../' Если у Вас - 'www.myspace.com/mainfile,php'<br/>'../../../../' Если у Вас -  www.websted.dk/htdocs/mainfile.com");
+define("_MI_INDEXSCAN_ROOTORSUB_DESC","Напишите здесь, откуда вы хотите начать сканирование<br>'../../../' Если у Вас - 'www.myspace.com/mainfile,php'<br>'../../../../' Если у Вас -  www.websted.dk/htdocs/mainfile.com");
 define("_MI_INDEXSCAN_ILLEGALFILETYPES","Пропустить типы файлов.");
 define("_MI_INDEXSCAN_ILLEGALFILETYPES_DESC","Добавьте файлы, которые вы хотите пропустить во время проверки файлов.<br/>Эти файлы будут считаться «безопасными»,<br/>если они также указаны в файле 'admin/filecheck.txt'.");
 define("_MI_INDEXSCAN_FROMBACKUP","Создание файла zip");
-define("_MI_INDEXSCAN_FROMBACKUP_DESC","Создает zip-архив с той же структурой папок, в folder2backup.<br/>Архив содержит только папки и<br/>index.html файлы, отсутствующие в<br/>Вашей загруженной папке.<br/><br/>Имя папки - это имя папки в папке folder2backup, например 'testing'.<br/>Вы можете удалить 'testing'.");
+define("_MI_INDEXSCAN_FROMBACKUP_DESC","Создает zip-архив с той же структурой папок, в folder2backup.<br>Архив содержит только папки и<br/>index.html файлы, отсутствующие в<br/>Вашей загруженной папке.<br><br>Имя папки - это имя папки в папке folder2backup, например 'testing'.<br>Вы можете удалить 'testing'.");
 
 //Startup
 define("_MI_PRINTLIMINATOR_STARTUP_MANAGER","Startup");
@@ -93,15 +94,15 @@ define("_MI_XOOPSINFO_EDITORS_MAIN","Редакторы");
 //Help
 define('_MI_PRINTLIMINATOR_DIRNAME', basename(dirname(dirname(__DIR__))));
 define('_MI_PRINTLIMINATOR_HELP_HEADER', __DIR__.'/help/helpheader.tpl');
-define('_MI_PRINTLIMINATOR_BACK_2_ADMIN', 'Back to Administration of ');
-define('_MI_PRINTLIMINATOR_OVERVIEW', 'Overview');
+define('_MI_PRINTLIMINATOR_BACK_2_ADMIN', 'Назад в настройки ');
+define('_MI_PRINTLIMINATOR_OVERVIEW', 'Обзор');
 
 //define('_MI_PRINTLIMINATOR_HELP_DIR', __DIR__);
 
 //help multi-page
-define('_MI_PRINTLIMINATOR_DISCLAIMER', 'Disclaimer');
-define('_MI_PRINTLIMINATOR_LICENSE', 'License');
-define('_MI_PRINTLIMINATOR_SUPPORT', 'Support');
+define('_MI_PRINTLIMINATOR_DISCLAIMER', 'Отказ от ответственности');
+define('_MI_PRINTLIMINATOR_LICENSE', 'Лицензия');
+define('_MI_PRINTLIMINATOR_SUPPORT', 'Поддержка');
 
 define('_MI_PRINTLIMINATOR_PRINTLIMINATOR', 'PrintLiminator');
 define('_MI_PRINTLIMINATOR_QRCODE', 'QRCode');
@@ -164,7 +165,7 @@ define("_AM_PRINTLIMINATOR_HELP_IS_2" , "<h3>Зачем использовать
 define("_AM_PRINTLIMINATOR_HELP_IS_3" , "Это небольшой модуль для сканирования папок сервера на отсутствие файлов index.html. Если они отсутствуют, Вы можете создать их.<br />Модуль, очевидно, не имеет доступа с главной страницы, но доступен через администрацию в качестве администратора.<br />Модуль тестировался с FF, Opera и IE8 и отлично работает.<br />Если Вы обнаружите какие-либо ошибки, отправьте письмо по электронной почте <a href='mailto:culex@culex.dk'>culex@culex.dk</a>.");
 define("_AM_PRINTLIMINATOR_HELP_IS_4" , "Модули сканируют ваши веб-папки на отсутствие файлов index.html Он пропускает папки, в которых уже есть индексные файлы (index.php, index.htm, index.html). Если Вы найдете папки без них, Вы можете автоматически создать их, нажав 'создать index файл'.<br /><br />Модуль просматривает текст в вашем index.php, index.html, index.htm, mainfile.php, верхние и нижние колонтитулы для слов iframe или fromCharCode, которые обычно используются в кодированных вставках javascript.<br /><br />Если он найдет некоторые из этих слов, Вы можете сами проверить исходный код, нажав красную кнопку, перемещающуюся по строке для файла. Не проверяйте файлы только потому, что модуль находит эти слова на ваших страницах. Не всегда использование iframe и javascript равны повреждающему коду, и поэтому лучше проверить и, если сомневаетесь, спросить о том, что делать с этими файлами.<br /><br />Модуль может сканировать ваши веб-папки для отображения в списке. Любой файл, не проверяемый в соответствии с файлом и фильтром, установленным в config, отображается как «Not Xoops File» и может быть удален на лету с помощью ajax + jquery.<br /><br />Он создает резервную копию из ваших файлов, используя только структуру папок и существующие файлы индексов. В тех случаях, когда отсутствует индексный файл, он будет создавать новые и предлагать эту папку в виде zip-файла.<br /><br /><b>/culex</b>");
 define("_AM_PRINTLIMINATOR_HELP_IS_5" , "<a target='_blank' href='https://defuse.ca/checksums.htm'>Генерация CheckSum</a>");
-define("_AM_PRINTLIMINATOR_HELP_IS_6" , "Для создания файла filecheck.txt возьмите файл <a href='../docs/md5.rar'>docs/md5.rar</a>, распакуйте его в корень сайта и запустите. В корне будет создан файл filecheck.txt. Проверьте его и если необходимо удалите './' в начале строки. Затем скопируйте в /modules/printliminator/admin с заменой старого файла.<br /><strong style='color:red;'>Внимание:</strong> после использования скрипта не забудьте удалить скрипт md5.php и файл filecheck.txt с корневой дирректории Вашего сайта!");
+define("_AM_PRINTLIMINATOR_HELP_IS_6" , "Для создания файла filecheck.txt возьмите файл <a href='../docs/md5.rar'>docs/md5.rar</a>, распакуйте его в корень сайта и запустите. В корне будет создан файл filecheck.txt. Проверьте его и если необходимо удалите './' в начале строки. Затем скопируйте в /modules/printliminator/admin с заменой старого файла.<br />Воспользовавшись ссылкой с лева, необходимо сгенерировать контрольные суммы файла и внести их в файл /admin/md5parser.php <br /><strong style='color:red;'>Внимание:</strong> после использования скрипта не забудьте удалить скрипт md5.php и файл filecheck.txt с корневой дирректории Вашего сайта!");
 
 //Share42
 define("_AM_PRINTLIMINATOR_HELP_SHARE42_1" , "<div id='share42'></div>Share42");

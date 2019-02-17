@@ -58,15 +58,15 @@ use Xmf\Module\Helper;
 		
 	function indexScan_Choice() {
 	global $xoopsModule,$count,$verifyMessage;
-	echo '<table class="outer bold shadowlight alignmiddle" width="100%"><tr>';
-	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=ScanNow\"' type='button' value='" . _AM_INDEXSCAN_NOW . "'></center></td>";
-	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=CreateNow\"' type='button' value='" . _AM_INDEXSCAN_CREATE . "'></center></td>";
-	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=injectionScan\"' type='button' value='" . _AM_INDEXSCAN_INJECTIONSCAN . "'></center></td>";
-	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=checkillegalfiles\"' type='button' value='" . _AM_INDEXSCAN_CHECKILLEGALFILES . "'></center></td>";
-	echo "<td class='even'><center><input onclick='return location.href = \"indexscan.php?op=createzip\"' type='button' value='" . _AM_INDEXSCAN_CREATEZIP . "'></center></td>";
+	echo '<table width="100%"><tr>';
+	echo "<td><center><input onclick='return location.href = \"indexscan.php?op=ScanNow\"' type='button' value='" . _AM_INDEXSCAN_NOW . "'></center></td>";
+	echo "<td><center><input onclick='return location.href = \"indexscan.php?op=CreateNow\"' type='button' value='" . _AM_INDEXSCAN_CREATE . "'></center></td>";
+	echo "<td><center><input onclick='return location.href = \"indexscan.php?op=injectionScan\"' type='button' value='" . _AM_INDEXSCAN_INJECTIONSCAN . "'></center></td>";
+	echo "<td><center><input onclick='return location.href = \"indexscan.php?op=checkillegalfiles\"' type='button' value='" . _AM_INDEXSCAN_CHECKILLEGALFILES . "'></center></td>";
+	echo "<td><center><input onclick='return location.href = \"indexscan.php?op=createzip\"' type='button' value='" . _AM_INDEXSCAN_CREATEZIP . "'></center></td>";
 	echo '</tr></table>';
 	if ($verifyMessage !=''){
-	echo '<div align="center" id="indexscan_verifyMsg"><br>'.$verifyMessage.'</div>';
+	echo '<div align="center" id="indexscan_verifyMsg"><br>' . $verifyMessage . '</div>';
 	} else {};
 	echo '<div style="text-align:center;" id="slidingDiv"><img src="images/spinner.gif" style="text-align:center;"><br>' . _AM_INDEXSCAN_SCANNING4MISS . '</div>';
 	echo '<div style="text-align:center;" id="slidingDiv2"><img src="images/spinner.gif" style="text-align:center;"><br>' . _AM_INDEXSCAN_CREATINGMISS . '</div>';
@@ -81,13 +81,13 @@ switch($op) {
 	case "ScanNow":
 		global $count;
 		xoops_cp_header();
-    $adminObject  = \Xmf\Module\Admin::getInstance();
-    $adminObject->displayNavigation(basename(__FILE__));
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));
 		indexScan_Choice();
 		print "<div style='text-align:center; width:100%;' id ='indexscan_result'><table class='outer' style='width:100%;'>";
 		print "<tr class='header'><center><th colspan=2><h2>"
-          . _AM_INDEXSCAN_HEADER
-          . "</h2></center></th></tr>";
+            . _AM_INDEXSCAN_HEADER
+            . "</h2></center></th></tr>";
 		print "<tr><center><td></center></td></tr>";
 
 /* 
@@ -101,8 +101,8 @@ function xoops_PrintPaths ( $xoopsFilePath,$File2Look4,$count ) {
 }
 
 // Setting up the search //		
-		global $xoopsModuleConfig;
-		$RootDir = indexscan_GetModuleOption('indexscan_rootorsub');
+	global $xoopsModuleConfig;
+	$RootDir = indexscan_GetModuleOption('indexscan_rootorsub');
 	$File2Look4 = 'index.html';
 	$ReturnFindings = 'xoops_PrintPaths';
 	$Dirs2Exclude = array( $xoopsModuleConfig['exep_01'], $xoopsModuleConfig['exep_02'], $xoopsModuleConfig['exep_03'], $xoopsModuleConfig['exep_04'] );
@@ -119,7 +119,7 @@ function xoops_Look4Files ( $RootDir, $File2Look4, $ReturnFindings = NULL, $Dirs
 		$path = $RootDir.trim( $path, '/' ).'/';
   }
   while ( $BaSe = array_shift( $Queue2Array ) ) {
-		$File_Path = $BaSe.$File2Look4;
+		$File_Path  = $BaSe.$File2Look4;
 		$File_Path2 = $BaSe.'index.php';
 		$File_Path3 = $BaSe.'index.htm';
 		$File_Path4 = $BaSe.'index.php3';
@@ -159,37 +159,37 @@ function xoops_Look4Files ( $RootDir, $File2Look4, $ReturnFindings = NULL, $Dirs
 case "CreateNow":
 		global $count,$myts;
  		xoops_cp_header();
-    $adminObject  = \Xmf\Module\Admin::getInstance();
-    $adminObject->displayNavigation(basename(__FILE__));    
+        $adminObject  = \Xmf\Module\Admin::getInstance();
+        $adminObject->displayNavigation(basename(__FILE__));    
 		indexScan_Choice();
 			print "<div align = 'center' id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
 			print "<tr class='header'><th colspan=2><center><h2>"
-            . _AM_INDEXSCAN_MAKINGHEADER
-            . "</h2></center></th></tr>";
+                . _AM_INDEXSCAN_MAKINGHEADER
+                . "</h2></center></th></tr>";
 			print "<tr class='header'><td colspan=2>&nbsp;</td></tr>";
-	function xoops_PrintPathsCR ( $xoopsFilePathCR,$File2Look4CR,$countCR ) {
-	$xoopsFilePathCRSHORT = substr($xoopsFilePathCR,7);
-	xoops_CreateMissingIndexFiles ($xoopsFilePathCR);
-	print "<tr><td><span class='indexscan_path'>"
-        . $xoopsFilePathCRSHORT
-        . "</span></td><td><span class='indexscan_created_ok'>"
-        .	_AM_INDEXSCAN_CREATED
-        . "</span><br><td></tr>";
+    	function xoops_PrintPathsCR ( $xoopsFilePathCR,$File2Look4CR,$countCR ) {
+    	$xoopsFilePathCRSHORT = substr($xoopsFilePathCR,7);
+    	xoops_CreateMissingIndexFiles ($xoopsFilePathCR);
+    	print "<tr><td><span class='indexscan_path'>"
+            . $xoopsFilePathCRSHORT
+            . "</span></td><td><span class='indexscan_created_ok'>"
+            .	_AM_INDEXSCAN_CREATED
+            . "</span><br><td></tr>";
 }
 
 // Setting up the search //		
 	
-	$File2Look4CR = 'index.html';
-	$ReturnFindingsCR = 'xoops_PrintPathsCR';
-	$RootDirCR = indexscan_GetModuleOption('indexscan_rootorsub');
+	$File2Look4CR      = 'index.html';
+	$ReturnFindingsCR  = 'xoops_PrintPathsCR';
+	$RootDirCR         = indexscan_GetModuleOption('indexscan_rootorsub');
 	
 // Define wich folders not to scan	
 	$Dirs2ExcludeCR = [
-                    $xoopsModuleConfig['exep_01'],
-                    $xoopsModuleConfig['exep_02'],
-                    $xoopsModuleConfig['exep_03'],
-                    $xoopsModuleConfig['exep_04']
-                    ];
+                      $xoopsModuleConfig['exep_01'],
+                      $xoopsModuleConfig['exep_02'],
+                      $xoopsModuleConfig['exep_03'],
+                      $xoopsModuleConfig['exep_04']
+                      ];
 
 /*
 This function opens a file called index.html, write content, and saves where not found
@@ -269,36 +269,38 @@ case "injectionScan":
 	* @since       File available since Release 1.0.1
 	*/
 			xoops_cp_header();
-        $adminObject  = \Xmf\Module\Admin::getInstance();
-        $adminObject->displayNavigation(basename(__FILE__));
+            $adminObject  = \Xmf\Module\Admin::getInstance();
+            $adminObject->displayNavigation(basename(__FILE__));
 			indexScan_Choice();
 			print "<div id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
 			global $xoopsModuleConfig;
-			$path = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1);
+			$path                    = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1);
 			
-				$baseDir = basename(dirname($_SERVER['PHP_SELF']));
-				$WebPth = 'http://'.$_SERVER['HTTP_HOST'].'/';
-				$content_pattern = ["iframe","fromCharCode","%69%66%72%61%6D%65","document.write(unescape("];
-					$tmp = pathinfo( XOOPS_ROOT_PATH . "/mainfile.php");
-					$tmp1 = dirname(dirname( XOOPS_ROOT_PATH . "/mainfile.php"));
-					$tmp2 = str_replace($tmp1,'',$tmp);
-					$file = $tmp2['dirname'] . "/modules/printliminator/admin/indexscan.php";
-					$fileSub = str_replace("\\","/",$file);
-					$fileSubs = "../../../..".$fileSub;
-				$content_pattern_exclude = ["../../../modules/printliminator/admin/indexsacn.php",$fileSubs];
-				$count_files = 0;
-				$count_injections = 0;
-					echo _AM_INDEXSCAN_CHECKFORFILES;
-				$dir_handle = @opendir($path) or die("Unable to open $path");
-					indexScan_Scan4ifrm($dir_handle, $path, '');
+			$baseDir                 = basename(dirname($_SERVER['PHP_SELF']));
+			$WebPth                  = 'http://'.$_SERVER['HTTP_HOST'].'/';
+			$content_pattern         = ["iframe","fromCharCode","%69%66%72%61%6D%65","document.write(unescape("];
+			$tmp                     = pathinfo( XOOPS_ROOT_PATH . "/mainfile.php");
+			$tmp1                    = dirname(dirname( XOOPS_ROOT_PATH . "/mainfile.php"));
+			$tmp2                    = str_replace($tmp1,'',$tmp);
+			$file                    = $tmp2['dirname'] . "/modules/printliminator/admin/indexscan.php";
+			$fileSub                 = str_replace("\\","/",$file);
+			$fileSubs                = "../../../..".$fileSub;
+			$content_pattern_exclude = ["../../../modules/printliminator/admin/indexsacn.php", $fileSubs];
+			$count_files             = 0;
+			$count_injections        = 0;
+                
+			echo _AM_INDEXSCAN_CHECKFORFILES;
+                
+			$dir_handle = @opendir($path) or die("Unable to open $path");
+			indexScan_Scan4ifrm($dir_handle, $path, '');
 		print "<tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr><tr><td colspan=2>&nbsp;</td></tr>";
 		print "<tr><td colspan=2>&nbsp;</td></tr><tr><th colspan=2><span style='position:relative;text-align:left;font-size:14px;font-weight:bold;'>"
-          . $count_injections
-          . "</span><span style = 'position:relative;text-align:left;font-size:10px;'> "
-          . _AM_INDEXSCAN_FINISDINJECTIONS
-          . "</span><span style='font-size:14px;font-weight:bold;'> "
-          . $count_files
-          . "</span></th></tr><tr><td colspan=2>&nbsp;</td></tr>";
+            . $count_injections
+            . "</span><span style = 'position:relative;text-align:left;font-size:10px;'> "
+            . _AM_INDEXSCAN_FINISDINJECTIONS
+            . "</span><span style='font-size:14px;font-weight:bold;'> "
+            . $count_files
+            . "</span></th></tr><tr><td colspan=2>&nbsp;</td></tr>";
 		echo "</table></div>";
     include_once __DIR__ . '/footer.php'; 
     break;
@@ -306,8 +308,8 @@ case "injectionScan":
 case "CheckIllegalFiles":
 	global $ignores;
 	xoops_cp_header();
-        $adminObject  = \Xmf\Module\Admin::getInstance();
-        $adminObject->displayNavigation(basename(__FILE__));
+    $adminObject  = \Xmf\Module\Admin::getInstance();
+    $adminObject->displayNavigation(basename(__FILE__));
 	indexScan_Choice();
 	$count_xoopsfiles = 0;
 	$count_illegalfiles = 0;
@@ -315,8 +317,8 @@ case "CheckIllegalFiles":
   
 	echo "<div id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
 	$ignores = [];
-	  $tmps = file('filecheck.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-	  foreach ($tmps as $lines) {
+	$tmps    = file('filecheck.txt',FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+	foreach ($tmps as $lines) {
 	  list($line, $sum) = explode(':',$lines);
 		$line = str_replace('\\','/',$line);
 		$line = str_replace('\s','',$line);
@@ -365,7 +367,7 @@ case "createzip":
 	$filecopy=0;
 	$filedeleted=0;
 	$filecreated=0;
-			echo "<div id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
+	echo "<div id ='indexscan_result' width='100%'><table class='outer' width='100%'>";
 	$module = indexscan_GetModuleOption('indexscan_frombackup');
 	$src = substr_replace(indexscan_GetModuleOption('indexscan_rootorsub'),"",-1)
         . '/modules/printliminator/admin/folder2backup/'

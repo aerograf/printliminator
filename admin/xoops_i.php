@@ -12,11 +12,15 @@
 *              - DuGris (http://www.dugris.info)
 */
 include '../../../include/cp_header.php';
+
 if (!defined('XOOPS_ROOT_PATH')) { die('XOOPS root path not defined'); }
+/*
 define('XOOPSINFO_URL', XOOPS_URL . '/modules/printliminator/');
 define('XOOPSINFO_URL_IMAGE', XOOPS_URL . '/modules/printliminator/assets/images/icons');
 define('XOOPSINFO_ADMIN_URL', XOOPS_URL . '/modules/printliminator/admin/xoopsinfo.php');
 define('XOOPSINFO_PATH', XOOPS_ROOT_PATH . '/modules/printliminator/');
+*/
+include_once __DIR__ . '/header.php';
 
 global $xoopsDB, $xoopsConfig, $xoopsModule;
 
@@ -309,7 +313,6 @@ $tray_save_cancel = new XoopsFormElementTray('', '');
 $tray_save_cancel->addElement($button_save);
 $hidden = new XoopsFormHidden('op', 'save');
 
-
 echo '<form action="'
       . XOOPSINFO_ADMIN_URL
       . '" method="post"><table width="100%"><tr><td colspan="2" class="bold shadowlight alignmiddle" style="text-align:center;"><h2>'
@@ -430,3 +433,4 @@ echo '<td class="even"><strong>'
       . '</strong></td><td class="odd"><span style="white-space:normal;">'
       . $_SERVER['HTTP_USER_AGENT']
       . '</span></td></tr></table></form><br><br>';
+include_once __DIR__ . '/footer.php';

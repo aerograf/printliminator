@@ -19,6 +19,8 @@ define('XOOPSINFO_URL_IMAGE',XOOPS_URL . '/modules/printliminator/assets/images/
 define('XOOPSINFO_ADMIN_URL',XOOPS_URL . '/modules/printliminator/admin');
 define('XOOPSINFO_PATH',XOOPS_ROOT_PATH . '/modules/printliminator/');
 
+include_once __DIR__ . '/header.php';
+
 global $xoopsDB, $xoopsConfig, $xoopsModule;  
 
 include_once( XOOPS_ROOT_PATH.'/class/xoopsformloader.php' );
@@ -68,7 +70,7 @@ while (false !== ($entry = $d->read())) {
 	}
 }
 $d->close();
-
+$xoopsTpl->display("db:admin/" . $xoopsModule->getVar("dirname") . "_admin_xinfo.tpl");
 echo '<table width="100%"><tr>';
 echo "<td colspan='6' class='bold shadowlight alignmiddle' style='text-align:center;'><h2>"
       . _AM_XI_ADMENU5
@@ -158,3 +160,5 @@ echo '<tr><td width="50%"><img src="'
       . '/noclass.gif" alt=""align="absmiddle" />&nbsp;'
       . _AM_XI_EDITOR_CLASS . '</th></tr>';
 echo '</table><br><br>';
+
+include_once __DIR__ . '/footer.php';

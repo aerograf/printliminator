@@ -1,3 +1,4 @@
+<div class="top"><{$navigation}><{$module_about}></div>
 <div id="Printliminator_Title" class="bold shadowlight alignmiddle">
     <div id="Printliminator_About">
         <{$smarty.const._AM_PRINTLIMINATOR_MANAGER_ABOUT1}>
@@ -35,7 +36,7 @@
 						<label><{$smarty.const._AM_PRINTLIMINATOR_ABOUT_WEBSITE}> : </label><text><a class="tooltip" href="<{$author_website_url}>" rel="external" title="<{$author_website_name}><br><{$author_website_url}>"><{$author_website_name}></a></text><br>
 					</div>
 				</fieldset>
-			</td>
+			</td><td></td>
 			<td class="aligntop width50">
 				<{if $changelog}>
 					<fieldset>

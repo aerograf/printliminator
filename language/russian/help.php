@@ -9,7 +9,7 @@
  * @author 	aerograf <https://www.shmel.org>
  * @version	$Id: blocks_mytype.php 2017-06-06 
 **/
-
+/*
 define("_AM_PRINTLIMINATOR_HELP1" , "--<a href='#printer'>The Printliminator</a>-- & --<a href='#qrcode'>QR Code</a>-- & --<a href='#filemanager'>File Manager</a>-- & --<a href='#indexscan'>Index Scan</a>-- & --<a href='#share42'>Share42</a>-- & --<a href='#xoopsinfo'>XoopsInfo</a>--");
 define("_AM_PRINTLIMINATOR_HELP2" , "<div id='printer'></div><a target='_blank' href='https://css-tricks.github.io/The-Printliminator/'><img src='../assets/images/web-store-tile.png'></a>");                               
 define("_AM_PRINTLIMINATOR_HELP3" , "<img src='../assets/images/screenshot.png'>");
@@ -36,7 +36,7 @@ define("_AM_PRINTLIMINATOR_HELP7" , "
 </ul>
 ");
 define("_AM_PRINTLIMINATOR_HELP8" , '<div id="qrcode"></div><h2>OR Code</h2>Для размещения QR кода в шаблоне необходимо скопировать код <{includeq file="db:printliminator_qrcode_div_in.tpl"}> и вставить его в необходимое место в шаблоне. Размер картинки QR кода можно в шаблоне /modules/printliminator/templates/printliminator_qrcode_div_in.tpl изменить параметр s=2 в диапазоне от 1 до 4.');
-define("_AM_PRINTLIMINATOR_HELP9" , "<h3>Дополнительно</h3>");
+define("_AM_PRINTLIMINATOR_HELP9" , "<h3>Дополнительно</h3>"); 
 define("_AM_PRINTLIMINATOR_HELP10" , "<h3><br /><hr /><br />Использованы скрипты:</h3>");
 define("_AM_PRINTLIMINATOR_HELP11" , "
 <ul>
@@ -97,3 +97,4 @@ define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_3" , "<br /><p><b><i>Следующа�
 define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_4" , "<br /><p><b>Включить отладку:</b><br />Чтобы включить отладку, перейдите в систему admin-->preferences а затем общие настройки. Вы увидите поле 'Режим отладки'. Выберите 'Включить отладку (рядный режим)'. Затем перейдите на страницу с проблемами, скопируйте и вставьте любые сообщения об ошибках в сообщениях php-debug в приведенном ниже шаблоне. Сделайте это для каждого типа отладки (PHP, MySQL, Smarty).<br /><br />Отладочные сообщения PHP:<br />Отладочные сообщения MySQL:<br />Отладочные сообщения Smarty:<br /></p><br /><p><b><i>Следующий шаблон должен служить надежным руководством в запросе к поддержке.</i></b></p><br />");
 define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_5" , "<p>Заглавие: Четкое и описательное название <br /><br />Описание: Подробное описание проблемы, которую Вы имеете. Пожалуйста, укажите как можно больше информации о том, что Вы делали прямо перед тем, как возникла проблема, и о любых шагах, которые Вы предприняли для решения проблемы.<br /><br />Убедитесь, что Вы включили в свой пост как можно больше технической информации. Без этой информации Вам будет очень сложно оказать поддержку.<br /><br />Website URL:<br />XOOPS Version:<br />Theme you are using:<br />Template Set you are using:<br />Module Name and Version:<br />PHP Version:<br />MySQL Version:<br />Server Software:<br />Operating System:<br />Browser Information<br />PHP Debug Messages:<br />MySQL Debug Messages:<br />Smarty Debug Messages:<br /></p>");
 define("_AM_PRINTLIMINATOR_HELP_XOOPSINFO_6" , "<br /><p><b><i>XOOPS Info File version 1.21</i></b><br />Last Updated: 26.06.2017<br />By: XOOPS Support Team</p>");
+*/

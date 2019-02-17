@@ -37,19 +37,25 @@ $modversion = [
     'modicons16'          => 'assets/images/icons/16',
     'modicons32'          => 'assets/images/icons/32',
 // ------------------- About ------------------- //
-    'module_release'      => '15/02/2019',
-    'release_date'        => '2019/02/15',
-    'module_status'       => 'Beta2',
+    'module_release'      => '18/02/2019',
+    'release_date'        => '2019/02/18',
+    'module_status'       => 'Beta 3',
     'module_website_url'  => 'https://url.shmel.org/xoops',
     'module_website_name' => 'SHMEL.ORG',
-    'module_website_url'  => 'https://github.com/aerograf/printliminator',
-    'module_website_name' => 'GitHub',
+    'developer_website_url'  => 'https://github.com/aerograf/printliminator',
+    'developer_website_name' => 'GitHub',
+    'download_website'    => 'https://github.com/aerograf/printliminator',
+    'support_site_url'    => 'https://url.shmel.org/xoops',
+    'support_site_name'   => 'SHMEL.ORG',
+    'submit_bug'          => 'https://xoops.org/',
+    'submit_feature'      => 'https://xoops.org/',
 // ------------------- Scripts to run upon install, uninstall or update ------------------- //
     'onInstall'           => 'include/install.php',
     'onUninstall'         => 'include/uninstall.php',
     'onUpdate'            => 'include/update.php',
     'min_php'             => '7.0',
     'min_xoops'           => '2.5.9+',
+    'min_admin'           => '1.1',
     'min_db'              => ['mysql' => '5.5'],
 // ------------------- Файл базы данных ------------------- //
     'sqlfile'             => ['mysql' => 'sql/mysql.sql'],
@@ -102,6 +108,10 @@ $modversion['templates'] = [
         'file'        => 'admin/' . $moduleDirName . '_admin_help.tpl',
         'description' => _MI_PRINTLIMINATOR_MANAGER_HELP_DESC
     ],
+    [
+        'file'        => 'admin/' . $moduleDirName . '_admin_xinfo.tpl',
+        'description' => _MI_PRINTLIMINATOR_XOOPSINFO
+    ],    
     [
         'file'        => $moduleDirName . '_qrcode_div_in.tpl',
         'description' => _MI_PRINTLIMINATOR_MANAGER_QRCODE_DIV_DESC

@@ -16,10 +16,10 @@ define('_MI_PRINTLIMINATOR_CAT2','<font color="#0040FF" size="6"><b>--- IndexSca
 define('_MI_PRINTLIMINATOR_CAT3','<font color="#0040FF" size="6"><b>--- Xoops Info ---</b></font> ');
 
 // The name of this module
-define("_MI_PRINTLIMINATOR_NAME" , "Printliminator (Utility XOOPS)");
+define("_MI_PRINTLIMINATOR_NAME" , "Printliminator");
 
 // A brief description of this module
-define("_MI_PRINTLIMINATOR_DESC" , "Printliminator utility module for XOOPS");
+define("_MI_PRINTLIMINATOR_DESC" , "Printliminator XOOPS Service Module");
 
 // Admin menu links
 define("_MI_PRINTLIMINATOR_MANAGER_INDEX" , "Index");

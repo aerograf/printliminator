@@ -16,7 +16,7 @@ $adminObject  = \Xmf\Module\Admin::getInstance();
 
 $module_info = $module_handler->get( $xoopsModule->getVar("mid") );
 \Xmf\Module\Admin::setPaypal('aerograf@shmel.org');
-$adminObject->displayAbout(false);
+//$adminObject->displayAbout(false);
 
 $xoopsTpl->assign("module_name",            $xoopsModule->getVar("name") );
 $xoopsTpl->assign("module_dirname",         $xoopsModule->getVar("dirname") );
@@ -34,12 +34,12 @@ $xoopsTpl->assign("author_website_url",     $module_info->getInfo("author_websit
 $xoopsTpl->assign("author_website_name",    $module_info->getInfo("author_website_name") );
 
 global $xoopsModule;
-$xoopsTpl->assign("module_update_date", formatTimestamp($xoopsModule->getVar("last_update"),"m") );
-
+$xoopsTpl->assign("module_update_date",     formatTimestamp($xoopsModule->getVar("last_update"),"m") );
+$xoopsTpl->assign('navigation',             $adminObject->displayNavigation(basename(__FILE__)));
+$xoopsTpl->assign('module_about',           $adminObject->renderAbout('', false));
 if ( is_readable( $changelog = XOOPS_ROOT_PATH . "/modules/" . $xoopsModule->getVar("dirname") . "/docs/changelog_dev.txt" ) ){
-    $xoopsTpl->assign("changelog",          implode("<br />", file( $changelog ) ) );
+    $xoopsTpl->assign("changelog",          implode("<br>", file( $changelog ) ) );
 }
-
 $xoopsTpl->display("db:admin/" . $xoopsModule->getVar("dirname") . "_admin_about.tpl");
 
 include_once __DIR__ . '/footer.php';

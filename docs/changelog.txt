@@ -1,3 +1,8 @@
+<h5>1.22 Beta 3          [2019-02-18]</h5>  Dev: Xoops 2.5.10, PHP 7.0
+
+- Fixes/Optimize (aerograf)
+
+<hr>
 <h5>1.22 Beta 2          [2019-02-15]</h5>  Dev: Xoops 2.5.10, PHP 7.0
 
 - Fixes/Updates/Optimize (aerograf)
