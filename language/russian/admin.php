@@ -55,7 +55,7 @@ define("_FM_AM_LASTVERSION","Последняя версия");
 define("_FM_AM_FILENAME","Имя файла");
 define("_FM_AM_FILESIZE","Размер");
 define("_FM_AM_FILETYPE","Тип");
-define("_FM_AM_MODIFIED","Модифицированный");
+define("_FM_AM_MODIFIED","Изменен");
 define("_FM_AM_ACTIONS","Действия");
 define("_FM_AM_RENAME","Переименовывать");
 define("_FM_AM_DELETE","Удалить");
@@ -134,6 +134,9 @@ define("_FM_AM_FILE_XLS","XLS File");
 define("_FM_AM_FILE_WORD","Word File");
 define("_FM_AM_FILE_FLASH","FLASH File");
 define("_FM_AM_FILE_EXE","Exe file");
+define("_FM_AM_FILE_XML","XML file");
+define("_FM_AM_FILE_ICO","ICON file");
+define("_FM_AM_FILE_HTACCESS","SECURITY file");
 define("_FM_AM_READ_ONLY","Только для чтения");
 define("_FM_AM_PERMISSION","Права доступа");
 

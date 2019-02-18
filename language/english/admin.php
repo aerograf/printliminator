@@ -134,6 +134,9 @@ define("_FM_AM_FILE_XLS","XLS File");
 define("_FM_AM_FILE_WORD","Word File");
 define("_FM_AM_FILE_FLASH","FLASH File");
 define("_FM_AM_FILE_EXE","Exe file");
+define("_FM_AM_FILE_XML","XML file");
+define("_FM_AM_FILE_ICO","ICON file");
+define("_FM_AM_FILE_HTACCESS","SECURITY file");
 define("_FM_AM_READ_ONLY","Read only");
 define("_FM_AM_PERMISSION","Permission");
 

@@ -30,11 +30,11 @@ function system_CleanVars( &$global, $key, $default = '', $type = 'int' ) {
 }
 
 function is_editable($file) {      
-    return (preg_match("/\.txt$|\.sql$|\.php$|\.php3$|\.phtml$|\.htm$|\.html$|\.cgi$|\.pl$|\.js$|\.css$|\.inc$/i", $file));
+    return (preg_match("/\.txt$|\.sql$|\.php$|\.php3$|\.phtml$|\.htm$|\.html$|\.cgi$|\.pl$|\.js$|\.css$|\.xml$|\.htaccess$|\.inc$/i", $file));
     }
 
 function is_image($file) {
-    return (preg_match("/\.png$|\.bmp$|\.jpg$|\.jpeg$|\.gif$/i", $file));
+    return (preg_match("/\.png$|\.bmp$|\.jpg$|\.jpeg$|\.ico$|\.gif$/i", $file));
     }
     
 function withMultipleSize( $size ) {
@@ -129,7 +129,7 @@ function getMimetype( $file, $quoi ) {
     else if(preg_match("/\.ra$/i", $file))    {$image = "ram.png"; $file_type = _REALfile . "";}
     else if(preg_match("/\.ram$/i", $file))   {$image = "ram.png"; $file_type = _REALfile . "";}
     else if(preg_match("/\.rm$/i", $file))    {$image = "ram.png"; $file_type = _REALfile . "";}
-    else if(preg_match("/\.pl$/i", $file))    {$image = "pl.png"; $file_type = _FM_AM_FILE_PERLSCRIPT . "";}
+    else if(preg_match("/\.pl$/i", $file))    {$image = "exe.png"; $file_type = _FM_AM_FILE_PERLSCRIPT . "";}
     else if(preg_match("/\.zip$/i", $file))   {$image = "zip.png"; $file_type = _FM_AM_FILE_ZIP . "";}
     else if(preg_match("/\.wav$/i", $file))   {$image = "wav.png"; $file_type = _FM_AM_FILE_WAV . "";}
     else if(preg_match("/\.php$/i", $file))   {$image = "php.png"; $file_type = _FM_AM_FILE_PHPSCRIPT . "";}
@@ -148,6 +148,9 @@ function getMimetype( $file, $quoi ) {
     else if(preg_match("/\.mpg$/i", $file))   {$image = "mpg.png"; $file_type = _FM_AM_FILE_MPG . "";}
     else if(preg_match("/\.mpeg$/i", $file))  {$image = "mpeg.png"; $file_type = _FM_AM_FILE_MPEG . "";}
     else if(preg_match("/\.swf$/i", $file))   {$image = "flash.png"; $file_type = _FM_AM_FILE_FLASH . "";}
+    else if(preg_match("/\.xml$/i", $file))   {$image = "html.png"; $file_type = _FM_AM_FILE_XML . "";}
+    else if(preg_match("/\.ico$/i", $file))   {$image = "gif.png"; $file_type = _FM_AM_FILE_ICO . "";}
+    else if(preg_match("/\.htaccess$/i", $file))   {$image = "exe.png"; $file_type = _FM_AM_FILE_HTACCESS . "";}
     else                             {$image = "defaut.png"; $file_type = _FM_AM_FILE . "";}
 
     if ($quoi == "image")

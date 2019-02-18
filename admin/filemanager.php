@@ -71,7 +71,7 @@ switch ($op) {
         if(preg_match("/\.sql$/i",$fic))        {$syntax = "sql";}
         else if(preg_match("/\.js$/i",$fic))    {$syntax = "js";}
         else if(preg_match("/\.html$/i",$fic))  {$syntax = "html";}
-        else if(preg_match("/\.htm$/i",$fic))   {$syntax = "html";}
+        else if(preg_match("/\.htm$/i",$fic))   {$syntax = "htm";}
         else if(preg_match("/\.pl$/i",$fic))    {$syntax = "perl";}
         else if(preg_match("/\.py$/i",$fic))    {$syntax = "python";}
         else if(preg_match("/\.php$/i",$fic))   {$syntax = "php";}
@@ -579,12 +579,12 @@ switch ($op) {
         echo "</script>";
 
         echo "<table style='width:100%; border:none;vertical-align:middle;border:1px dotted black;'>";
-        echo "<tr><td><tr style='font-size:medium;text-align:center;background-color:#cccccc;'>";
+        echo "<tr><td><tr>";
         if( $rep != "" )
             {$link = "&rep=" . $rep;}
         else
             {$link = "";}
-        echo "<td><b><a href='"
+        echo "<th><b><a href='"
               . $current_file
               . "?id="
               . $id
@@ -597,7 +597,7 @@ switch ($op) {
         if ( $order_by == "nom" || $order_by == "" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td><td><b><a href='"
+        echo "</b></th><th><b><a href='"
               . $current_file
               . "?id="
               . $id
@@ -610,7 +610,7 @@ switch ($op) {
         if ( $order_by == "permission" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td><td><b><a href=\"$current_file?id=$id&order_by=size&sens=$sens"
+        echo "</b></th><th><b><a href=\"$current_file?id=$id&order_by=size&sens=$sens"
               . $link
               . "\">"
               . _FM_AM_FILESIZE
@@ -618,7 +618,7 @@ switch ($op) {
         if ( $order_by == "size" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td><td><b><a href=\"$current_file?id=$id&order_by=type&sens=$sens"
+        echo "</b></th><th><b><a href=\"$current_file?id=$id&order_by=type&sens=$sens"
               . $link
               . "\">"
               . _FM_AM_FILETYPE
@@ -626,7 +626,7 @@ switch ($op) {
         if ( $order_by == "type" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td><td><b><a href=\"$current_file?id=$id&order_by=mod&sens=$sens"
+        echo "</b></th><th><b><a href=\"$current_file?id=$id&order_by=mod&sens=$sens"
               . $link
               . "\">"
               . _FM_AM_MODIFIED
@@ -634,9 +634,9 @@ switch ($op) {
         if ( $order_by == "mod" ) {
             echo "&nbsp;&nbsp;<img src='images/arrow${sens}.png'>";
             }
-        echo "</b></td><td align='center'><b>"
+        echo "</b></th><th align='center'><b>"
               . _FM_AM_ACTIONS
-              . "</b></td></tr>";
+              . "</b></th></tr>";
         if($sens==1){$sens  =0;}else{$sens=1;}
         if ( $rep != "" ) {
             $nom = dirname($rep);
